@@ -2,15 +2,15 @@
   "generator-fountain-angular1": {
     "version": "1.0.0",
     "props": {
-      "resolved": "C:\\Users\\michael.suchorolski\\AppData\\Roaming\\npm\\node_modules\\generator-fountain-angular1\\generators\\app\\index.js",
+      "resolved": "C:\\Users\\luis.aviles\\AppData\\Roaming\\nvm\\v6.9.4\\node_modules\\generator-fountain-angular1\\generators\\app\\index.js",
       "namespace": "fountain-angular1:app",
       "_": [],
       "framework": "angular1",
-      "modules": "webpack",
+      "modules": "inject",
       "js": "js",
       "css": "css",
       "ci": [],
-      "sample": "techs",
+      "sample": "hello",
       "router": "uirouter"
     }
   }

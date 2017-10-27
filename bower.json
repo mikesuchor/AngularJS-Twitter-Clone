@@ -1,20 +1,13 @@
 {
-  "name": "mike-angularjs-project",
-  "version": "0.0.0",
+  "name": "fountain-inject",
+  "version": "0.0.1",
   "dependencies": {
-    "angular": "~1.5.0",
-    "json3": "~3.3.1",
-    "es5-shim": "~3.0.1",
-    "bootstrap": "~3.1.1",
-    "angular-resource": "~1.5.0",
-    "angular-cookies": "~1.5.0",
-    "angular-sanitize": "~1.5.0",
-    "angular-bootstrap": "~1.1.2",
-    "font-awesome": ">=4.1.0",
-    "lodash": "~2.4.1",
-    "angular-ui-router": "~0.2.15"
+    "angular": "^1.6.2",
+    "angular-ui-router": "1.0.0-beta.3",
+    "bootstrap": "3.3.4",
+    "components-font-awesome": "^4.7.0"
   },
   "devDependencies": {
-    "angular-mocks": "~1.5.0"
+    "angular-mocks": "^1.6.2"
   }
 }

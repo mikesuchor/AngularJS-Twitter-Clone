@@ -45,17 +45,8 @@
             <!-- Trends section -->
             <section class="trends-section">
                 <h1 class="trends-section-title">Trends for you<span class="separator-dot">.</span><span class="section-title-options">Change</span></h1>
-                <ul class="trends-section-list">
-                    <li><h2>#docventures</h2><p>1,715 Tweets</p></li>
-                    <li><h2>Amazon Key</h2><p>31.2K Tweets</p></li>
-                    <li><h2>Fats Domino</h2><p>116K Tweets</p></li>
-                    <li><h2>#WednesdayWisdom</h2><p>8,999 Tweets</p></li>
-                    <li><h2>#BestHalloweenIn5Words</h2><p>16.3K Tweets</p></li>
-                    <li><h2>#MillenialAMovie</h2><p>3,183 Tweets</p></li>
-                    <li><h2>#PutShoesOnAMovie</h2><p>3,733 Tweets</p></li>
-                    <li><h2>#MyGoToComfortFood</h2><p>2,005 Tweets</p></li>
-                    <li><h2>#RBLFCB</h2><p>5,207 Tweets</p></li>
-                    <li><h2>#destelling</h2><p>10.5K Tweets</p></li>
+                <ul class="trends-section-list" ng-repeat="trend in $ctrl.trends">
+                    <li><h2>{{trend.name}}</h2><p>{{trend.numtweets}}</p></li>
                 </ul>
             </section>
         </div>
@@ -69,17 +60,17 @@
             </section>
             <!-- Tweets section -->
             <section class="tweets-section">
-                <ul class="tweets-section-list" ng-repeat="x in $ctrl.tweets">
+                <ul class="tweets-section-list" ng-repeat="tweet in $ctrl.tweets">
                     <li>
-                        <img class="tweets-account" ng-src={{x.photo}}>
-                        <a class="tweets-name" ng-href="https://twitter.com/{{x.handle}}">{{x.name}}</a><span>{{"@" + x.handle}}</span><i class="fa fa-chevron-down" aria-hidden="true"></i>
-                        <p>{{x.tweet}}</p>
+                        <img class="tweets-account" ng-src={{tweet.photo}}>
+                        <a class="tweets-name" ng-href="https://twitter.com/{{tweet.handle}}">{{tweet.name}}</a><span>{{"@" + tweet.handle}}</span><i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        <p>{{tweet.tweet}}</p>
                         <p class="tweets-icons"><i class="fa fa-comment-o" aria-hidden="true"></i><i class="fa fa-retweet" aria-hidden="true"></i><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-envelope-o" aria-hidden="true"></i></p>
-                        <div class="tweets-photo-section" ng-show={{x.image}}>
-                            <img ng-src={{x.image.url}}>
-                            <h2>{{x.image.heading}}</h2>
-                            <p>{{x.image.description}}</p>
-                            <p>{{x.image.link}}</p>
+                        <div class="tweets-photo-section" ng-show={{tweet.image}}>
+                            <img ng-src={{tweet.image.url}}>
+                            <h2>{{tweet.image.heading}}</h2>
+                            <p>{{tweet.image.description}}</p>
+                            <p>{{tweet.image.link}}</p>
                         </div>
                     </li>
                 </ul>
@@ -91,20 +82,10 @@
             <!-- Follow section -->
             <section class="follow-section">
                 <h1 class="follow-section-title">Who to follow<span class="separator-dot">.</span><span class="section-title-options">Refresh</span><span class="separator-dot">.</span><span class="section-title-options">View all</span></h1>
-                <ul class="follow-section-people">
+                <ul class="follow-section-people" ng-repeat="follow in $ctrl.follow">
                     <li>
-                        <img src="https://pbs.twimg.com/profile_images/696357709361188864/3Ghh7TKT_bigger.jpg">
-                        <a href="https://twitter.com/Fragno92">Francesco</a><span>@Fragno92</span><i class="fa fa-times" aria-hidden="true"></i>
-                        <button class="btn follow-button">Follow</button>
-                    </li>
-                    <li>
-                        <img src="https://pbs.twimg.com/profile_images/896061559788552192/p7K_iGym_bigger.jpg">
-                        <a href="https://twitter.com/treehouse">Treehouse</a><span>@Treehouse</span><i class="fa fa-times" aria-hidden="true"></i>
-                        <button class="btn follow-button">Follow</button>
-                    </li>
-                    <li>
-                        <img src="https://pbs.twimg.com/profile_images/803647146914217984/eLpTsAdA_bigger.jpg">
-                        <a href="https://twitter.com/JayHouston">Jay Houston</a><span>@JayHouston</span><i class="fa fa-times" aria-hidden="true"></i>
+                        <img ng-src={{follow.photo}}>
+                        <a ng-href="https://twitter.com/{{follow.handle}}">{{follow.name}}</a><span>{{"@" + follow.handle}}</span><i class="fa fa-times" aria-hidden="true"></i>
                         <button class="btn follow-button">Follow</button>
                     </li>
                 </ul>

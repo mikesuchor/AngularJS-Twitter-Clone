@@ -12,6 +12,39 @@ angular
       following: 62,
       followers: 159,
     }
+    vm.trends = [
+        {
+            name: "#docventures",
+            numtweets: "1,715 Tweets",
+        },{
+            name: "Amazon Key",
+            numtweets: "31.2K Tweets",
+        },{
+            name: "Fats Domino",
+            numtweets: "116K Tweets",
+        },{
+            name: "#WednesdayWisdom",
+            numtweets: "8,999 Tweets",
+        },{
+            name: "#BestHalloweenIn5Words",
+            numtweets: "16.3K Tweets",
+        },{
+            name: "#MillenialAMovie",
+            numtweets: "3,183 Tweets",
+        },{
+            name: "#PutShoesOnAMovie",
+            numtweets: "3,733 Tweets",
+        },{
+            name: "#MyGoToComfortFood",
+            numtweets: "2,005 Tweets",
+        },{
+            name: "#RBLFCB",
+            numtweets: "5,207 Tweets",
+        },{
+            name: "#destelling",
+            numtweets: "10.5K Tweets",
+        }
+    ]
     vm.tweets = [
       {
           photo: "https://pbs.twimg.com/profile_images/861332770374770688/MSbiM1ec_bigger.jpg",
@@ -83,5 +116,20 @@ angular
           image: null,          
       }
   ]
-  }
+  vm.follow = [
+      {
+          photo: "https://pbs.twimg.com/profile_images/696357709361188864/3Ghh7TKT_bigger.jpg",
+          name: "Francesco",
+          handle: "Fragno92",
+      },{
+          photo: "https://pbs.twimg.com/profile_images/896061559788552192/p7K_iGym_bigger.jpg",
+          name: "Treehouse",
+          handle: "Treehouse",
+      },{
+          photo: "https://pbs.twimg.com/profile_images/803647146914217984/eLpTsAdA_bigger.jpg",
+          name: "JayHouston",
+          handle: "JayHouston",
+      }
+  ]
+}
 });

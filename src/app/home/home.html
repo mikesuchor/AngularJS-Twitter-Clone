@@ -1,57 +1,15 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <ul class="navbar-brand"><i class="fa fa-twitter" aria-hidden="true"></i></ul>
-        <ul class="nav navbar-nav navbar-left">
-            <li class="active"><a href="https://twitter.com"><i class="fa fa-home" aria-hidden="true"><span>Home</span></i></a></li>
-            <li><a href="https://twitter.com/i/notifications"><i class="fa fa-bell-o" aria-hidden="true"><span>Notifications</span></i></a></li>
-            <li><a href="https://twitter.com/#"><i class="fa fa-envelope-o" aria-hidden="true"><span>Messages</span></i></a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <form class="navbar-form">
-                    <input type="text" class="form-control navbar-input" placeholder="Search Twitter">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </form>
-            </li>
-            <li><img class="navbar-image" src="https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg"></li>
-            <li><button class="btn navbar-btn">Tweet</button></li>
-        </ul>
-    </div>
-</nav>
+<navbar></navbar>
 <!-- Left column -->
 <div class="container-fluid"></div>
     <div class="row">
         <div class="left-column col-xs-3">
-            <!--Profile section-->
-            <section class="profile-top-section">
-                <img class="profile-image" ng-src={{$ctrl.profile.photo}}>
-            </section>
-            <section class="profile-bottom-section">
-                <h1 class="profile-name">{{$ctrl.profile.name}}</h1>
-                <h2 class="profile-account">{{"@" + $ctrl.profile.handle}}</h2>
-                <table class="profile-stats">
-                    <tr class="profile-stats-headers">
-                        <th>Tweets</th>
-                        <th>Following</th>
-                        <th>Followers</th>
-                    </tr>
-                    <tr class="profile-stats-numbers">
-                        <td>{{$ctrl.profile.tweets}}</td>
-                        <td>{{$ctrl.profile.following}}</td> 
-                        <td>{{$ctrl.profile.followers}}</td>
-                    </tr>
-                </table>
-            </section>
+            <!-- Profile section -->
+            <profile></profile>
             <!-- Trends section -->
-            <section class="trends-section">
-                <h1 class="trends-section-title">Trends for you<span class="separator-dot">.</span><span class="section-title-options">Change</span></h1>
-                <ul class="trends-section-list" ng-repeat="trend in $ctrl.trends">
-                    <li><h2>{{trend.name}}</h2><p>{{trend.numtweets}}</p></li>
-                </ul>
-            </section>
+            <trends></trends>
         </div>
     
-<!-- Center column -->
+        <!-- Center column -->
         <div class="center-column col-xs-6">
             <!-- Whats happening section -->
             <section class="whats-happening-section">
@@ -59,37 +17,13 @@
                 <input class="whats-happening-input" type="text" placeholder="What's happening?">
             </section>
             <!-- Tweets section -->
-            <section class="tweets-section">
-                <ul class="tweets-section-list" ng-repeat="tweet in $ctrl.tweets">
-                    <li>
-                        <img class="tweets-account" ng-src={{tweet.photo}}>
-                        <a class="tweets-name" ng-href="https://twitter.com/{{tweet.handle}}">{{tweet.name}}</a><span>{{"@" + tweet.handle}}</span><i class="fa fa-chevron-down" aria-hidden="true"></i>
-                        <p>{{tweet.tweet}}</p>
-                        <p class="tweets-icons"><i class="fa fa-comment-o" aria-hidden="true"></i><i class="fa fa-retweet" aria-hidden="true"></i><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-envelope-o" aria-hidden="true"></i></p>
-                        <div class="tweets-photo-section" ng-show={{tweet.image}}>
-                            <img ng-src={{tweet.image.url}}>
-                            <h2>{{tweet.image.heading}}</h2>
-                            <p>{{tweet.image.description}}</p>
-                            <p>{{tweet.image.link}}</p>
-                        </div>
-                    </li>
-                </ul>
-            </section>
+            <tweets></tweets>
         </div>
 
-<!-- Right column -->
+        <!-- Right column -->
         <div class="right-column col-xs-3">
             <!-- Follow section -->
-            <section class="follow-section">
-                <h1 class="follow-section-title">Who to follow<span class="separator-dot">.</span><span class="section-title-options">Refresh</span><span class="separator-dot">.</span><span class="section-title-options">View all</span></h1>
-                <ul class="follow-section-people" ng-repeat="follow in $ctrl.follow">
-                    <li>
-                        <img ng-src={{follow.photo}}>
-                        <a ng-href="https://twitter.com/{{follow.handle}}">{{follow.name}}</a><span>{{"@" + follow.handle}}</span><i class="fa fa-times" aria-hidden="true"></i>
-                        <button class="btn follow-button">Follow</button>
-                    </li>
-                </ul>
-            </section>
+            <follow></follow>
             <!-- Find people section -->
             <section class="find-people-section">
                 <div class="find-people-section-contacts">

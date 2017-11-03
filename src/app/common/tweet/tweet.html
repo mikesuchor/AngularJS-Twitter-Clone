@@ -1,0 +1,16 @@
+<section class="tweets-section">
+  <ul class="tweets-section-list" ng-repeat="tweet in $ctrl.tweet">
+      <li>
+          <img class="tweets-account" ng-src={{tweet.photo}}>
+          <a class="tweets-name" ng-href="https://twitter.com/{{tweet.handle}}">{{tweet.name}}</a><span>{{"@" + tweet.handle}}</span><i class="fa fa-chevron-down" aria-hidden="true"></i>
+          <p>{{tweet.tweet}}</p>
+          <p class="tweets-icons"><i class="fa fa-comment-o" aria-hidden="true"></i><i class="fa fa-retweet" aria-hidden="true"></i><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-envelope-o" aria-hidden="true"></i></p>
+          <div class="tweets-photo-section" ng-show={{tweet.image}}>
+              <img ng-src={{tweet.image.url}}>
+              <h2>{{tweet.image.heading}}</h2>
+              <p>{{tweet.image.description}}</p>
+              <p>{{tweet.image.link}}</p>
+          </div>
+      </li>
+  </ul>
+</section>

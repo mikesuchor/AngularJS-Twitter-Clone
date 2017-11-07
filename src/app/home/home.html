@@ -17,7 +17,7 @@
                 <input class="whats-happening-input" type="text" placeholder="What's happening?">
             </section>
             <!-- Tweets section -->
-            <tweet tweet="$ctrl.tweet"></tweet>
+            <tweet ng-repeat="tweet in $ctrl.tweets" tweet="tweet"></tweet>
         </div>
 
         <!-- Right column -->

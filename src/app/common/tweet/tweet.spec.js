@@ -1,14 +1,14 @@
-describe('tweets component', function () {
+describe('tweet component', function () {
   beforeEach(module('app', function ($provide) {
-    $provide.factory('tweets', function () {
+    $provide.factory('tweet', function () {
       return {
-        templateUrl: 'app/tweets.html'
+        templateUrl: 'app/tweet.html'
       };
     });
   }));
 
   it('should...', angular.mock.inject(function ($rootScope, $compile) {
-    var element = $compile('<tweets></tweets>')($rootScope);
+    var element = $compile('<tweet></tweet>')($rootScope);
     $rootScope.$digest();
     expect(element).not.toBeNull();
   }));

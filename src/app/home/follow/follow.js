@@ -3,7 +3,7 @@ angular
   .component('follow', {
     templateUrl: 'app/home/follow/follow.html',
     controller: function() {
-      vm = this;
+      var vm = this;
       vm.follow = [
         {
             photo: "https://pbs.twimg.com/profile_images/696357709361188864/3Ghh7TKT_bigger.jpg",

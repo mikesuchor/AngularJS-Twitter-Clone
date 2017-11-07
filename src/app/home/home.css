@@ -14,10 +14,10 @@ Username: Helvetica Neue Regular
 */
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  color: #14171A;
-  background: #E1E8ED;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	color: #14171A;
+	background: #E1E8ED;
 	margin-top: 60px;
 }
 
@@ -25,7 +25,7 @@ h1 {
 	font-size: 18px;
 	font-weight: bold;
 	display: inline-block;
-  vertical-align: top;
+ 	vertical-align: top;
 }
 
 h2 {
@@ -39,14 +39,14 @@ p {
 }
 
 ul {
-  list-style: none;
-  padding-left: 0px;
+	list-style: none;
+	padding-left: 0px;
 }
 
 .navbar {
-  background: #FFFFFF;
-  border-bottom: 1px solid #AAB8C2;
-  box-shadow: 1px 1px #E1E8ED;
+	background: #FFFFFF;
+	border-bottom: 1px solid #AAB8C2;
+	box-shadow: 1px 1px #E1E8ED;
 	padding: 0px 35px;
 	height: 40px;
 	line-height: 50px;
@@ -56,17 +56,17 @@ ul {
 	color: #657786;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: bold;
-  font-size: 14px;
-  margin-left: 3px;
-  margin-right: 30px;
+	font-size: 14px;
+	margin-left: 3px;
+	margin-right: 30px;
 }
 
 .navbar-brand {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  text-align: center;
-  margin:0 auto;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	margin:0 auto;
 }
 
 .navbar-left .active {
@@ -74,8 +74,8 @@ ul {
 }
 
 .navbar-left i {
-  color: #657786;
-  font-size: 20px;
+	color: #657786;
+	font-size: 20px;
 	vertical-align: middle;
 	padding-left: 3px;
 }
@@ -107,8 +107,8 @@ ul {
 }
 
 .navbar-image {
-  height: 32px;
-  border-radius: 100%;
+	height: 32px;
+	border-radius: 100%;
 }
 
 .navbar-form {
@@ -128,13 +128,18 @@ ul {
 }
 
 .navbar-btn {
-  border-radius: 20px;
-  color: #FFFFFF;
-	background: #1DA1F2;
+	border-radius: 20px;
+	color: #FFFFFF;
+	background: #4AB3F4;
 	margin-left: 16px;
 	margin-right: 25px;
 	width: 75px;
 	font-weight: bold;
+}
+
+.navbar-btn:hover {
+	color: #FFFFFF;
+	background: #1DA1F2;
 }
 
 .fa-twitter {
@@ -144,7 +149,7 @@ ul {
 }
 
 .form-control {
-  border-radius: 20px;
+  	border-radius: 20px;
 }
 
 .fa-search {
@@ -153,7 +158,7 @@ ul {
 }
 
 .row {
-  width: 95%;
+  	width: 95%;
 	margin: auto;
 }
 
@@ -162,8 +167,8 @@ ul {
 }
 
 .profile-top-section {
-  background: #1DA1F2;
-  height: 95px;
+	background: #1DA1F2;
+	height: 95px;
 }
 
 .profile-bottom-section {
@@ -186,11 +191,11 @@ ul {
 }
 
 .profile-account {
-  color: #657786;
+	color: #657786;
 	font-size: 14px;
 	font-weight: normal;
-  margin-top: 0px;
-  margin-left: 90px;
+	margin-top: 0px;
+	margin-left: 90px;
 }
 
 .profile-stats {
@@ -209,7 +214,7 @@ ul {
 }
 
 .trends-section {
-  background: #FFFFFF;
+  	background: #FFFFFF;
 	height: 475px;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -248,15 +253,15 @@ ul {
 }
 
 .whats-happening-section {
-  background: #E8F5FD;
-  height: 58px;
+	background: #E8F5FD;
+	height: 58px;
 	line-height: 58px;
 }
 
 .whats-happening-image {
-  height: 32px;
-  border-radius: 100%;
-  margin-left: 10px;
+	height: 32px;
+	border-radius: 100%;
+	margin-left: 10px;
 }
 
 .whats-happening-input {
@@ -292,7 +297,7 @@ ul {
 }
 
 .tweets-section-list li:hover {
-	background: 	#F5F8FA;
+	background: #F5F8FA;
 }
 
 .tweets-section-list li:not(:last-child) {
@@ -348,7 +353,7 @@ ul {
 }
 
 .right-column {
-  width: 320px;
+ 	width: 320px;
 }
 
 .right-column section {
@@ -358,8 +363,8 @@ ul {
 
 .follow-section {
 	height: 260px;
-  background: #FFFFFF;
-  vertical-align: top;
+	background: #FFFFFF;
+	vertical-align: top;
 }
 
 .follow-section-people img {
@@ -411,9 +416,9 @@ ul {
 }
 
 .find-people-section {
-  background: #FFFFFF;
-  margin-bottom: 12px;
-  border-top: 1px solid #E1E8ED;
+	background: #FFFFFF;
+	margin-bottom: 12px;
+	border-top: 1px solid #E1E8ED;
 	vertical-align: top;
 }
 
@@ -451,7 +456,7 @@ ul {
 
 .about-section {
 	background: #FFFFFF;
-  border-bottom: 1px solid #E1E8ED;
+  	border-bottom: 1px solid #E1E8ED;
 	vertical-align: top;
 	padding-top: 15px;
 	padding-bottom: 15px;

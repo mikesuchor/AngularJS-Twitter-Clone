@@ -294,6 +294,7 @@ ul {
 
 .tweets-section-list li {
 	margin-top: 10px;
+	width: 600px;
 }
 
 .tweets-section-list li:hover {

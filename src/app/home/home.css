@@ -247,11 +247,6 @@ ul {
 	padding-right: 0px;
 }
 
-.center-column section {
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
 .whats-happening-section {
 	background: #E8F5FD;
 	height: 58px;
@@ -294,7 +289,9 @@ ul {
 
 .tweets-section-list li {
 	margin-top: 10px;
-	width: 600px;
+	width: 630px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .tweets-section-list li:hover {

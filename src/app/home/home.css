@@ -7,7 +7,6 @@ Light Gray: #AAB8C2
 Extra Light Gray: #E1E8ED
 Extra Extra Light Gray: #F5F8FA
 White: #FFFFFF
-
 Typeface:
 Name, Tweet, Timestamp: Helvetica Neue Bold
 Username: Helvetica Neue Regular
@@ -242,14 +241,9 @@ ul {
 }
 
 .center-column {
-	width: 630px;
+	width: 600px;
 	padding-left: 0px;
 	padding-right: 0px;
-}
-
-.center-column section {
-	padding-left: 15px;
-	padding-right: 15px;
 }
 
 .whats-happening-section {
@@ -258,13 +252,19 @@ ul {
 	line-height: 58px;
 }
 
-.whats-happening-image {
+.your-reply-section {
+	background: #F5F8FA;
+	height: 58px;
+	line-height: 58px;
+}
+
+.whats-happening-image, .your-reply-image {
 	height: 32px;
 	border-radius: 100%;
 	margin-left: 10px;
 }
 
-.whats-happening-input {
+.whats-happening-input, .your-reply-input {
 	color: #14171A;
 	font-size: 14px;
 	font-weight: normal;
@@ -284,6 +284,7 @@ ul {
 	background: #FFFFFF;
 	display: inline-block;
 	vertical-align: top;
+	width: 600px;
 }
 
 .tweets-account {
@@ -294,6 +295,8 @@ ul {
 
 .tweets-section-list li {
 	margin-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .tweets-section-list li:hover {
@@ -342,6 +345,71 @@ ul {
 }
 
 .tweets-icons i {
+	color: #657786;
+	font-size: 16px;
+	margin-right: 50px;
+}
+
+.tweet-detail-section {
+	background: #FFFFFF;
+	width: 100%;
+	border-radius: 50px;
+	padding: 30px 40px 30px 40px;
+}
+
+.tweet-detail-section-list li {
+	margin-top: 10px;
+	padding-left: 30px;
+	padding-right: 10px;
+}
+
+.tweet-detail-account {
+	height: 48px;
+	border-radius: 100%;
+	float: left;
+}
+
+.tweet-detail-name {
+	font-size: 18px;
+	color: #14171A;
+	margin-left: 10px;
+	margin-right: 5px;
+}
+
+.tweet-detail-handle {
+	font-size: 14px;
+	color: #657786;
+	margin-left: 58px;
+}
+
+.tweet-detail-tweet {
+	font-size: 27px;
+    line-height: 32px;
+    letter-spacing: .01em;
+}
+
+.tweet-detail-photo-section {
+	border: 1px solid #AAB8C2;
+	border-radius: 5px;
+	margin-left: 58px;
+	margin-bottom: 15px;
+}
+
+.tweet-detail-photo-section img {
+	width: 100%;
+}
+
+.tweet-detail-photo-section h2 {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.tweet-detail-photo-section p {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.tweet-detail-icons i {
 	color: #657786;
 	font-size: 16px;
 	margin-right: 50px;

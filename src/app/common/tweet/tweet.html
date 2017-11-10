@@ -1,9 +1,9 @@
 <section class="tweets-section">
   <ul class="tweets-section-list">
-      <li>
+      <li ng-click="$ctrl.open()">
           <img class="tweets-account" ng-src={{$ctrl.tweet.photo}}>
           <a class="tweets-name" ng-href="https://twitter.com/{{$ctrl.tweet.handle}}">{{$ctrl.tweet.name}}</a><span>{{"@" + $ctrl.tweet.handle}}</span><i class="fa fa-chevron-down" aria-hidden="true"></i>
-          <p>{{$ctrl.tweet.tweet}}</p>
+          <p class="tweets-tweet">{{$ctrl.tweet.tweet}}</p>
           <p class="tweets-icons"><i class="fa fa-comment-o" aria-hidden="true"></i><i class="fa fa-retweet" aria-hidden="true"></i><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-envelope-o" aria-hidden="true"></i></p>
           <div class="tweets-photo-section" ng-show={{$ctrl.tweet.image}}>
               <img ng-src={{$ctrl.tweet.image.url}}>

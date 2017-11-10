@@ -5,6 +5,18 @@ angular
     bindings: {
       tweet: '<'
     },
-    controller: function() {
+    controller: function($uibModal) {
+      var vm = this;
+      vm.open = function (){
+        $uibModal.open({
+          component: "tweetDetail",
+          size: 'lg',
+          resolve: {
+            tweet: function () {
+              return vm.tweet;
+            }
+          }
+        });
+      };
     }
   });

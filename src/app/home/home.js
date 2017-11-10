@@ -85,7 +85,7 @@ angular
             handle: "freeCodeCamp",
             tweet: "Your ultimate guide to the Google Maps SDK on iOS using Swift 4, by <a href=\"https://twitter.com/atanasov_d\">@atanasov_d<\/a>",
             image: {
-              url: "https://pbs.twimg.com/card_img/926529110725287936/NwTNXfbw?format=png&name=600x314",
+              url: "https://pbs.twimg.com/card_img/928387403080806401/Mt0T25Dl?format=jpg&name=600x314",
               heading: "Your ultimate guide to the Google Maps SDK on iOS, using Swift 4",
               description: "Many iOS apps use Google Maps. This is a very common feature, so I have decided to prepare an ultimate guide on the Google Maps SDK for iOS...",
               link: "medium.freecodecamp.org"

@@ -3,7 +3,8 @@ angular
   .component('tweet', {
     templateUrl: 'app/common/tweet/tweet.html',
     bindings: {
-      tweet: '<'
+      tweet: '<',
+      type: '@'
     },
     controller: function($uibModal) {
       var vm = this;

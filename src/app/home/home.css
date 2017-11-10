@@ -280,14 +280,14 @@ ul {
 	color: #1DA1F2;
 }
 
-.tweets-section {
+.tweets-section, .tweet-reply-section {
 	background: #FFFFFF;
 	display: inline-block;
 	vertical-align: top;
 	width: 600px;
 }
 
-.tweets-account {
+.tweets-account, .tweet-reply-account {
 	height: 48px;
 	border-radius: 100%;
 	float: left;
@@ -299,52 +299,57 @@ ul {
 	padding-right: 10px;
 }
 
-.tweets-section-list li:hover {
+.tweet-reply-section-list li {
+	padding: 30px 40px 30px 40px;
+	width: 898px;
+}
+
+.tweets-section-list li:hover, .tweet-reply-section-list li:hover {
 	background: #F5F8FA;
 }
 
-.tweets-section-list li:not(:last-child) {
+.tweets-section-list li:not(:last-child), .tweet-reply-section-list li:not(:last-child) {
 	border-bottom: 1px solid #E1E8ED;
 }
 
-.tweets-name {
+.tweets-name, .tweet-reply-name {
 	color: #14171A;
 	margin-left: 10px;
 	margin-right: 5px;
 }
 
-.tweets-section-list p {
+.tweets-section-list p, .tweet-reply-section-list p {
 	margin-left: 58px;
 	font-size: 14px;
 }
 
-.tweets-section-list li span {
+.tweets-section-list li span, .tweet-reply-section-list li span {
 	color: #657786;
 	font-weight: normal;
 }
 
-.tweets-photo-section {
+.tweets-photo-section, .tweet-reply-photo-section {
 	border: 1px solid #AAB8C2;
 	border-radius: 5px;
 	margin-left: 58px;
 	margin-bottom: 15px;
 }
 
-.tweets-photo-section img {
+.tweets-photo-section img, .tweet-reply-photo-section img {
 	width: 100%;
 }
 
-.tweets-photo-section h2 {
+.tweets-photo-section h2, .tweet-reply-photo-section h2 {
 	margin-left: 10px;
 	margin-right: 10px;
 }
 
-.tweets-photo-section p {
+.tweets-photo-section p, .tweet-reply-photo-section p {
 	margin-left: 10px;
 	margin-right: 10px;
 }
 
-.tweets-icons i {
+.tweets-icons i, .tweet-reply-icons i {
 	color: #657786;
 	font-size: 16px;
 	margin-right: 50px;
@@ -357,10 +362,11 @@ ul {
 	padding: 30px 40px 30px 40px;
 }
 
-.tweet-detail-section-list li {
+.tweet-detail-section li {
 	margin-top: 10px;
 	padding-left: 30px;
 	padding-right: 10px;
+	width: 800px;
 }
 
 .tweet-detail-account {

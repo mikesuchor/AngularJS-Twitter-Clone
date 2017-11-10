@@ -1,4 +1,5 @@
-<section class="tweets-section">
+<!-- Tweet template for tweets on the home page -->
+<section class="tweets-section" ng-if="$ctrl.type==='tweet-home'">
   <ul class="tweets-section-list">
       <li ng-click="$ctrl.open()">
           <img class="tweets-account" ng-src={{$ctrl.tweet.photo}}>
@@ -14,3 +15,36 @@
       </li>
   </ul>
 </section>
+
+<!-- Tweet template for the main tweet in the tweet detail modal -->
+<section class="tweet-detail-section" ng-if="$ctrl.type==='tweet-detail'">
+    <img class="tweet-detail-account" ng-src={{$ctrl.tweet.photo}}>
+    <a class="tweet-detail-name" ng-href="https://twitter.com/{{$ctrl.tweet.handle}}">{{$ctrl.tweet.name}}</a><i class="fa fa-chevron-down" aria-hidden="true"></i>
+    <p class="tweet-detail-handle">{{"@" + $ctrl.tweet.handle}}</p>
+    <p class="tweet-detail-tweet">{{$ctrl.tweet.tweet}}</p>
+    <p class="tweet-detail-icons"><i class="fa fa-comment-o" aria-hidden="true"></i><i class="fa fa-retweet" aria-hidden="true"></i><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-envelope-o" aria-hidden="true"></i></p>
+    <div class="tweet-detail-photo-section" ng-show={{$ctrl.tweet.image}}>
+        <img ng-src={{$ctrl.tweet.image.url}}>
+        <h2>{{$ctrl.tweet.image.heading}}</h2>
+        <p>{{$ctrl.tweet.image.description}}</p>
+        <p>{{$ctrl.tweet.image.link}}</p>
+    </div>
+</section>
+
+<!-- Tweet template for tweet replies in the tweet detail modal -->
+<section class="tweet-reply-section" ng-if="$ctrl.type==='tweet-reply'">
+    <ul class="tweet-reply-section-list">
+        <li ng-click="$ctrl.open()">
+            <img class="tweet-reply-account" ng-src={{$ctrl.tweet.photo}}>
+            <a class="tweet-reply-name" ng-href="https://twitter.com/{{$ctrl.tweet.handle}}">{{$ctrl.tweet.name}}</a><span>{{"@" + $ctrl.tweet.handle}}</span><i class="fa fa-chevron-down" aria-hidden="true"></i>
+            <p class="tweet-reply-tweet">{{$ctrl.tweet.tweet}}</p>
+            <p class="tweet-reply-icons"><i class="fa fa-comment-o" aria-hidden="true"></i><i class="fa fa-retweet" aria-hidden="true"></i><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-envelope-o" aria-hidden="true"></i></p>
+            <div class="tweet-reply-photo-section" ng-show={{$ctrl.tweet.image}}>
+                <img ng-src={{$ctrl.tweet.image.url}}>
+                <h2>{{$ctrl.tweet.image.heading}}</h2>
+                <p>{{$ctrl.tweet.image.description}}</p>
+                <p>{{$ctrl.tweet.image.link}}</p>
+            </div>
+        </li>
+    </ul>
+  </section>

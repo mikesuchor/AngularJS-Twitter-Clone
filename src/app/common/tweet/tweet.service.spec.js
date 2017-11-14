@@ -1,6 +1,6 @@
-describe('Tweet.service service', function () {
+describe('TweetService service', function () {
   beforeEach(module('app'));
-  it('should', angular.mock.inject(function (Tweet.service) {
-    expect(Tweet.service.getData()).toEqual(3);
+  it('should', angular.mock.inject(function (TweetService) {
+    expect(TweetService.getData()).toEqual(3);
   }));
 });

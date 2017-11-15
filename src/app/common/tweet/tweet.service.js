@@ -2,10 +2,9 @@ angular
 .module('app')
 .service('TweetService', TweetService);
 
-function TweetService($http) {
+function TweetService($resource) {
   var vm = this;
-  var tweets;
   vm.getTweets = function() {
-    return $http.get('db.json');
+    return $resource('http://localhost:4000/tweets/').query(function(data){});
   }
 }

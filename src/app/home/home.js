@@ -4,8 +4,8 @@ angular
   templateUrl: 'app/home/home.html',
   controller: function(TweetService) {
     var vm = this;
-    TweetService.getTweets().then(function(success) {
-      vm.tweets = success.data.tweets;
+    TweetService.getTweets().$promise.then(function(success) {
+      vm.tweets = success;
     });
 }
 });

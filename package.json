@@ -69,8 +69,5 @@
     "extends": [
       "xo-space"
     ]
-  },
-  "dependencies": {
-    "angular-resource": "^1.6.6"
   }
 }

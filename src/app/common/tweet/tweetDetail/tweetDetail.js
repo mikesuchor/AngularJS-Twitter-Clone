@@ -8,7 +8,6 @@ angular
     },
     controller: function() {
       var vm = this;
-      
       vm.$onInit = function () {
           vm.tweet = vm.resolve.tweet;
       };

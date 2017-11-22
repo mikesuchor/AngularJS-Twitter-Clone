@@ -1,4 +1,4 @@
-<navbar></navbar>
+<navbar on-post-tweet="$ctrl.onPostTweet()"></navbar>
 <!-- Left column -->
 <div class="container-fluid"></div>
     <div class="row">
@@ -11,11 +11,8 @@
     
         <!-- Center column -->
         <div class="center-column col-xs-6">
-            <!-- Whats happening section -->
-            <section class="whats-happening-section">
-                <img class="whats-happening-image" src="https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg">
-                <input class="whats-happening-input" type="text" placeholder="What's happening?">
-            </section>
+            <!-- Compose tweet section -->
+            <compose-tweet on-post-tweet="$ctrl.onPostTweet()"></compose-tweet>
             <!-- Tweets section -->
             <tweet ng-repeat="tweet in $ctrl.tweets" tweet="tweet" type="tweet-home"></tweet>
         </div>

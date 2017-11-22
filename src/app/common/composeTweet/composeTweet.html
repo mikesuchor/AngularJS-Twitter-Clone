@@ -1,0 +1,13 @@
+<section class="compose-tweet-section">
+  <img class="compose-tweet-image" src="https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg">
+  <form>
+    <textarea class="compose-tweet-textarea" rows="1" placeholder="What's happening?" ng-model="composetweet" ng-focus="showbutton=true" ng-blur="showbutton=false"></textarea>
+    <div class="compose-tweet-icons" ng-show="showbutton || (composetweet!==null && composetweet!=='' && composetweet!==undefined)">
+      <i class="fa fa-file-image-o" aria-hidden="true"></i>
+      <i class="fa fa-file-video-o" aria-hidden="true"></i>
+      <i class="fa fa-bar-chart" aria-hidden="true"></i>
+      <i class="fa fa-map-marker" aria-hidden="true"></i>         
+      <button class="btn compose-tweet-btn" ng-click="$ctrl.postTweet(composetweet); composetweet=null">Tweet</button>
+    </div>
+  </form>
+</section>

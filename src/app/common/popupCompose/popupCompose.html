@@ -1,0 +1,13 @@
+<section class="popup-compose-tweet-header">
+  <div class="popup-compose-tweet-title">Compose new Tweet</div>
+  <form class="popup-compose-tweet-form">
+    <textarea class="popup-compose-tweet-textarea" rows="4" placeholder="What's happening?" ng-model="composetweet"></textarea>
+    <div class="popup-compose-tweet-icons">
+      <i class="fa fa-file-image-o" aria-hidden="true"></i>
+      <i class="fa fa-file-video-o" aria-hidden="true"></i>
+      <i class="fa fa-bar-chart" aria-hidden="true"></i>
+      <i class="fa fa-map-marker" aria-hidden="true"></i>         
+      <button class="btn padding-compose-tweet-btn" ng-click="$ctrl.postTweet(composetweet)">Tweet</button>
+    </div>
+  </form>
+</section>

@@ -12,9 +12,9 @@
         <!-- Center column -->
         <div class="center-column col-xs-6">
             <!-- Compose tweet section -->
-            <compose-tweet on-post-tweet="$ctrl.onPostTweet()"></compose-tweet>
+            <compose-tweet type="tweet-home" on-post-tweet="$ctrl.onPostTweet()"></compose-tweet>
             <!-- Tweets section -->
-            <tweet ng-repeat="tweet in $ctrl.tweets" tweet="tweet" type="tweet-home"></tweet>
+            <tweet ng-repeat="tweet in $ctrl.tweets" tweet="tweet" type="tweet-home" on-delete-tweet="$ctrl.onDeleteTweet()"></tweet>
         </div>
 
         <!-- Right column -->

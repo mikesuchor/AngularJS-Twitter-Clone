@@ -1,13 +1,28 @@
-<section class="compose-tweet-section">
+<section class="compose-tweet-section" ng-if="$ctrl.type==='tweet-home'">
   <img class="compose-tweet-image" src="https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg">
   <form>
-    <textarea class="compose-tweet-textarea" rows="1" placeholder="What's happening?" ng-model="composetweet" ng-focus="showbutton=true" ng-blur="showbutton=false"></textarea>
+    <textarea class="compose-tweet-textarea" rows="1" placeholder="What's happening?" ng-model="composetweet" ng-class="{'focus':focus===true}" ng-focus="showbutton=true; focus=true" ng-blur="(composetweet==null || composetweet=='') ? focus=false : focus=true; showbutton=false"></textarea>
     <div class="compose-tweet-icons" ng-show="showbutton || (composetweet!==null && composetweet!=='' && composetweet!==undefined)">
       <i class="fa fa-file-image-o" aria-hidden="true"></i>
       <i class="fa fa-file-video-o" aria-hidden="true"></i>
       <i class="fa fa-bar-chart" aria-hidden="true"></i>
       <i class="fa fa-map-marker" aria-hidden="true"></i>         
-      <button class="btn compose-tweet-btn" ng-click="$ctrl.postTweet(composetweet); composetweet=null">Tweet</button>
+      <button class="btn compose-tweet-btn" ng-click="$ctrl.postTweet(composetweet); composetweet=null; focus=false" ng-disabled="composetweet==null || composetweet==''">Tweet</button>
     </div>
   </form>
 </section>
+
+<section class="compose-tweet-section" ng-if="$ctrl.type==='tweet-interaction'">
+    <form>
+      <img class="compose-tweet-interaction-image" src="https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg">
+      <p ng-show="showbutton || (composetweet!==null && composetweet!=='' && composetweet!==undefined)">Replying to...</p>
+      <textarea class="compose-tweet-textarea" rows="1" placeholder="Tweet your reply" ng-model="composetweet" ng-class="{'focus':focus===true}" ng-focus="showbutton=true; focus=true" ng-blur="(composetweet==null || composetweet=='') ? focus=false : focus=true; showbutton=false"></textarea>
+      <div class="compose-tweet-icons" ng-show="showbutton || (composetweet!==null && composetweet!=='' && composetweet!==undefined)">
+        <i class="fa fa-file-image-o" aria-hidden="true"></i>
+        <i class="fa fa-file-video-o" aria-hidden="true"></i>
+        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+        <i class="fa fa-map-marker" aria-hidden="true"></i>         
+        <button class="btn compose-tweet-btn" ng-click="$ctrl.postTweetInteraction(composetweet); composetweet=null; focus=false" ng-disabled="composetweet==null || composetweet==''">Reply</button>
+      </div>
+    </form>
+  </section>

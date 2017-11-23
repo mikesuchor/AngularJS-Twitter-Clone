@@ -6,10 +6,15 @@ angular
       tweet: '<',
       resolve: '<'
     },
-    controller: function() {
+    controller: function(TweetService) {
       var vm = this;
       vm.$onInit = function () {
           vm.tweet = vm.resolve.tweet;
       };
+      vm.postTweet = function(composetweet) {
+        TweetService.postTweetInteraction(composetweet).$promise.then(function(success) {
+          vm.modalInstance.close();
+        });
+      }
     }
   });

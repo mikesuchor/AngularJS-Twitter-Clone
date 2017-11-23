@@ -261,12 +261,18 @@ ul {
 	line-height: 58px;
 }
 
-.compose-tweet-image {
+.compose-tweet-image, .compose-tweet-interaction-image {
 	height: 32px;
 	border-radius: 100%;
 	position: absolute;
 	left: 28px;
 	top: 13px;
+}
+
+.compose-tweet-interaction-image {
+	position: absolute;
+	left: 28px;
+	top: 197px;
 }
 
 .your-reply-image {
@@ -307,9 +313,9 @@ ul {
 	width: 100%;
 }
 
-.compose-tweet-textarea:focus {
+/* .compose-tweet-textarea:focus {
 	height: 64px;
-}
+} */
 
 .compose-tweet-textarea::placeholder {
 	color: #1DA1F2;
@@ -657,4 +663,8 @@ ul {
 
 .click-container {
 	display: inline;
+}
+
+.focus {
+	height: 64px;
 }

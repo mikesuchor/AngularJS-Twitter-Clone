@@ -2,7 +2,7 @@ angular
 .module('app')
 .component('home', {
   templateUrl: 'app/home/home.html',
-  controller: function($scope, TweetService, $uibModalInstance) {
+  controller: function(TweetService) {
     var vm = this;
     TweetService.getTweets().$promise.then(function(success) {
       vm.tweets = success;
@@ -12,11 +12,10 @@ angular
         vm.tweets = success;
       });
     }
-    $scope.$on('tweetcreated', function() {
+    vm.onDeleteTweet = function() {
       TweetService.getTweets().$promise.then(function(success) {
         vm.tweets = success;
       });
-    });
-    
+    }
 }
 });

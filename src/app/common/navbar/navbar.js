@@ -3,7 +3,7 @@ angular
 .component('navbar', {
   templateUrl: 'app/common/navbar/navbar.html',
   bindings: {
-    onPostTweet: '&'
+    onUpdateTweet: '&'
   },
   controller: function($uibModal) {
     var vm = this;
@@ -18,7 +18,7 @@ angular
         }
       });
       modalInstance.result.then(function() {
-        vm.onPostTweet();
+        vm.onUpdateTweet();
       });
     };
   }

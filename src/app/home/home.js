@@ -7,12 +7,7 @@ angular
     TweetService.getTweets().$promise.then(function(success) {
       vm.tweets = success;
     });
-    vm.onPostTweet = function() {
-      TweetService.getTweets().$promise.then(function(success) {
-        vm.tweets = success;
-      });
-    }
-    vm.onDeleteTweet = function() {
+    vm.onUpdateTweet = function() {
       TweetService.getTweets().$promise.then(function(success) {
         vm.tweets = success;
       });

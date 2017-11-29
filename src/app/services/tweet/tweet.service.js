@@ -4,13 +4,17 @@ angular
 
 function TweetService($resource) {
   var vm = this;
+  var tweetsUrl = $resource('http://localhost:4000/tweets');
+  var singleTweetUrl = $resource('http://localhost:4000/tweets/:id', {id: '@id'});
+
   vm.getTweets = function() {
-    return $resource('http://localhost:4000/tweets/').query(function(data){
+    return tweetsUrl.query(function(data){
       data.reverse();
     });
   }
+  
   vm.postTweet = function(composetweet) {
-    return $resource('http://localhost:4000/tweets/').save(
+    return tweetsUrl.save(
       {
         photo: "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
         name: "Michael Suchorolski",
@@ -18,27 +22,21 @@ function TweetService($resource) {
         tweet: composetweet
       }, function(response) {return response.handle});
   }
-  vm.postTweetInteraction = function(composereply) {
-    return $resource('http://localhost:4000/tweets/20').save(
-      {
-        interactions: [
-          {
-            photo: "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-            name: "Michael Suchorolski",
-            handle: "mikesuchor",
-            time: "testing",
-            replyingto: "testing",
-            tweet: composereply
-          }
-        ]
-      }, function(response) {return response.handle});
-  }
+
   vm.deleteTweet = function(id) {
-    return $resource('http://localhost:4000/tweets/' + id).delete(function(data){
+    return singleTweetUrl.delete({id: id}, function(data){
     });
   }
-  vm.deleteTweetInteraction = function(id) {
-    return $resource('http://localhost:4000/tweets/' + id).delete(function(data){
-    });
+
+  vm.postTweetInteraction = function(tweet, composetweet) {
+    return $resource('http://localhost:4000/tweets/' + tweet.id, null, {
+      'update': { method:'PUT' }
+    }).update(tweet);
+  }
+
+  vm.deleteTweetInteraction = function(parent, date) {
+    return $resource('http://localhost:4000/tweets/' + parent.id, null, {
+      'update': { method:'PUT' }
+    }).update(parent);
   }
 }

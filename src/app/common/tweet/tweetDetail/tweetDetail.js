@@ -6,10 +6,10 @@ angular
       tweet: '<',
       resolve: '<'
     },
-    controller: function() {
+    controller: function(TweetService) {
       var vm = this;
       vm.$onInit = function () {
           vm.tweet = vm.resolve.tweet;
-      };
-    }
-  });
+      }
+  }
+});

@@ -1,25 +1,45 @@
 <!-- Tweet template for tweets on the home page -->
 <section class="tweets-section" ng-if="$ctrl.type==='tweet-home'">
-  <ul class="tweets-section-list">
-      <li ng-click="$ctrl.open()">
-          <img class="tweets-account" ng-src={{$ctrl.tweet.photo}}>
-          <a class="tweets-name" ng-href="https://twitter.com/{{$ctrl.tweet.handle}}">{{$ctrl.tweet.name}}</a><span>{{"@" + $ctrl.tweet.handle}}</span><i class="fa fa-chevron-down" aria-hidden="true"></i>
-          <p class="tweets-tweet">{{$ctrl.tweet.tweet}}</p>
-          <p class="tweets-icons"><i class="fa fa-comment-o" aria-hidden="true"></i><i class="fa fa-retweet" aria-hidden="true"></i><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-envelope-o" aria-hidden="true"></i></p>
-          <div class="tweets-photo-section" ng-show={{$ctrl.tweet.image}}>
-              <img ng-src={{$ctrl.tweet.image.url}}>
-              <h2>{{$ctrl.tweet.image.heading}}</h2>
-              <p>{{$ctrl.tweet.image.description}}</p>
-              <p>{{$ctrl.tweet.image.link}}</p>
-          </div>
-      </li>
-  </ul>
+    <ul class="tweets-section-list">
+        <li>
+            <div class="click-container" ng-click="$ctrl.open()">
+                <img class="tweets-account" ng-src={{$ctrl.tweet.photo}}>
+                <a class="tweets-name" ng-href="https://twitter.com/{{$ctrl.tweet.handle}}">{{$ctrl.tweet.name}}</a><span>{{"@" + $ctrl.tweet.handle}}</span>
+            </div>
+            <!-- Dropdown Menu -->
+            <div class="dropdown" uib-dropdown on-toggle="$ctrl.tweetOptions(open)" ng-click="$ctrl.openoptions()">
+                <button class="dropdown-toggle" uib-dropdown-toggle><span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></button>
+                <ul uib-dropdown-menu>
+                    <li ng-click="$ctrl.deleteTweet($ctrl.tweet.id)"><a href="#">Delete Tweet</a></li>
+                </ul>
+            </div>
+            <!-- Dropdown Menu ends -->
+            <div class="click-container" ng-click="$ctrl.open()">
+                <p class="tweets-tweet">{{$ctrl.tweet.tweet}}</p>
+                <p class="tweets-icons"><i class="fa fa-comment-o" aria-hidden="true"></i><i class="fa fa-retweet" aria-hidden="true"></i><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-envelope-o" aria-hidden="true"></i></p>
+                <div class="tweets-photo-section" ng-show={{$ctrl.tweet.image}}>
+                    <img ng-src={{$ctrl.tweet.image.url}}>
+                    <h2>{{$ctrl.tweet.image.heading}}</h2>
+                    <p>{{$ctrl.tweet.image.description}}</p>
+                    <p>{{$ctrl.tweet.image.link}}</p>
+                </div>
+            </div>
+        </li>
+    </ul>
 </section>
 
 <!-- Tweet template for the main tweet in the tweet detail modal -->
 <section class="tweet-detail-section" ng-if="$ctrl.type==='tweet-detail'">
     <img class="tweet-detail-account" ng-src={{$ctrl.tweet.photo}}>
-    <a class="tweet-detail-name" ng-href="https://twitter.com/{{$ctrl.tweet.handle}}">{{$ctrl.tweet.name}}</a><i class="fa fa-chevron-down" aria-hidden="true"></i>
+    <a class="tweet-detail-name" ng-href="https://twitter.com/{{$ctrl.tweet.handle}}">{{$ctrl.tweet.name}}</a>
+    <!-- Dropdown Menu -->
+    <div class="dropdown" uib-dropdown on-toggle="$ctrl.tweetOptions(open)" ng-click="$ctrl.openoptions()">
+        <button class="dropdown-toggle" uib-dropdown-toggle><span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></button>
+        <ul uib-dropdown-menu>
+            <li ng-click="$ctrl.deleteTweet($ctrl.tweet.id)"><a href="#">Delete Tweet</a></li>
+        </ul>
+    </div>
+    <!-- Dropdown Menu ends -->
     <p class="tweet-detail-handle">{{"@" + $ctrl.tweet.handle}}</p>
     <p class="tweet-detail-tweet">{{$ctrl.tweet.tweet}}</p>
     <p class="tweet-detail-icons"><i class="fa fa-comment-o" aria-hidden="true"></i><i class="fa fa-retweet" aria-hidden="true"></i><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-envelope-o" aria-hidden="true"></i></p>
@@ -31,12 +51,20 @@
     </div>
 </section>
 
-<!-- Tweet template for tweet replies in the tweet detail modal -->
+<!-- Tweet template for tweet interactions in the tweet detail modal -->
 <section class="tweet-reply-section" ng-if="$ctrl.type==='tweet-reply'">
     <ul class="tweet-reply-section-list">
-        <li ng-click="$ctrl.open()">
+        <li class="tweet-reply-section-list-items">
             <img class="tweet-reply-account" ng-src={{$ctrl.tweet.photo}}>
-            <a class="tweet-reply-name" ng-href="https://twitter.com/{{$ctrl.tweet.handle}}">{{$ctrl.tweet.name}}</a><span>{{"@" + $ctrl.tweet.handle}}</span><i class="fa fa-chevron-down" aria-hidden="true"></i>
+            <a class="tweet-reply-name" ng-href="https://twitter.com/{{$ctrl.tweet.handle}}">{{$ctrl.tweet.name}}</a><span>{{"@" + $ctrl.tweet.handle}}</span>
+            <!-- Dropdown Menu -->
+            <div class="dropdown" uib-dropdown on-toggle="$ctrl.tweetOptions(open)" ng-click="$ctrl.openoptions()">
+                <button class="dropdown-toggle" uib-dropdown-toggle><span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></button>
+                <ul uib-dropdown-menu>
+                    <li ng-click="$ctrl.deleteTweetInteraction($ctrl.parent, $ctrl.tweet.date)"><a href="#">Delete Tweet</a></li>
+                </ul>
+            </div>
+            <!-- Dropdown Menu ends -->
             <p class="tweet-reply-tweet">{{$ctrl.tweet.tweet}}</p>
             <p class="tweet-reply-icons"><i class="fa fa-comment-o" aria-hidden="true"></i><i class="fa fa-retweet" aria-hidden="true"></i><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-envelope-o" aria-hidden="true"></i></p>
             <div class="tweet-reply-photo-section" ng-show={{$ctrl.tweet.image}}>
@@ -47,4 +75,4 @@
             </div>
         </li>
     </ul>
-  </section>
+</section>

@@ -126,7 +126,7 @@ ul {
 	box-shadow: none;
 }
 
-.navbar-btn {
+.navbar-btn, .compose-tweet-btn, .padding-compose-tweet-btn {
 	border-radius: 20px;
 	color: #FFFFFF;
 	background: #4AB3F4;
@@ -136,7 +136,11 @@ ul {
 	font-weight: bold;
 }
 
-.navbar-btn:hover {
+.navbar-btn:focus, .compose-tweet-btn:focus, .padding-compose-tweet-btn:focus {
+	outline: 0;
+}
+
+.navbar-btn:hover, .compose-tweet-btn:hover {
 	color: #FFFFFF;
 	background: #1DA1F2;
 }
@@ -241,15 +245,14 @@ ul {
 }
 
 .center-column {
-	width: 600px;
+	width: 588px;
 	padding-left: 0px;
 	padding-right: 0px;
 }
 
-.whats-happening-section {
+.compose-tweet-section, .popup-compose-tweet-form {
 	background: #E8F5FD;
-	height: 58px;
-	line-height: 58px;
+	padding: 10px 12px;
 }
 
 .your-reply-section {
@@ -258,33 +261,117 @@ ul {
 	line-height: 58px;
 }
 
-.whats-happening-image, .your-reply-image {
+.compose-tweet-image, .compose-tweet-interaction-image {
 	height: 32px;
 	border-radius: 100%;
-	margin-left: 10px;
+	position: absolute;
+	left: 28px;
+	top: 13px;
 }
 
-.whats-happening-input, .your-reply-input {
+.compose-tweet-interaction-image {
+	position: absolute;
+	left: 28px;
+	top: 197px;
+}
+
+.your-reply-image {
+	height: 32px;
+	border-radius: 100%;
+	left: 28px;
+	top: 13px;
+}
+
+.popup-compose-tweet-title {
+	background: white;
+	width: 598px;
+	margin: auto;
+	text-align: center;
+	font-size: 18px;
+	height: 49px;
+	padding: 12px;
+	border-bottom: 1px solid #1DA1F2;
+}
+
+.compose-tweet-textarea, .popup-compose-tweet-textarea {
 	color: #14171A;
 	font-size: 14px;
 	font-weight: normal;
-	line-height: 32px;
+	line-height: 20px;
 	border: 1px solid #1DA1F2;
 	border-radius: 6px;
-	margin-left: 8px;
-	width: 90%;
-	padding-left: 5px;
+	width: 506px;
+	padding: 8px 31px 8px 8px;
+	margin-left: 60px;
+	resize: none;
+	overflow: hidden;
 }
 
-.whats-happening-input::placeholder {
+.popup-compose-tweet-textarea {
+	display: block;
+	margin: auto;
+	width: 100%;
+}
+
+/* .compose-tweet-textarea:focus {
+	height: 64px;
+} */
+
+.compose-tweet-textarea::placeholder {
 	color: #1DA1F2;
+}
+
+.compose-tweet-icons {
+	margin-left: 40px;
+}
+
+.popup-compose-tweet-icons {
+	margin-left: 0px;
+}
+
+.compose-tweet-icons i {
+	color: #1DA1F2;
+	font-size: 20px;
+	padding-left: 30px;
+	padding-top: 8px;
+}
+
+.popup-compose-tweet-icons i {
+	color: #1DA1F2;
+	font-size: 20px;
+	padding-left: 10px;
+	padding-right: 20px;
+	padding-top: 15px;
+}
+
+.compose-tweet-btn {
+	margin-left: 244px;
+	margin-right: 0px;
+}
+
+.padding-compose-tweet-btn {
+	margin-left: 294px;
+	margin-right: 0px;
+}
+
+.your-reply-input {
+	color: #14171A;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 20px;
+	border: 1px solid #1DA1F2;
+	border-radius: 6px;
+	width: 88%;
+	padding: 8px 31px 8px 8px;
+	resize: none;
+	overflow: hidden;
 }
 
 .tweets-section, .tweet-reply-section {
 	background: #FFFFFF;
 	display: inline-block;
 	vertical-align: top;
-	width: 600px;
+	width: 588px;
 }
 
 .tweets-account, .tweet-reply-account {
@@ -299,8 +386,8 @@ ul {
 	padding-right: 10px;
 }
 
-.tweet-reply-section-list li {
-	padding: 30px 40px 30px 40px;
+.tweet-reply-section-list-items {
+	padding: 9px 40px;
 	width: 898px;
 }
 
@@ -359,14 +446,7 @@ ul {
 	background: #FFFFFF;
 	width: 100%;
 	border-radius: 50px;
-	padding: 30px 40px 30px 40px;
-}
-
-.tweet-detail-section li {
-	margin-top: 10px;
-	padding-left: 30px;
-	padding-right: 10px;
-	width: 800px;
+	padding: 30px 40px;
 }
 
 .tweet-detail-account {
@@ -423,7 +503,7 @@ ul {
 
 .fa-chevron-down {
 	float: right;
-	font-size: 13px;
+	font-size: 12px;
 }
 
 .right-column {
@@ -564,4 +644,45 @@ ul {
 	font-size: 12px;
 	font-weight: normal;
 	margin-left: 10px;
+}
+
+.dropdown {
+	float: right;
+}
+.dropdown-toggle {
+	background: none;
+	border: none;
+}
+
+.click-container {
+	display: inline;
+}
+
+.focus {
+	height: 64px;
+}
+
+.replying-to {
+	font-size: 14px;
+	color: #657786;
+	margin-left: 58px;
+}
+
+.dropdown-menu {
+	position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    width: 160px;
+    padding: 0;
+    margin: 0;
+	font-size: 14px;
+    text-align: left;
+	list-style: none;
+	line-height: 14px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }

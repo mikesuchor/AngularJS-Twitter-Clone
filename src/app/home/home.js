@@ -7,5 +7,10 @@ angular
     TweetService.getTweets().$promise.then(function(success) {
       vm.tweets = success;
     });
+    vm.onUpdateTweet = function() {
+      TweetService.getTweets().$promise.then(function(success) {
+        vm.tweets = success;
+      });
+    }
 }
 });

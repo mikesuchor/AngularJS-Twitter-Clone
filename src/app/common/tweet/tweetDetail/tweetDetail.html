@@ -1,6 +1,3 @@
 <tweet tweet="$ctrl.tweet" type="tweet-detail"></tweet>
-<section class="your-reply-section">
-    <img class="your-reply-image" src="https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg">
-    <input class="your-reply-input" type="text" placeholder="Tweet your reply">
-</section>
-<tweet tweet="interaction" ng-repeat="interaction in $ctrl.tweet.interactions" type="tweet-reply"></tweet>
+<compose-tweet type="tweet-interaction" tweet="$ctrl.tweet"></compose-tweet>
+<tweet tweet="interaction" parent="$ctrl.tweet" ng-repeat="interaction in $ctrl.tweet.interactions" type="tweet-reply"></tweet>

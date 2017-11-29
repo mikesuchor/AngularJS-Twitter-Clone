@@ -4,7 +4,7 @@ angular
 
 function TweetService($resource) {
   var vm = this;
-  var tweetResource= $resource('http://localhost:4000/tweets/:id', {id: '@id'}, {
+  var tweetResource = $resource('http://localhost:4000/tweets/:id', {id: '@id'}, {
     'update': { method:'PUT' }
   });
 

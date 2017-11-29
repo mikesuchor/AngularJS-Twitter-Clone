@@ -1,3 +1,3 @@
 <tweet tweet="$ctrl.tweet" type="tweet-detail"></tweet>
-<compose-tweet type="tweet-interaction"></compose-tweet>
-<tweet tweet="interaction" ng-repeat="interaction in $ctrl.tweet.interactions" type="tweet-reply"></tweet>
+<compose-tweet type="tweet-interaction" tweet="$ctrl.tweet"></compose-tweet>
+<tweet tweet="interaction" parent="$ctrl.tweet" ng-repeat="interaction in $ctrl.tweet.interactions" type="tweet-reply"></tweet>

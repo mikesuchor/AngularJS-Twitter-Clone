@@ -3,7 +3,7 @@ angular
 .component('popupCompose', {
   templateUrl: 'app/common/popupCompose/popupCompose.html',
   bindings: {
-    modalInstance: "<"
+    modalInstance: '<'
   },
   controller: function(TweetService) {
     var vm = this;

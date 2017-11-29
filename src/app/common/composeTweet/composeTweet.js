@@ -25,7 +25,7 @@ angular
         date: new Date().toString()
       };
       TweetService.postTweetInteraction(tweet, composetweet).$promise.then(function(success) {
-        if (tweet.interactions === null || tweet.interactions === undefined) {
+        if (!tweet.interactions) {
           tweet.interactions = [];
         }
         tweet.interactions.push(composetweet);

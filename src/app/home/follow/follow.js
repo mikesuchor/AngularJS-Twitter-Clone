@@ -14,7 +14,7 @@ angular
             name: "Treehouse",
             handle: "Treehouse",
         },{
-            photo: "https://pbs.twimg.com/profile_images/803647146914217984/eLpTsAdA_bigger.jpg",
+            photo: "https://pbs.twimg.com/profile_images/930793337178808320/RZVVM3TO_400x400.jpg",
             name: "JayHouston",
             handle: "JayHouston",
         }

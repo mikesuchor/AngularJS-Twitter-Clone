@@ -27,8 +27,8 @@ angular
       });
     }
     vm.deleteTweetInteraction = function(parent, date) {
-      parent.interactions.splice(parent.interactions.findIndex(function(element){return element.date == date}), 1);
       TweetService.deleteTweetInteraction(parent, date).$promise.then(function(success) {
+        parent.interactions.splice(parent.interactions.findIndex(function(element){return element.date == date}), 1);
         vm.onUpdateTweet();
       });
     }

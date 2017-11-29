@@ -386,8 +386,8 @@ ul {
 	padding-right: 10px;
 }
 
-.tweet-reply-section-list li {
-	padding: 30px 40px 30px 40px;
+.tweet-reply-section-list-items {
+	padding: 9px 40px;
 	width: 898px;
 }
 
@@ -446,14 +446,7 @@ ul {
 	background: #FFFFFF;
 	width: 100%;
 	border-radius: 50px;
-	padding: 30px 40px 30px 40px;
-}
-
-.tweet-detail-section li {
-	margin-top: 10px;
-	padding-left: 30px;
-	padding-right: 10px;
-	width: 800px;
+	padding: 30px 40px;
 }
 
 .tweet-detail-account {
@@ -668,3 +661,40 @@ ul {
 .focus {
 	height: 64px;
 }
+
+.replying-to {
+	font-size: 14px;
+	color: #657786;
+	margin-left: 58px;
+}
+
+.dropdown-menu {
+	position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    width: 160px;
+    padding: 0;
+    margin: 0;
+	font-size: 14px;
+    text-align: left;
+	list-style: none;
+	line-height: 14px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+/* .dropdown-menu {
+	padding: 5px 0px;
+	width: 160px;
+} */
+
+/* .menuarrow {
+	border: 12px solid white;
+	border-top-color: transparent;
+	border-left-color: transparent;
+	border-right-color: transparent;
+} */

@@ -6,7 +6,7 @@
 - `gulp` tasks
 - Use pure old JavaScript
 - Pure `CSS` for styling
-- `UI-Roter` module
+- `UI-Router` module
 
 ## Install dependencies
 

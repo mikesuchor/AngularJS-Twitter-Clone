@@ -9,7 +9,9 @@ angular
     controller: function(TweetService) {
       var vm = this;
       vm.$onInit = function () {
-          vm.tweet = vm.resolve.tweet;
+          TweetService.getTweetById(vm.resolve.tweet.id).$promise.then(function(success) {
+            vm.tweet = success;
+          });
       }
   }
 });

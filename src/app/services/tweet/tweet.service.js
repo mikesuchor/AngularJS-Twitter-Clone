@@ -4,7 +4,7 @@ angular
 
 function TweetService($resource) {
   var vm = this;
-  var expressTweetResource = $resource('http://localhost:5000/tweets/');
+  var expressTweetResource = $resource('http://localhost:5000/tweets/:id', {id: '@id'});
   var tweetResource = $resource('http://localhost:4000/tweets/:id', {id: '@id'}, {
     'update': { method:'PUT' }
   });
@@ -16,7 +16,7 @@ function TweetService($resource) {
   }
 
   vm.getTweetById = function(id) {
-    return tweetResource.get({id: id});
+    return expressTweetResource.get({id: id});
   }
   
   vm.postTweet = function(composetweet) {

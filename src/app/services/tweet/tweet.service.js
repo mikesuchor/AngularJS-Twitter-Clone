@@ -4,14 +4,19 @@ angular
 
 function TweetService($resource) {
   var vm = this;
+  var expressTweetResource = $resource('http://localhost:5000/tweets/');
   var tweetResource = $resource('http://localhost:4000/tweets/:id', {id: '@id'}, {
     'update': { method:'PUT' }
   });
 
   vm.getTweets = function() {
-    return tweetResource.query(function(data){
+    return expressTweetResource.query(function(data){  
       data.reverse();
     });
+  }
+
+  vm.getTweetById = function(id) {
+    return tweetResource.get({id: id});
   }
   
   vm.postTweet = function(composetweet) {
@@ -35,4 +40,5 @@ function TweetService($resource) {
   vm.deleteTweetInteraction = function(parent, date) {
     return tweetResource.update(parent);
   }
+
 }

@@ -4,6 +4,7 @@ var fs = require('fs');
 var router = express.Router();
 router.options('/', cors())
 
+var databaseJSON;
 var tweetsInDatabase;
 var pathToDatabase = '../server/public/db.json';
 
@@ -11,7 +12,8 @@ fs.readFile(pathToDatabase, function(err, data) {
   if (err) {
     return console.log(err);
   }
-  tweetsInDatabase = JSON.parse(data).tweets;
+  databaseJSON = JSON.parse(data);
+  tweetsInDatabase = databaseJSON.tweets;
 });
 
 /* GET tweets listing */
@@ -42,7 +44,7 @@ router.post('/', cors(), function(req, res, next) {
   }
   /* Push the new tweet onto the tweets array and write it to db.json */
   tweetsInDatabase.push(req.body);
-  res.send(fs.writeFile('../server/public/db.json', JSON.stringify(tweetsInDatabase, null, '\t'), function (err) {
+  res.send(fs.writeFile('../server/public/db.json', JSON.stringify(databaseJSON, null, '\t'), function (err) {
     if (err) {
       return console.log(err);
     }

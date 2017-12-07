@@ -10,7 +10,7 @@ function TweetService($resource) {
   });
 
   vm.getTweets = function() {
-    return expressTweetResource.query(function(data){  
+    return expressTweetResource.query(function(data){   
       data.reverse();
     });
   }
@@ -20,7 +20,7 @@ function TweetService($resource) {
   }
   
   vm.postTweet = function(composetweet) {
-    return tweetResource.save(
+    return expressTweetResource.save(
       {
         photo: "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
         name: "Michael Suchorolski",
@@ -40,5 +40,4 @@ function TweetService($resource) {
   vm.deleteTweetInteraction = function(parent, date) {
     return tweetResource.update(parent);
   }
-
 }

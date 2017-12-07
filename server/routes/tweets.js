@@ -1,48 +1,54 @@
 var express = require('express');
-var http = require('http');
 var cors = require('cors');
+var fs = require('fs');
 var router = express.Router();
+router.options('/', cors())
 
-/* GET tweets listing. */
-router.get('/', cors(), function(req, res, next) {
-  var options = {
-    host: 'localhost',
-    path: '/tweets/',
-    port: '4000'
-  };
-  var callback = function(response) {
-    var str = '';
-    //another chunk of data has been recieved, so append it to `str`
-    response.on('data', function (chunk) {
-      str += chunk;
-    });
-    //the whole response has been recieved, so we just print it out here
-    response.on('end', function () {
-      res.send(str);
-    });
+var databaseJSON;
+var tweetsInDatabase;
+var pathToDatabase = '../server/public/db.json';
+
+fs.readFile(pathToDatabase, function(err, data) {
+  if (err) {
+    return console.log(err);
   }
-  http.request(options, callback).end();
+  databaseJSON = JSON.parse(data);
+  tweetsInDatabase = databaseJSON.tweets;
+});
+
+/* GET tweets listing */
+router.get('/', cors(), function(req, res, next) {
+  res.json(tweetsInDatabase);
 });
 
 /* GET tweets by id */
 router.get('/:id', cors(), function(req, res, next) {
-  var options = {
-    host: 'localhost',
-    path: '/tweets/' + req.params.id,
-    port: '4000'
-  };
-  callback = function(response) {
-    var str = '';
-    //another chunk of data has been recieved, so append it to `str`
-    response.on('data', function (chunk) {
-      str += chunk;
-    });
-    //the whole response has been recieved, so we just print it out here
-    response.on('end', function () {
-      res.send(str);
-    });
+  var tweetId = req.params.id;
+  var index = tweetsInDatabase.findIndex(function(element) {return element.id == tweetId});
+  if (index === -1) {
+    res.status(404).send('Tweet with id: ' + tweetId + ' was not found');
+  } else {
+    res.json(tweetsInDatabase[index]);
   }
-  http.request(options, callback).end();
+});
+
+/* POST tweets to db.json file */
+router.post('/', cors(), function(req, res, next) {
+  /* Create an id for the new tweet */
+  if (tweetsInDatabase.length === 0) {
+    req.body.id = 1;
+  }
+  else {
+    var lastTweetId = tweetsInDatabase[tweetsInDatabase.length - 1].id;
+    req.body.id = lastTweetId + 1;
+  }
+  /* Push the new tweet onto the tweets array and write it to db.json */
+  tweetsInDatabase.push(req.body);
+  res.send(fs.writeFile('../server/public/db.json', JSON.stringify(databaseJSON, null, '\t'), function (err) {
+    if (err) {
+      return console.log(err);
+    }
+  }));
 });
 
 module.exports = router;

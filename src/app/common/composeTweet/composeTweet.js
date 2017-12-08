@@ -21,8 +21,7 @@ angular
         handle: "mikesuchor",
         time: "testing",
         replyingto: "testing",
-        tweet: text,
-        date: new Date().toString()
+        tweet: text
       };
       TweetService.postTweetInteraction(tweet, composetweet).$promise.then(function(success) {
         if (!tweet.interactions) {

@@ -26,9 +26,9 @@ angular
         vm.onUpdateTweet();
       });
     }
-    vm.deleteTweetInteraction = function(parent, date) {
-      TweetService.deleteTweetInteraction(parent, date).$promise.then(function(success) {
-        parent.interactions.splice(parent.interactions.findIndex(function(element){return element.date == date}), 1);
+    vm.deleteTweetInteraction = function(parent, id) {
+      TweetService.deleteTweetInteraction(parent, id).$promise.then(function(success) {
+        parent.interactions.splice(parent.interactions.findIndex(function(element){return element.id == id}), 1);
         vm.onUpdateTweet();
       });
     }

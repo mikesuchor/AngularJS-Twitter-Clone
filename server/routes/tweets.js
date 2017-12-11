@@ -31,10 +31,9 @@ router.get('/', cors(), function(req, res, next) {
 
 /* GET tweet by id */
 router.get('/:id', cors(), function(req, res, next) {
-  var tweetId = req.params.id;
-  var index = tweetsInDatabase.findIndex(function(element) {return element.id == tweetId});
+  var index = tweetsInDatabase.findIndex(function(element) {return element.id == req.params.id});
   if (index === -1) {
-    res.status(404).send('Tweet with id: ' + tweetId + ' was not found');
+    res.status(404).send('Tweet with id: ' + req.params.id + ' was not found');
   } else {
     res.json(tweetsInDatabase[index]);
   }
@@ -57,29 +56,32 @@ router.post('/', cors(), function(req, res, next) {
 
 /* POST tweet interaction to tweet */
 router.post('/:id', cors(), function(req, res, next) {
-  var tweetId = req.params.id;
-  var index = tweetsInDatabase.findIndex(function(element) {return element.id == tweetId});
-  if (!tweetsInDatabase[index].interactions) {
+  var index = tweetsInDatabase.findIndex(function(element) {return element.id == req.params.id});
+  if (!tweetsInDatabase[index].interactions || tweetsInDatabase[index].interactions.length == 0) {
     tweetsInDatabase[index].interactions = [];
+    req.body.id = 1;
   }
-  tweetsInDatabase[index].interactions.date = new Date().toString();
-  console.log(tweetsInDatabase[index]);
+  else {
+    var lastInteractionId = tweetsInDatabase[index].interactions[tweetsInDatabase[index].interactions.length - 1].id;
+    req.body.id = lastInteractionId + 1;
+  }
+  req.body.date = new Date().toString();
   tweetsInDatabase[index].interactions.push(req.body);
-  console.log(tweetsInDatabase[index]);
   res.send(writeToDatabase());
 });
 
 /* DELETE tweet by id */
 router.delete('/:id', cors(), function(req, res, next) {
-  var tweetId = req.params.id;
-  var index = tweetsInDatabase.findIndex(function(element) {return element.id == tweetId});
-  tweetsInDatabase.splice(index, 1);
+  tweetsInDatabase.splice(tweetsInDatabase.findIndex(function(element) {return element.id == req.params.id}), 1);
   res.send(writeToDatabase());
 });
 
 /* DELETE tweet interaction */
-// router.delete('/:id/:interaction', cors(), function(req, res, next) {
-//   res.send(writeToDatabase());
-// });
+router.delete('/:id/:interactionId', cors(), function(req, res, next) {
+  var index = tweetsInDatabase.findIndex(function(element) {return element.id == req.params.id});
+  var interactionIndex = tweetsInDatabase[index].interactions.findIndex(function(element) {return element.id == req.params.interactionId});
+  tweetsInDatabase[index].interactions.splice(interactionIndex, 1);
+  res.send(writeToDatabase());
+});
 
 module.exports = router;

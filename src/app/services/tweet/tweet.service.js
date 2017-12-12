@@ -4,10 +4,7 @@ angular
 
 function TweetService($resource) {
   var vm = this;
-  var expressTweetResource = $resource('http://localhost:5000/tweets/:id', {id: '@id'});
-  var tweetResource = $resource('http://localhost:4000/tweets/:id', {id: '@id'}, {
-    'update': { method:'PUT' }
-  });
+  var expressTweetResource = $resource('http://localhost:5000/tweets/:id/:interactionId', {id: '@id', interactionId: '@interactionId'});
 
   vm.getTweets = function() {
     return expressTweetResource.query(function(data){   
@@ -30,14 +27,14 @@ function TweetService($resource) {
   }
 
   vm.deleteTweet = function(id) {
-    return tweetResource.delete({id: id});
+    return expressTweetResource.delete({id: id});
   }
 
   vm.postTweetInteraction = function(tweet, composetweet) {
-    return tweetResource.update(tweet);
+    return expressTweetResource.save({id: tweet.id}, composetweet);
   }
 
-  vm.deleteTweetInteraction = function(parent, date) {
-    return tweetResource.update(parent);
+  vm.deleteTweetInteraction = function(parent, id) {
+    return expressTweetResource.delete({id: parent.id}, {interactionId: id});
   }
 }

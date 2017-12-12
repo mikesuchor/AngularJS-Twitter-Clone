@@ -9,9 +9,12 @@ angular
     controller: function(TweetService) {
       var vm = this;
       vm.$onInit = function () {
-          TweetService.getTweetById(vm.resolve.tweet.id).$promise.then(function(success) {
-            vm.tweet = success;
-          });
+          vm.loadTweet();
+      }
+      vm.loadTweet = function () {
+        TweetService.getTweetById(vm.resolve.tweet.id).$promise.then(function(success) {
+          vm.tweet = success;
+        });
       }
   }
 });

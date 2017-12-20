@@ -12,7 +12,7 @@ angular
           vm.loadTweet();
       }
       vm.loadTweet = function () {
-        TweetService.getTweetById(vm.resolve.tweet.id).$promise.then(function(success) {
+        TweetService.getTweetById(vm.resolve.tweet.id).then(function(success) {
           vm.tweet = success;
         });
       }

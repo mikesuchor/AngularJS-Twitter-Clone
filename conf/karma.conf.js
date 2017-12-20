@@ -41,7 +41,17 @@ module.exports = function (config) {
       require('karma-phantomjs-shim'),
       require('karma-ng-html2js-preprocessor'),
       require('karma-angular-filesort')
-    ]
+    ],
+    /* Configuration for console.log settings */
+    client: {
+      captureConsole: true
+    },
+    browserConsoleLogOptions: {
+      level: 'log',
+      format: '%b %T: %m',
+      terminal: true
+    },
+    logLevel: config.LOG_LOG
   };
 
   config.set(configuration);

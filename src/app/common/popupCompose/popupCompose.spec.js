@@ -1,33 +1,21 @@
 describe('popupCompose component', function () {
-    var $componentController;
+    var $componentController, $q;
+    var deferred, promise;
     
     beforeEach(module('app'));
-    beforeEach(inject(function(_$componentController_) {
+    beforeEach(inject(function(_$componentController_, _TweetService_, _$q_) {
       $componentController = _$componentController_;
+      TweetService = _TweetService_;
+      $q = _$q_;
+      deferred = $q.defer();
+      promise = deferred.promise;
     }));
   
-    it('should post a tweet and return it with an id', function() {
-      var ctrl = $componentController('popupCompose', null);
-      var postTweetSpy = spyOn(ctrl, 'postTweet');
-      var composeTweet = {
-        tweet: "test"
-      };
-      var response = {
-        id: 1,
-        tweet: "test"
-      };
+    it('should call TweetService after posting a tweet', function() {
+      spyOn(TweetService, 'postTweet').and.returnValue(promise);
+      var ctrl = $componentController('popupCompose', TweetService);
+      var composeTweet = { tweet: "test" };
       ctrl.postTweet(composeTweet);
-      expect(postTweetSpy).toHaveBeenCalledWith(composeTweet);
+      expect(TweetService.postTweet).toHaveBeenCalledWith(composeTweet);
     });
   });
-
-// describe('popupCompose component', function () {
-//   var $q, $scope, controller, deferred, element, TweetService;
-
-//   beforeEach(module('app', function ($provide) {
-//     $provide.factory('popupCompose', function () {
-//       return {
-//         templateUrl: 'app/popupCompose.html'
-//       };
-//     });
-//   }));

@@ -1,31 +1,27 @@
-// describe('tweet component', function () {
-//   beforeEach(module('app', function ($provide) {
-//     $provide.factory('tweet', function () {
-//       return {
-//         templateUrl: 'app/tweet.html'
-//       };
-//     });
-//   }));
-
-//   it('should...', angular.mock.inject(function ($rootScope, $compile) {
-//     var element = $compile('<tweet></tweet>')($rootScope);
-//     $rootScope.$digest();
-//     expect(element).not.toBeNull();
-//   }));
-// });
-
 describe('tweetDetail component', function () {
-  var $componentController;
+  var $componentController, $q;
+  var deferred, promise;
   
   beforeEach(module('app'));
-  beforeEach(inject(function(_$componentController_) {
+  beforeEach(inject(function(_$componentController_, _TweetService_, _$q_) {
     $componentController = _$componentController_;
+    TweetService = _TweetService_;
+    $q = _$q_;
+    deferred = $q.defer();
+    promise = deferred.promise;
   }));
 
-  it('should load a tweet', function() {
-    var ctrl = $componentController('tweetDetail', null);
-    var loadTweetSpy = spyOn(ctrl, 'loadTweet');
+  it('should call TweetService after loading a tweet', function() {
+    var bindings = {
+      resolve: {
+        tweet: {
+          id: 1
+        }
+      }
+    };
+    spyOn(TweetService, 'getTweetById').and.returnValue(promise);
+    var ctrl = $componentController('tweetDetail', TweetService, bindings);
     ctrl.loadTweet();
-    expect(loadTweetSpy).toHaveBeenCalled();
+    expect(TweetService.getTweetById).toHaveBeenCalledWith(1);
   });
 });

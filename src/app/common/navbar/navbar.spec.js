@@ -1,51 +1,23 @@
 describe('navbar component', function () {
-  var $componentController;
+  var $componentController, $q, $scope;
+  var deferred, promise;
   
   beforeEach(module('app'));
-  beforeEach(inject(function(_$componentController_) {
+  beforeEach(inject(function(_$componentController_, _$q_, _$rootScope_, _$uibModal_) {
     $componentController = _$componentController_;
+    $q = _$q_;
+    $scope = _$rootScope_.$new();
+    $uibModal = _$uibModal_;
+    deferred = $q.defer();
+    promise = deferred.promise;
   }));
 
-  it('should open a modal when clicking the tweet button', function() {
-    var ctrl = $componentController('navbar', null);
-    var openTweetSpy = spyOn(ctrl, 'open');
+  xit('should open a modal when clicking the tweet button', function() {
+    spyOn($uibModal, 'open').and.returnValue(promise);
+    var ctrl = $componentController('navbar', $uibModal);
     ctrl.open();
-    expect(openTweetSpy).toHaveBeenCalled();
+    deferred.resolve();
+    $scope.$apply();
+    expect($uibModal.open).toHaveBeenCalled();
   });
 });
-
-// describe('navbar component', function () {
-//   var element;
-//   var $rootScope;
-//   var controller;
-  
-//   beforeEach(module('app', function ($provide) {
-//     $provide.factory('navbar', function () {
-//       return {
-//         templateUrl: 'app/navbar.html'
-//       };
-//     });
-//   }));
-
-//   beforeEach(angular.mock.inject(function (_$rootScope_, _$compile_) {
-//     $rootScope = _$rootScope_
-//     element = _$compile_('<tweet></tweet>')($rootScope);
-//     $rootScope.$digest();
-//     controller = element.controller('tweet');
-//   }));
-
-//   it('should...', angular.mock.inject(function ($rootScope, $compile) {
-//     var element = $compile('<navbar></navbar>')($rootScope);
-//     $rootScope.$digest();
-//     expect(element).not.toBeNull();
-//   }));
-
-//   describe('vm.open', function () {
-//     it('should call $uibModal.open()', angular.mock.inject(function (_$uibModal_) {
-//       var $uibModal = _$uibModal_;
-//       spyOn($uibModal, 'open');
-//       controller.open();
-//       expect($uibModal.open).toHaveBeenCalled();
-//     }));
-//   });
-// });

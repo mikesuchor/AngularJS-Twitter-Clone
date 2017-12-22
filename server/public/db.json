@@ -133,23 +133,8 @@
 			"photo": "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
 			"name": "Michael Suchorolski",
 			"handle": "mikesuchor",
-			"tweet": "testing",
-			"id": 11,
-			"interactions": []
-		},
-		{
-			"photo": "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-			"name": "Michael Suchorolski",
-			"handle": "mikesuchor",
 			"tweet": "test1",
-			"id": 12
-		},
-		{
-			"photo": "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-			"name": "Michael Suchorolski",
-			"handle": "mikesuchor",
-			"tweet": "test2",
-			"id": 13,
+			"id": 11,
 			"interactions": [
 				{
 					"photo": "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
@@ -157,92 +142,9 @@
 					"handle": "mikesuchor",
 					"time": "testing",
 					"replyingto": "testing",
-					"tweet": "1",
-					"date": "Fri Dec 08 2017 18:00:59 GMT-0400 (SA Western Standard Time)"
-				},
-				{
-					"photo": "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-					"name": "Michael Suchorolski",
-					"handle": "mikesuchor",
-					"time": "testing",
-					"replyingto": "testing",
-					"tweet": "2",
-					"date": "Fri Dec 08 2017 18:01:01 GMT-0400 (SA Western Standard Time)"
-				}
-			]
-		},
-		{
-			"photo": "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-			"name": "Michael Suchorolski",
-			"handle": "mikesuchor",
-			"tweet": "test3",
-			"id": 14,
-			"interactions": [
-				{
-					"photo": "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-					"name": "Michael Suchorolski",
-					"handle": "mikesuchor",
-					"time": "testing",
-					"replyingto": "testing",
-					"tweet": "1"
-				},
-				{
-					"photo": "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-					"name": "Michael Suchorolski",
-					"handle": "mikesuchor",
-					"time": "testing",
-					"replyingto": "testing",
-					"tweet": "2"
-				},
-				{
-					"photo": "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-					"name": "Michael Suchorolski",
-					"handle": "mikesuchor",
-					"time": "testing",
-					"replyingto": "testing",
-					"tweet": "5"
-				}
-			]
-		},
-		{
-			"photo": "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-			"name": "Michael Suchorolski",
-			"handle": "mikesuchor",
-			"tweet": "test",
-			"id": 15,
-			"interactions": [
-				{
-					"photo": "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-					"name": "Michael Suchorolski",
-					"handle": "mikesuchor",
-					"time": "testing",
-					"replyingto": "testing",
-					"tweet": "1"
-				},
-				{
-					"photo": "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-					"name": "Michael Suchorolski",
-					"handle": "mikesuchor",
-					"time": "testing",
-					"replyingto": "testing",
-					"tweet": "2"
-				}
-			]
-		},
-		{
-			"photo": "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-			"name": "Michael Suchorolski",
-			"handle": "mikesuchor",
-			"tweet": "test",
-			"id": 16,
-			"interactions": [
-				{
-					"photo": "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-					"name": "Michael Suchorolski",
-					"handle": "mikesuchor",
-					"time": "testing",
-					"replyingto": "testing",
-					"tweet": "444"
+					"tweet": "test2",
+					"date": "Fri Dec 22 2017 14:47:44 GMT-0400 (SA Western Standard Time)",
+					"id": 2
 				}
 			]
 		}

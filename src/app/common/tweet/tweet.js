@@ -27,8 +27,6 @@ angular
       });
     }
     vm.deleteTweetInteraction = function(parent, id) {
-      console.log(parent);
-      console.log("id: " + id);
       TweetService.deleteTweetInteraction(parent, id).then(function(success) {
         var index = parent.interactions.findIndex(function(element){return element.id === id});
         parent.interactions.splice(index, 1);

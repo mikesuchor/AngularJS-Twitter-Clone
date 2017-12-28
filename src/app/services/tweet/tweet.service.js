@@ -8,12 +8,10 @@ function TweetService($resource, $q) {
 
   vm.getTweets = function() {
     var deferred = $q.defer();
-    expressTweetResource.query(function(data){   
-      data.reverse();
-    }).$promise.then(function(success) {
-      deferred.resolve(success);
+    expressTweetResource.query().$promise.then(function(success) {
+      deferred.resolve(success.reverse());
     });
-    return deferred.promise;;
+    return deferred.promise;
   }
 
   vm.getTweetById = function(id) {

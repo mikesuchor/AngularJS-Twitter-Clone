@@ -1,15 +1,36 @@
 describe('navbar component', function () {
-  beforeEach(module('app', function ($provide) {
-    $provide.factory('navbar', function () {
-      return {
-        templateUrl: 'app/navbar.html'
-      };
-    });
+  var $componentController, $q, $scope;
+  var deferred, promise;
+  
+  beforeEach(module('app'));
+  beforeEach(inject(function(_$componentController_, _$q_, _$rootScope_, _$uibModal_) {
+    $componentController = _$componentController_;
+    $q = _$q_;
+    $scope = _$rootScope_.$new();
+    $uibModal = _$uibModal_;
+    deferred = $q.defer();
+    promise = deferred.promise;
   }));
 
-  it('should...', angular.mock.inject(function ($rootScope, $compile) {
-    var element = $compile('<navbar></navbar>')($rootScope);
-    $rootScope.$digest();
-    expect(element).not.toBeNull();
-  }));
+  it('should open a modal when clicking the tweet button', function() {
+    var onUpdateTweetSpy = jasmine.createSpy('onUpdateTweet');
+    var bindings = {onUpdateTweet: onUpdateTweetSpy};
+    spyOn($uibModal, 'open').and.returnValue({result: promise});
+    var ctrl = $componentController('navbar', $uibModal, bindings);
+    ctrl.open();
+    deferred.resolve();
+    $scope.$apply();
+    expect($uibModal.open).toHaveBeenCalled();
+  });
+
+  it('should run onUpdateTweet function after opening the modal', function() {
+    var onUpdateTweetSpy = jasmine.createSpy('onUpdateTweet');
+    var bindings = {onUpdateTweet: onUpdateTweetSpy};
+    spyOn($uibModal, 'open').and.returnValue({result: promise});
+    var ctrl = $componentController('navbar', $uibModal, bindings);
+    ctrl.open();
+    deferred.resolve();
+    $scope.$apply();
+    expect(onUpdateTweetSpy).toHaveBeenCalled();
+  });
 });

@@ -22,13 +22,14 @@ angular
       });
     };
     vm.deleteTweet = function(id) {
-      TweetService.deleteTweet(id).$promise.then(function(success) {
+      TweetService.deleteTweet(id).then(function(success) {
         vm.onUpdateTweet();
       });
     }
     vm.deleteTweetInteraction = function(parent, id) {
-      TweetService.deleteTweetInteraction(parent, id).$promise.then(function(success) {
-        parent.interactions.splice(parent.interactions.findIndex(function(element){return element.id == id}), 1);
+      TweetService.deleteTweetInteraction(parent, id).then(function(success) {
+        var index = parent.interactions.findIndex(function(element){return element.id === id});
+        parent.interactions.splice(index, 1);
         vm.onUpdateTweet();
       });
     }

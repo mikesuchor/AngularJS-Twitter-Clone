@@ -10,8 +10,8 @@ angular
   controller: function(TweetService) {
     var vm = this;
     vm.postTweet = function(composetweet) {
-      TweetService.postTweet(composetweet).$promise.then(function(success) {
-          vm.onUpdateTweet();
+      TweetService.postTweet(composetweet).then(function(success) {
+        vm.onUpdateTweet();
       });
     }
     vm.postTweetInteraction = function(tweet, text) {
@@ -24,7 +24,7 @@ angular
         tweet: text,
         date: new Date().toString()
       };
-      TweetService.postTweetInteraction(tweet, composetweet).$promise.then(function(success) {
+      TweetService.postTweetInteraction(tweet, composetweet).then(function(success) {
         if (!tweet.interactions) {
           tweet.interactions = [];
         }

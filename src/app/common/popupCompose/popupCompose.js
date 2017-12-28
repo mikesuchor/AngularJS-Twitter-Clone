@@ -8,7 +8,7 @@ angular
   controller: function(TweetService) {
     var vm = this;
     vm.postTweet = function(composetweet) {
-      TweetService.postTweet(composetweet).$promise.then(function(success) {
+      TweetService.postTweet(composetweet).then(function(success) {
         vm.modalInstance.close();
       });
     }

@@ -1,4 +1,4 @@
-describe('deleting a tweet interaction', function() {
+describe('deleteinteraction', function() {
 
     beforeEach(function() {
         browser.get('http://localhost:3000/');

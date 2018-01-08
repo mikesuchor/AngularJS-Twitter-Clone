@@ -1,4 +1,4 @@
-describe('clicking on a tweet', function() {
+describe('displayinteractions', function() {
 
     beforeEach(function() {
         browser.get('http://localhost:3000/');
@@ -10,7 +10,7 @@ describe('clicking on a tweet', function() {
         element.all(by.css('.compose-tweet-btn')).first().click();
     });
 
-    it('should open the tweet and display interactions', function() {
+    it('should open a tweet and display the interactions', function() {
         var interactions = element.all(by.repeater('interaction in $ctrl.tweet.interactions')).count();
         expect(interactions).toEqual(1);
     });

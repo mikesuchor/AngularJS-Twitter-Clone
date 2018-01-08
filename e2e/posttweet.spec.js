@@ -1,4 +1,4 @@
-describe('writing a tweet', function() {
+describe('posttweet', function() {
     it('should post a tweet', function() {
         browser.get('http://localhost:3000/');
         var randomString = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);

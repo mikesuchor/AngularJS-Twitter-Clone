@@ -1,17 +1,22 @@
+var TwitterMainPage = require('./twittermainpage.po.js');
+
 describe('Twitter App', function() {
 
+    var twitterMainPage = new TwitterMainPage();
+
     beforeEach(function() {
-        browser.get('http://localhost:3000/');
-        var randomString = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-        element.all(by.model('composetweet')).first().sendKeys(randomString);
-        element.all(by.css('.compose-tweet-btn')).first().click();
-        element.all(by.css('.tweets-section')).first().click();
-        element.all(by.model('composetweet')).first().sendKeys(randomString);
-        element.all(by.css('.compose-tweet-btn')).first().click();
+        var randomString = twitterMainPage.generateRandomString();
+        twitterMainPage.loadHomePage();
+        twitterMainPage.composeTweet(randomString);
+        twitterMainPage.openTweetDetail();
+        twitterMainPage.composeTweetInteraction(randomString);
     });
 
     it('should open a tweet and display the interactions', function() {
-        var numInteractions = element.all(by.repeater('interaction in $ctrl.tweet.interactions')).count();
-        expect(numInteractions).toEqual(1);
+        expect(twitterMainPage.interactionCount()).toEqual(1);
     });
+
+    afterEach(function() {
+        twitterMainPage.deleteTweet();
+    })
 });

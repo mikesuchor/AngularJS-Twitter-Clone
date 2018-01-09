@@ -1,20 +1,21 @@
+var TwitterMainPage = require('./twittermainpage.pageObject.js');
+
 describe('Twitter App', function() {
+
+    var twitterMainPage = new TwitterMainPage();
     
     beforeEach(function() {
-        browser.get('http://localhost:3000/');
+        twitterMainPage.get();
         var randomString = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-        element.all(by.model('composetweet')).first().sendKeys(randomString);
-        element.all(by.css('.compose-tweet-btn')).first().click();
-        element.all(by.css('.tweets-section')).first().click();
-        element.all(by.model('composetweet')).first().sendKeys(randomString);
-        element.all(by.css('.compose-tweet-btn')).first().click();
+        twitterMainPage.composeTweet(randomString);
+        twitterMainPage.openTweetDetail();
+        twitterMainPage.composeTweetInteraction(randomString);
     });
 
     it('should delete a tweet interaction', function() {
         var interactionCount = element.all(by.repeater("interaction in $ctrl.tweet.interactions")).count();
         interactionCount.then(function(data) {
-            element.all(by.css('.interaction-dropdown')).first().click();
-            element.all(by.css('[ng-click="$ctrl.deleteTweetInteraction($ctrl.parent, $ctrl.tweet.id)"]')).first().click();
+            twitterMainPage.deleteTweetInteraction();
             var interactionCountAfterDelete = element.all(by.repeater("interaction in $ctrl.tweet.interactions")).count();
             expect(interactionCountAfterDelete).toEqual(data-1);
         });

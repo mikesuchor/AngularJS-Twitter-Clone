@@ -8,7 +8,7 @@ describe('Twitter App', function() {
         var randomString = twitterMainPage.generateRandomString();
         twitterMainPage.loadHomePage();
         twitterMainPage.composeTweet(randomString);
-        expect(element.all(by.binding('$ctrl.tweet.tweet')).first().getText()).toEqual(randomString);
+        expect(twitterMainPage.tweetText()).toEqual(randomString);
     });
 
     afterEach(function() {

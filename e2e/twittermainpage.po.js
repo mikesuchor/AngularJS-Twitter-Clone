@@ -9,6 +9,7 @@ var TwitterMainPage = function() {
     var deleteTweetInteraction = element.all(by.css('[ng-click="$ctrl.deleteTweetInteraction($ctrl.parent, $ctrl.tweet.id)"]')).first();
     var tweetCollection = element.all(by.repeater('tweet in $ctrl.tweets'));
     var interactionCollection = element.all(by.repeater('interaction in $ctrl.tweet.interactions'));
+    var tweet = element.all(by.binding('$ctrl.tweet.tweet')).first();
 
     this.generateRandomString = function() {
         return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
@@ -35,6 +36,10 @@ var TwitterMainPage = function() {
         composeTweetField.sendKeys(randomString);
         composeTweetButton.click();
     };
+
+    this.tweetText = function() {
+        return tweet.getText();
+    }
 
     this.openTweetDetail = function() {
         tweetDetail.click();

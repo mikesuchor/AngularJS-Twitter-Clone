@@ -7,10 +7,24 @@ var TwitterMainPage = function() {
     var deleteTweet = element.all(by.css('[ng-click="$ctrl.deleteTweet($ctrl.tweet.id)"]')).first();
     var interactionDropdownMenu = element.all(by.css('.interaction-dropdown')).first();
     var deleteTweetInteraction = element.all(by.css('[ng-click="$ctrl.deleteTweetInteraction($ctrl.parent, $ctrl.tweet.id)"]')).first();
+    var tweetCollection = element.all(by.repeater('tweet in $ctrl.tweets'));
+    var interactionCollection = element.all(by.repeater('interaction in $ctrl.tweet.interactions'));
 
-    this.get = function() {
+    this.generateRandomString = function() {
+        return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    };
+
+    this.loadHomePage = function() {
         browser.get('http://localhost:3000/');
     };
+
+    this.tweetCount = function() {
+        return tweetCollection.count();
+    }
+
+    this.interactionCount = function() {
+        return interactionCollection.count();
+    }
 
     this.composeTweet = function(randomString) {
         composeTweetField.sendKeys(randomString);

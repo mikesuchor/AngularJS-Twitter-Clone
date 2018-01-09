@@ -1,12 +1,16 @@
-var TwitterMainPage = require('./twittermainpage.pageObject.js');
+var TwitterMainPage = require('./twittermainpage.po.js');
 
 describe('Twitter App', function() {
     
     var twitterMainPage = new TwitterMainPage();
 
     it('should display tweets on the main page', function() {
-        twitterMainPage.get();
-        var numTweets = element.all(by.repeater('tweet in $ctrl.tweets')).count();
-        expect(numTweets).not.toBeLessThan(1);
+        twitterMainPage.loadHomePage();
+        twitterMainPage.composeTweet('test');
+        expect(twitterMainPage.tweetCount()).toBeGreaterThan(0);
+    });
+
+    afterEach(function() {
+        twitterMainPage.deleteTweet();
     });
 });

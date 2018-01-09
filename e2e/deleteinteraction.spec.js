@@ -1,23 +1,25 @@
-var TwitterMainPage = require('./twittermainpage.pageObject.js');
+var TwitterMainPage = require('./twittermainpage.po.js');
 
 describe('Twitter App', function() {
 
     var twitterMainPage = new TwitterMainPage();
     
     beforeEach(function() {
-        twitterMainPage.get();
-        var randomString = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        var randomString = twitterMainPage.generateRandomString();
+        twitterMainPage.loadHomePage();
         twitterMainPage.composeTweet(randomString);
         twitterMainPage.openTweetDetail();
         twitterMainPage.composeTweetInteraction(randomString);
     });
 
     it('should delete a tweet interaction', function() {
-        var interactionCount = element.all(by.repeater("interaction in $ctrl.tweet.interactions")).count();
-        interactionCount.then(function(data) {
+        twitterMainPage.interactionCount().then(function(result) {
             twitterMainPage.deleteTweetInteraction();
-            var interactionCountAfterDelete = element.all(by.repeater("interaction in $ctrl.tweet.interactions")).count();
-            expect(interactionCountAfterDelete).toEqual(data-1);
+            expect(twitterMainPage.interactionCount()).toEqual(result - 1);
         });
     });
+
+    afterEach(function() {
+        twitterMainPage.deleteTweet();
+    })
 });

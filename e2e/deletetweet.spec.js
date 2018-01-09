@@ -1,4 +1,4 @@
-describe('deletetweet', function() {
+describe('Twitter App', function() {
     
     beforeEach(function() {
         browser.get('http://localhost:3000/');

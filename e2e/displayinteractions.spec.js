@@ -1,4 +1,4 @@
-describe('displayinteractions', function() {
+describe('Twitter App', function() {
 
     beforeEach(function() {
         browser.get('http://localhost:3000/');
@@ -11,7 +11,7 @@ describe('displayinteractions', function() {
     });
 
     it('should open a tweet and display the interactions', function() {
-        var interactions = element.all(by.repeater('interaction in $ctrl.tweet.interactions')).count();
-        expect(interactions).toEqual(1);
+        var numInteractions = element.all(by.repeater('interaction in $ctrl.tweet.interactions')).count();
+        expect(numInteractions).toEqual(1);
     });
 });

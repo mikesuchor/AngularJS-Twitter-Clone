@@ -4,7 +4,7 @@
         <li>
             <div class="click-container" ng-click="$ctrl.open()">
                 <img class="tweets-account" ng-src={{$ctrl.tweet.photo}}>
-                <a class="tweets-name" ng-href="https://twitter.com/{{$ctrl.tweet.handle}}">{{$ctrl.tweet.name}}</a><span>{{"@" + $ctrl.tweet.handle}}</span>
+                <a class="tweets-name">{{$ctrl.tweet.name}}</a><span>{{"@" + $ctrl.tweet.handle}}</span>
             </div>
             <!-- Dropdown Menu -->
             <div class="dropdown" uib-dropdown on-toggle="$ctrl.tweetOptions(open)" ng-click="$ctrl.openoptions()">
@@ -31,7 +31,7 @@
 <!-- Tweet template for the main tweet in the tweet detail modal -->
 <section class="tweet-detail-section" ng-if="$ctrl.type==='tweet-detail'">
     <img class="tweet-detail-account" ng-src={{$ctrl.tweet.photo}}>
-    <a class="tweet-detail-name" ng-href="https://twitter.com/{{$ctrl.tweet.handle}}">{{$ctrl.tweet.name}}</a>
+    <a class="tweet-detail-name">{{$ctrl.tweet.name}}</a>
     <!-- Dropdown Menu -->
     <div class="dropdown" uib-dropdown on-toggle="$ctrl.tweetOptions(open)" ng-click="$ctrl.openoptions()">
         <button class="dropdown-toggle" uib-dropdown-toggle><span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></button>
@@ -56,10 +56,10 @@
     <ul class="tweet-reply-section-list">
         <li class="tweet-reply-section-list-items">
             <img class="tweet-reply-account" ng-src={{$ctrl.tweet.photo}}>
-            <a class="tweet-reply-name" ng-href="https://twitter.com/{{$ctrl.tweet.handle}}">{{$ctrl.tweet.name}}</a><span>{{"@" + $ctrl.tweet.handle}}</span>
+            <a class="tweet-reply-name">{{$ctrl.tweet.name}}</a><span>{{"@" + $ctrl.tweet.handle}}</span>
             <!-- Dropdown Menu -->
             <div class="dropdown" uib-dropdown on-toggle="$ctrl.tweetOptions(open)" ng-click="$ctrl.openoptions()">
-                <button class="dropdown-toggle" uib-dropdown-toggle><span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></button>
+                <button class="dropdown-toggle interaction-dropdown" uib-dropdown-toggle><span><i class="fa fa-chevron-down" aria-hidden="true"></i></span></button>
                 <ul uib-dropdown-menu>
                     <li ng-click="$ctrl.deleteTweetInteraction($ctrl.parent, $ctrl.tweet.id)"><a href="#">Delete Tweet</a></li>
                 </ul>

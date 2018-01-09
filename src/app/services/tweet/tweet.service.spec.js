@@ -1,4 +1,4 @@
-describe('TweetService service', function () {
+describe('TweetService', function () {
   var $httpBackend, $q;
   var interactionId, tweet, parent, composetweet;
   var id = 1;
@@ -22,7 +22,7 @@ describe('TweetService service', function () {
     composetweet = "testcomposetweet";
   }));
 
-  it('vm.getTweets should return an array containing all the tweets and reverse the array', function() {
+  it('should return a reversed array containing all the tweets after calling vm.getTweets', function() {
     deferred.resolve();
     $httpBackend.expectGET(expressTweetResource).respond([{id: 1}, {id: 2}, {id: 3}]);
     var result = TweetService.getTweets();
@@ -30,7 +30,7 @@ describe('TweetService service', function () {
     expect(result).toBeResolvedWith([{id: 3}, {id: 2}, {id: 1}]);
   });
 
-  it('vm.getTweetById should return an object by its id', function() {
+  it('should return an object by its id after calling vm.getTweetById', function() {
     $httpBackend.expectGET(expressTweetResourceWithId).respond({
       photo:":)",
       name:"A",
@@ -47,7 +47,7 @@ describe('TweetService service', function () {
     });
   });
 
-  it('vm.postTweet should post a tweet', function() {
+  it('should post a tweet after calling vm.postTweet', function() {
     $httpBackend.expectPOST(expressTweetResource).respond({
       photo: "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
       name: "Michael Suchorolski",
@@ -64,7 +64,7 @@ describe('TweetService service', function () {
     });
   });
 
-  it('vm.deleteTweet should delete a tweet using its id', function() {
+  it('should delete a tweet using its id after calling vm.deleteTweet', function() {
     $httpBackend.expectDELETE(expressTweetResourceWithId).respond({
       photo:":)",
       name:"A",
@@ -81,7 +81,7 @@ describe('TweetService service', function () {
     });
   });
 
-  it('vm.postTweetInteraction should post a tweet interaction to a tweet', function() {
+  it('should post a tweet interaction to a tweet after calling vm.postTweetInteraction', function() {
     $httpBackend.expectPOST(expressTweetResourceWithId).respond({
       id: tweet.id,
       tweet: composetweet
@@ -94,7 +94,7 @@ describe('TweetService service', function () {
     });
   });
 
-  it('vm.deleteTweetInteraction should delete a tweet interaction', function() {
+  it('should delete a tweet interaction after calling vm.deleteTweetInteraction', function() {
     $httpBackend.expectDELETE(expressTweetResourceWithId + '/' + interactionId).respond({
       id: parent.id,
       interactionId: id

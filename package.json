@@ -70,5 +70,8 @@
     "extends": [
       "xo-space"
     ]
+  },
+  "dependencies": {
+    "protractor": "^5.2.2"
   }
 }

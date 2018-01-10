@@ -1,6 +1,6 @@
 <section class="follow-section">
   <h1 class="follow-section-title">Who to follow<span class="separator-dot">.</span><span class="section-title-options">Refresh</span><span class="separator-dot">.</span><span class="section-title-options">View all</span></h1>
-  <ul class="follow-section-people" ng-repeat="follow in $ctrl.follow">
+  <ul class="follow-section-people" ng-repeat="follow in FollowController.follow">
     <li>
       <img ng-src={{follow.photo}}>
       <a ng-href="https://twitter.com/{{follow.handle}}">{{follow.name}}</a><span>{{"@" + follow.handle}}</span><i class="fa fa-times" aria-hidden="true"></i>

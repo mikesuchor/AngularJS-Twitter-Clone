@@ -31,7 +31,9 @@ router.get('/', cors(), function(req, res, next) {
 
 /* GET tweet by id */
 router.get('/:id', cors(), function(req, res, next) {
-  var index = tweetsInDatabase.findIndex(function(element) {return element.id == req.params.id});
+  var index = tweetsInDatabase.findIndex(function(element) {
+    return element.id == req.params.id
+  });
   if (index === -1) {
     res.status(404).send('Tweet with id: ' + req.params.id + ' was not found');
   } else {
@@ -56,7 +58,9 @@ router.post('/', cors(), function(req, res, next) {
 
 /* POST tweet interaction to tweet */
 router.post('/:id', cors(), function(req, res, next) {
-  var index = tweetsInDatabase.findIndex(function(element) {return element.id == req.params.id});
+  var index = tweetsInDatabase.findIndex(function(element) {
+    return element.id == req.params.id
+  });
   if (!tweetsInDatabase[index].interactions || tweetsInDatabase[index].interactions.length == 0) {
     tweetsInDatabase[index].interactions = [];
     req.body.id = 1;
@@ -72,14 +76,20 @@ router.post('/:id', cors(), function(req, res, next) {
 
 /* DELETE tweet by id */
 router.delete('/:id', cors(), function(req, res, next) {
-  tweetsInDatabase.splice(tweetsInDatabase.findIndex(function(element) {return element.id == req.params.id}), 1);
+  tweetsInDatabase.splice(tweetsInDatabase.findIndex(function(element) {
+    return element.id == req.params.id
+  }), 1);
   res.send(writeToDatabase());
 });
 
 /* DELETE tweet interaction */
 router.delete('/:id/:interactionId', cors(), function(req, res, next) {
-  var index = tweetsInDatabase.findIndex(function(element) {return element.id == req.params.id});
-  var interactionIndex = tweetsInDatabase[index].interactions.findIndex(function(element) {return element.id == req.params.interactionId});
+  var index = tweetsInDatabase.findIndex(function(element) {
+    return element.id == req.params.id
+  });
+  var interactionIndex = tweetsInDatabase[index].interactions.findIndex(function(element) {
+    return element.id == req.params.interactionId
+  });
   tweetsInDatabase[index].interactions.splice(interactionIndex, 1);
   res.send(writeToDatabase());
 });

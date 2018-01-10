@@ -1,7 +1,12 @@
 describe('composeTweet component', function () {
-  var $componentController, $q, $scope;
-  var deferred, promise;
-  var tweet, text, composeTweet;
+  var $componentController;
+  var $q;
+  var $scope;
+  var deferred;
+  var promise;
+  var tweet;
+  var text;
+  var composeTweet;
   
   beforeEach(module('app'));
   beforeEach(inject(function(_$componentController_, _TweetService_, _$q_, _$rootScope_) {
@@ -11,7 +16,7 @@ describe('composeTweet component', function () {
     $scope = _$rootScope_.$new();
     deferred = $q.defer();
     promise = deferred.promise;
-    tweet = { tweet: "test" };
+    tweet = {tweet: "test"};
     text = "test";
     composeTweet = {
       photo: "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
@@ -27,7 +32,7 @@ describe('composeTweet component', function () {
   it('should call TweetService after posting a tweet', function() {
     spyOn(TweetService, 'postTweet').and.returnValue(promise);
     var ctrl = $componentController('composeTweet', TweetService);
-    composeTweet = { tweet: "test" };
+    composeTweet = {tweet: "test"};
     ctrl.postTweet(composeTweet);
     expect(TweetService.postTweet).toHaveBeenCalledWith(composeTweet);
   });

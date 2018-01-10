@@ -17,8 +17,8 @@ describe('TweetService', function () {
     promise = deferred.promise;
     id = 1;
     interactionId = 1;
-    tweet = { id: 1 };
-    parent = { id: 1 };
+    tweet = {id: 1};
+    parent = {id: 1};
     composetweet = "testcomposetweet";
   }));
 

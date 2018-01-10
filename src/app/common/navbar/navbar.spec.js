@@ -1,6 +1,9 @@
 describe('navbar component', function () {
-  var $componentController, $q, $scope;
-  var deferred, promise;
+  var $componentController;
+  var $q;
+  var $scope;
+  var deferred;
+  var promise;
   
   beforeEach(module('app'));
   beforeEach(inject(function(_$componentController_, _$q_, _$rootScope_, _$uibModal_) {

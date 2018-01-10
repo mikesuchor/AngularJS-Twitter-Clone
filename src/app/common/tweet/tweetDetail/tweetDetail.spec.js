@@ -1,6 +1,9 @@
 describe('tweetDetail component', function () {
-  var $componentController, $q, $scope;
-  var deferred, promise;
+  var $componentController;
+  var $q;
+  var $scope;
+  var deferred;
+  var promise;
   
   beforeEach(module('app'));
   beforeEach(inject(function(_$componentController_, _TweetService_, _$q_, _$rootScope_) {

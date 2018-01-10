@@ -1,7 +1,11 @@
 describe('tweet component', function () {
-  var $componentController, $q, $scope;
-  var deferred, promise;
-  var parent, id;
+  var $componentController;
+  var $q;
+  var $scope;
+  var deferred;
+  var promise;
+  var parent;
+  var id;
   
   beforeEach(module('app'));
   beforeEach(inject(function(_$componentController_, _TweetService_, _$uibModal_, _$q_, _$rootScope_) {
@@ -12,7 +16,9 @@ describe('tweet component', function () {
     $scope = _$rootScope_.$new();
     deferred = $q.defer();
     promise = deferred.promise;
-    parent = {interactions: [{id: 1}]};
+    parent = {
+      interactions: [{id: 1}]
+    };
     id = 1;
   }));
 
@@ -40,7 +46,7 @@ describe('tweet component', function () {
   /* Requires ES6 for findIndex method */
   it('should splice an interaction by id after resolving deleteTweetInteraction', function() {
     var onUpdateTweetSpy = jasmine.createSpy('onUpdateTweet');
-    var bindings = { onUpdateTweet: onUpdateTweetSpy };
+    var bindings = {onUpdateTweet: onUpdateTweetSpy};
     spyOn(TweetService, 'deleteTweetInteraction').and.returnValue(promise);
     var ctrl = $componentController('tweet', TweetService, bindings);
     ctrl.deleteTweetInteraction(parent, id);

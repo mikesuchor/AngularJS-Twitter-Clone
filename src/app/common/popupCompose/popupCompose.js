@@ -8,6 +8,7 @@
     bindings: {
       modalInstance: '<'
     },
+    controllerAs: 'PopupComposeController',
     controller: function(TweetService) {
       var vm = this;
       

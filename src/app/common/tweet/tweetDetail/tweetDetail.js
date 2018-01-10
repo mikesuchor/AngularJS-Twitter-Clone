@@ -1,4 +1,7 @@
-angular
+(function() {
+  'use strict';
+
+  angular
   .module('app')
   .component('tweetDetail', {
     templateUrl: 'app/common/tweet/tweetDetail/tweetDetail.html',
@@ -8,13 +11,19 @@ angular
     },
     controller: function(TweetService) {
       var vm = this;
-      vm.$onInit = function () {
+
+      vm.$onInit = $onInit;
+      vm.loadTweet = loadTweet;
+
+      function $onInit() {
           vm.loadTweet();
       }
-      vm.loadTweet = function () {
+
+      function loadTweet() {
         TweetService.getTweetById(vm.resolve.tweet.id).then(function(success) {
           vm.tweet = success;
         });
       }
-  }
-});
+    }
+  });
+})();

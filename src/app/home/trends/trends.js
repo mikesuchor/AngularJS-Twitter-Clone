@@ -5,6 +5,7 @@ angular
   .module('app')
   .component('trends', {
     templateUrl: 'app/home/trends/trends.html',
+    controllerAs: 'TrendsController',
     controller: function() {
       var vm = this;
       vm.trends = [

@@ -2,15 +2,15 @@ var TwitterMainPage = require('./twittermainpage.po.js');
 
 describe('Twitter App', function() {
     
-    var twitterMainPage = new TwitterMainPage();
+  var twitterMainPage = new TwitterMainPage();
 
-    it('should display tweets on the main page', function() {
-        twitterMainPage.loadHomePage();
-        twitterMainPage.composeTweet('test');
-        expect(twitterMainPage.tweetCount()).toBeGreaterThan(0);
-    });
+  it('should display tweets on the main page', function() {
+    twitterMainPage.loadHomePage();
+    twitterMainPage.composeTweet('test');
+    expect(twitterMainPage.tweetCount()).toBeGreaterThan(0);
+  });
 
-    afterEach(function() {
-        twitterMainPage.deleteTweet();
-    });
+  afterEach(function() {
+    twitterMainPage.deleteTweet();
+  });
 });

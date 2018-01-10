@@ -11,6 +11,7 @@
       type: '@',
       onUpdateTweet: '&'
     },
+    controllerAs: 'TweetController',
     controller: function(TweetService, $uibModal) {
       var vm = this;
 

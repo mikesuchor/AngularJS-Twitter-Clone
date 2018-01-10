@@ -5,6 +5,7 @@
   .module('app')
   .component('profile', {
     templateUrl: 'app/home/profile/profile.html',
+    controllerAs: 'ProfileController',
     controller: function() {
       var vm = this;
       vm.profile = {

@@ -1,14 +1,23 @@
-angular
-.module('app')
-.component('navbar', {
-  templateUrl: 'app/common/navbar/navbar.html',
-  bindings: {
-    onUpdateTweet: '&'
-  },
-  controller: function($uibModal) {
-    var vm = this;
-    vm.open = function (){
-      var modalInstance = $uibModal.open({
+(function() {
+  'use strict';
+
+  angular
+  .module('app')
+  .component('navbar', {
+    templateUrl: 'app/common/navbar/navbar.html',
+    bindings: {
+      onUpdateTweet: '&'
+    },
+    controller: NavbarController
+  });
+  
+  function NavbarController($uibModal) {
+    let vm = this;
+
+    vm.open = open;
+
+    function open(){
+      let modalInstance = $uibModal.open({
         component: "popupCompose",
         windowClass: 'navbar-tweet-window',
         resolve: {
@@ -22,4 +31,4 @@ angular
       });
     };
   }
-});
+})();

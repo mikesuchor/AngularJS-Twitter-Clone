@@ -1,21 +1,31 @@
-angular
-.module('app')
-.component('composeTweet', {
-  templateUrl: 'app/common/composeTweet/composeTweet.html',
-  bindings: {
-    tweet: '<',
-    type: '@',
-    onUpdateTweet: '&'
-  },
-  controller: function(TweetService) {
-    var vm = this;
-    vm.postTweet = function(composetweet) {
-      TweetService.postTweet(composetweet).then(function(success) {
+(function() {
+  'use strict';
+
+  angular
+  .module('app')
+  .component('composeTweet', {
+    templateUrl: 'app/common/composeTweet/composeTweet.html',
+    bindings: {
+      tweet: '<',
+      type: '@',
+      onUpdateTweet: '&'
+    },
+    controller: ComposeTweetController
+  });
+  
+  function ComposeTweetController(TweetService) {
+    let vm = this;
+
+    vm.postTweet = postTweet;
+    vm.postTweetInteraction = postTweetInteraction;
+
+    function postTweet(composeTweet) {
+      TweetService.postTweet(composeTweet).then(function(success) {
         vm.onUpdateTweet();
       });
     }
-    vm.postTweetInteraction = function(tweet, text) {
-      var composetweet = {
+    function postTweetInteraction(tweet, text) {
+      let composeTweet = {
         photo: "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
         name: "Michael Suchorolski",
         handle: "mikesuchor",
@@ -24,13 +34,13 @@ angular
         tweet: text,
         date: new Date().toString()
       };
-      TweetService.postTweetInteraction(tweet, composetweet).then(function(success) {
+      TweetService.postTweetInteraction(tweet, composeTweet).then(function(success) {
         if (!tweet.interactions) {
           tweet.interactions = [];
         }
-        tweet.interactions.push(composetweet);
+        tweet.interactions.push(composeTweet);
         vm.onUpdateTweet();
       });
     }
   }
-});
+})();

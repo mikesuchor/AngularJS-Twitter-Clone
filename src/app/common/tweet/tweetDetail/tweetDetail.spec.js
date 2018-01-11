@@ -1,6 +1,9 @@
 describe('tweetDetail component', function () {
-  var $componentController, $q, $scope;
-  var deferred, promise;
+  let $componentController;
+  let $q;
+  let $scope;
+  let deferred;
+  let promise;
   
   beforeEach(module('app'));
   beforeEach(inject(function(_$componentController_, _TweetService_, _$q_, _$rootScope_) {
@@ -13,7 +16,7 @@ describe('tweetDetail component', function () {
   }));
 
   it('should call TweetService after loading a tweet', function() {
-    var bindings = {
+    let bindings = {
       resolve: {
         tweet: {
           id: 1
@@ -21,13 +24,13 @@ describe('tweetDetail component', function () {
       }
     };
     spyOn(TweetService, 'getTweetById').and.returnValue(promise);
-    var ctrl = $componentController('tweetDetail', TweetService, bindings);
+    let ctrl = $componentController('tweetDetail', TweetService, bindings);
     ctrl.loadTweet();
     expect(TweetService.getTweetById).toHaveBeenCalledWith(1);
   });
 
   it('should store the results of the promise in ctrl.tweet after loading a tweet', function() {
-    var bindings = {
+    let bindings = {
       resolve: {
         tweet: {
           name: "hello",
@@ -36,7 +39,7 @@ describe('tweetDetail component', function () {
       }
     };
     spyOn(TweetService, 'getTweetById').and.returnValue(promise);
-    var ctrl = $componentController('tweetDetail', TweetService, bindings);
+    let ctrl = $componentController('tweetDetail', TweetService, bindings);
     ctrl.loadTweet();
     deferred.resolve();
     $scope.$apply();

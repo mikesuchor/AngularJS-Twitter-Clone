@@ -3,7 +3,7 @@ var TwitterMainPage = require('./twittermainpage.po.js');
 describe('Twitter App', function() {
 
   var twitterMainPage = new TwitterMainPage();
-    
+
   beforeEach(function() {
     var randomString = twitterMainPage.generateRandomString();
     twitterMainPage.loadHomePage();

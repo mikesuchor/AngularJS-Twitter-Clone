@@ -8,16 +8,18 @@
     bindings: {
       modalInstance: '<'
     },
-    controller: function(TweetService) {
-      let vm = this;
-      
-      vm.postTweet = postTweet;
-      
-      function postTweet(composetweet) {
-        TweetService.postTweet(composetweet).then(function(success) {
-          vm.modalInstance.close();
-        });
-      }
-    }
+    controller: PopupComposeController
   });
+  
+  function PopupComposeController(TweetService) {
+    let vm = this;
+    
+    vm.postTweet = postTweet;
+    
+    function postTweet(composetweet) {
+      TweetService.postTweet(composetweet).then(function(success) {
+        vm.modalInstance.close();
+      });
+    }
+  }
 })();

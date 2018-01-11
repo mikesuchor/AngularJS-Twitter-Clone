@@ -5,20 +5,22 @@
   .module('app')
   .component('home', {
     templateUrl: 'app/home/home.html',
-    controller: function(TweetService) {
-      let vm = this;
+    controller: HomeController
+  });
+  
+  function HomeController(TweetService) {
+    let vm = this;
 
-      vm.onUpdateTweet = onUpdateTweet;
+    vm.onUpdateTweet = onUpdateTweet;
 
-      function onUpdateTweet() {
-        TweetService.getTweets().then(function(success) {
-          vm.tweets = success;
-        });
-      }
-
+    function onUpdateTweet() {
       TweetService.getTweets().then(function(success) {
         vm.tweets = success;
-      })
+      });
     }
-  });
+
+    TweetService.getTweets().then(function(success) {
+      vm.tweets = success;
+    })
+  }
 })();

@@ -11,40 +11,42 @@
       type: '@',
       onUpdateTweet: '&'
     },
-    controller: function(TweetService, $uibModal) {
-      let vm = this;
-
-      vm.open = open;
-      vm.deleteTweet = deleteTweet;
-      vm.deleteTweetInteraction = deleteTweetInteraction;
-
-      function open() {
-        $uibModal.open({
-          component: "tweetDetail",
-          size: 'lg',
-          resolve: {
-            tweet: function() {
-              return vm.tweet;
-            }
-          }
-        });
-      }
-
-      function deleteTweet(id) {
-        TweetService.deleteTweet(id).then(function(success) {
-          vm.onUpdateTweet();
-        });
-      }
-
-      function deleteTweetInteraction (parent, id) {
-        TweetService.deleteTweetInteraction(parent, id).then(function(success) {
-          let index = parent.interactions.findIndex(function(element) {
-            return element.id === id;
-          });
-          parent.interactions.splice(index, 1);
-          vm.onUpdateTweet();
-        });
-      }
-    }
+    controller: TweetController
   });
+  
+  function TweetController(TweetService, $uibModal) {
+    let vm = this;
+
+    vm.open = open;
+    vm.deleteTweet = deleteTweet;
+    vm.deleteTweetInteraction = deleteTweetInteraction;
+
+    function open() {
+      $uibModal.open({
+        component: "tweetDetail",
+        size: 'lg',
+        resolve: {
+          tweet: function() {
+            return vm.tweet;
+          }
+        }
+      });
+    }
+
+    function deleteTweet(id) {
+      TweetService.deleteTweet(id).then(function(success) {
+        vm.onUpdateTweet();
+      });
+    }
+
+    function deleteTweetInteraction (parent, id) {
+      TweetService.deleteTweetInteraction(parent, id).then(function(success) {
+        let index = parent.interactions.findIndex(function(element) {
+          return element.id === id;
+        });
+        parent.interactions.splice(index, 1);
+        vm.onUpdateTweet();
+      });
+    }
+  }
 })();

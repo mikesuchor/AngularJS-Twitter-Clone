@@ -9,21 +9,23 @@
       tweet: '<',
       resolve: '<'
     },
-    controller: function(TweetService) {
-      let vm = this;
-
-      vm.$onInit = $onInit;
-      vm.loadTweet = loadTweet;
-
-      function $onInit() {
-          vm.loadTweet();
-      }
-
-      function loadTweet() {
-        TweetService.getTweetById(vm.resolve.tweet.id).then(function(success) {
-          vm.tweet = success;
-        });
-      }
-    }
+    controller: TweetDetailController
   });
+  
+  function TweetDetailController(TweetService) {
+    let vm = this;
+
+    vm.$onInit = $onInit;
+    vm.loadTweet = loadTweet;
+
+    function $onInit() {
+        vm.loadTweet();
+    }
+
+    function loadTweet() {
+      TweetService.getTweetById(vm.resolve.tweet.id).then(function(success) {
+        vm.tweet = success;
+      });
+    }
+  }
 })();

@@ -8,25 +8,27 @@
     bindings: {
       onUpdateTweet: '&'
     },
-    controller: function($uibModal) {
-      let vm = this;
-
-      vm.open = open;
-
-      function open(){
-        let modalInstance = $uibModal.open({
-          component: "popupCompose",
-          windowClass: 'navbar-tweet-window',
-          resolve: {
-            tweet: function () {
-              return vm.tweet;
-            }
-          }
-        });
-        modalInstance.result.then(function() {
-          vm.onUpdateTweet();
-        });
-      };
-    }
+    controller: NavbarController
   });
+  
+  function NavbarController($uibModal) {
+    let vm = this;
+
+    vm.open = open;
+
+    function open(){
+      let modalInstance = $uibModal.open({
+        component: "popupCompose",
+        windowClass: 'navbar-tweet-window',
+        resolve: {
+          tweet: function () {
+            return vm.tweet;
+          }
+        }
+      });
+      modalInstance.result.then(function() {
+        vm.onUpdateTweet();
+      });
+    };
+  }
 })();

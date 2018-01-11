@@ -1,15 +1,15 @@
 var TwitterMainPage = function() {
 
-  var composeTweetField = element.all(by.model('composetweet')).first();
+  var composeTweetField = element.all(by.model('composeTweet')).first();
   var composeTweetButton = element.all(by.css('.compose-tweet-btn')).first();
   var tweetDetail = element.all(by.css('.tweets-section')).first();
   var tweetDropdownMenu = element.all(by.css('.dropdown-toggle')).first();
-  var deleteTweet = element.all(by.css('[ng-click="$ctrl.deleteTweet($ctrl.tweet.id)"]')).first();
+  var deleteTweet = element.all(by.css('[ng-click="TweetController.deleteTweet(TweetController.tweet.id)"]')).first();
   var interactionDropdownMenu = element.all(by.css('.interaction-dropdown')).first();
-  var deleteTweetInteraction = element.all(by.css('[ng-click="$ctrl.deleteTweetInteraction($ctrl.parent, $ctrl.tweet.id)"]')).first();
-  var tweetCollection = element.all(by.repeater('tweet in $ctrl.tweets'));
-  var interactionCollection = element.all(by.repeater('interaction in $ctrl.tweet.interactions'));
-  var tweet = element.all(by.binding('$ctrl.tweet.tweet')).first();
+  var deleteTweetInteraction = element.all(by.css('[ng-click="TweetController.deleteTweetInteraction(TweetController.parent, TweetController.tweet.id)"]')).first();
+  var tweetCollection = element.all(by.repeater('tweet in HomeController.tweets'));
+  var interactionCollection = element.all(by.repeater('interaction in TweetDetailController.tweet.interactions'));
+  var tweet = element.all(by.binding('TweetController.tweet.tweet')).first();
 
   this.generateRandomString = function() {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);

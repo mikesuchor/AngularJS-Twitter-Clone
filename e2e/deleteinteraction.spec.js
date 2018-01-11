@@ -2,24 +2,24 @@ var TwitterMainPage = require('./twittermainpage.po.js');
 
 describe('Twitter App', function() {
 
-  const TWITTER_MAIN_PAGE = new TwitterMainPage();
-
+  const twitterMainPage = new TwitterMainPage();
+  
   beforeEach(function() {
-    let randomString = TWITTER_MAIN_PAGE.generateRandomString();
-    TWITTER_MAIN_PAGE.loadHomePage();
-    TWITTER_MAIN_PAGE.composeTweet(randomString);
-    TWITTER_MAIN_PAGE.openTweetDetail();
-    TWITTER_MAIN_PAGE.composeTweetInteraction(randomString);
+      let randomString = twitterMainPage.generateRandomString();
+      twitterMainPage.loadHomePage();
+      twitterMainPage.composeTweet(randomString);
+      twitterMainPage.openTweetDetail();
+      twitterMainPage.composeTweetInteraction(randomString);
   });
 
   it('should delete a tweet interaction', function() {
-    TWITTER_MAIN_PAGE.interactionCount().then(function(result) {
-      TWITTER_MAIN_PAGE.deleteTweetInteraction();
-      expect(TWITTER_MAIN_PAGE.interactionCount()).toEqual(result - 1);
-    });
+      twitterMainPage.interactionCount().then(function(result) {
+          twitterMainPage.deleteTweetInteraction();
+          expect(twitterMainPage.interactionCount()).toEqual(result - 1);
+      });
   });
 
   afterEach(function() {
-    TWITTER_MAIN_PAGE.deleteTweet();
-  })
+      twitterMainPage.deleteTweet();
+  });
 });

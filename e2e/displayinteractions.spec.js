@@ -2,21 +2,21 @@ var TwitterMainPage = require('./twittermainpage.po.js');
 
 describe('Twitter App', function() {
 
-  const TWITTER_MAIN_PAGE = new TwitterMainPage();
+  const twitterMainPage = new TwitterMainPage();
 
   beforeEach(function() {
-    let randomString = TWITTER_MAIN_PAGE.generateRandomString();
-    TWITTER_MAIN_PAGE.loadHomePage();
-    TWITTER_MAIN_PAGE.composeTweet(randomString);
-    TWITTER_MAIN_PAGE.openTweetDetail();
-    TWITTER_MAIN_PAGE.composeTweetInteraction(randomString);
+    let randomString = twitterMainPage.generateRandomString();
+    twitterMainPage.loadHomePage();
+    twitterMainPage.composeTweet(randomString);
+    twitterMainPage.openTweetDetail();
+    twitterMainPage.composeTweetInteraction(randomString);
   });
 
   it('should open a tweet and display the interactions', function() {
-    expect(TWITTER_MAIN_PAGE.interactionCount()).toEqual(1);
+    expect(twitterMainPage.interactionCount()).toEqual(1);
   });
 
   afterEach(function() {
-    TWITTER_MAIN_PAGE.deleteTweet();
+    twitterMainPage.deleteTweet();
   });
 });

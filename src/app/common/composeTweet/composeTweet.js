@@ -19,7 +19,7 @@
 
       function postTweet(composeTweet) {
         TweetService.postTweet(composeTweet).then(function(success) {
-          vm.onUpdateTweet();s
+          vm.onUpdateTweet();
         });
       }
       function postTweetInteraction(tweet, text) {

@@ -39,8 +39,8 @@
 
       function deleteTweetInteraction (parent, id) {
         TweetService.deleteTweetInteraction(parent, id).then(function(success) {
-          var index = parent.interactions.findIndex(function(element){
-            return element.id === id
+          var index = parent.interactions.findIndex(function(element) {
+            return element.id === id;
           });
           parent.interactions.splice(index, 1);
           vm.onUpdateTweet();

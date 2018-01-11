@@ -32,7 +32,7 @@ router.get('/', cors(), function(req, res, next) {
 /* GET tweet by id */
 router.get('/:id', cors(), function(req, res, next) {
   var index = tweetsInDatabase.findIndex(function(element) {
-    return element.id == req.params.id
+    return element.id == req.params.id;
   });
   if (index === -1) {
     res.status(404).send('Tweet with id: ' + req.params.id + ' was not found');
@@ -59,7 +59,7 @@ router.post('/', cors(), function(req, res, next) {
 /* POST tweet interaction to tweet */
 router.post('/:id', cors(), function(req, res, next) {
   var index = tweetsInDatabase.findIndex(function(element) {
-    return element.id == req.params.id
+    return element.id == req.params.id;
   });
   if (!tweetsInDatabase[index].interactions || tweetsInDatabase[index].interactions.length == 0) {
     tweetsInDatabase[index].interactions = [];
@@ -77,7 +77,7 @@ router.post('/:id', cors(), function(req, res, next) {
 /* DELETE tweet by id */
 router.delete('/:id', cors(), function(req, res, next) {
   tweetsInDatabase.splice(tweetsInDatabase.findIndex(function(element) {
-    return element.id == req.params.id
+    return element.id == req.params.id;
   }), 1);
   res.send(writeToDatabase());
 });
@@ -85,10 +85,10 @@ router.delete('/:id', cors(), function(req, res, next) {
 /* DELETE tweet interaction */
 router.delete('/:id/:interactionId', cors(), function(req, res, next) {
   var index = tweetsInDatabase.findIndex(function(element) {
-    return element.id == req.params.id
+    return element.id == req.params.id;
   });
   var interactionIndex = tweetsInDatabase[index].interactions.findIndex(function(element) {
-    return element.id == req.params.interactionId
+    return element.id == req.params.interactionId;
   });
   tweetsInDatabase[index].interactions.splice(interactionIndex, 1);
   res.send(writeToDatabase());

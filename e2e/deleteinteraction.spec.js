@@ -5,21 +5,21 @@ describe('Twitter App', function() {
   const twitterMainPage = new TwitterMainPage();
   
   beforeEach(function() {
-      let randomString = twitterMainPage.generateRandomString();
-      twitterMainPage.loadHomePage();
-      twitterMainPage.composeTweet(randomString);
-      twitterMainPage.openTweetDetail();
-      twitterMainPage.composeTweetInteraction(randomString);
+    let randomString = twitterMainPage.generateRandomString();
+    twitterMainPage.loadHomePage();
+    twitterMainPage.composeTweet(randomString);
+    twitterMainPage.openTweetDetail();
+    twitterMainPage.composeTweetInteraction(randomString);
   });
 
   it('should delete a tweet interaction', function() {
-      twitterMainPage.interactionCount().then(function(result) {
-          twitterMainPage.deleteTweetInteraction();
-          expect(twitterMainPage.interactionCount()).toEqual(result - 1);
-      });
+    twitterMainPage.interactionCount().then(function(result) {
+      twitterMainPage.deleteTweetInteraction();
+      expect(twitterMainPage.interactionCount()).toEqual(result - 1);
+    });
   });
 
   afterEach(function() {
-      twitterMainPage.deleteTweet();
+    twitterMainPage.deleteTweet();
   });
 });

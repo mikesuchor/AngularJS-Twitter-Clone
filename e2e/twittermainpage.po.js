@@ -12,47 +12,47 @@ var TwitterMainPage = function() {
   const tweet = element.all(by.binding('$ctrl.tweet.tweet')).first();
 
   this.generateRandomString = function() {
-      return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   };
 
   this.loadHomePage = function() {
-      browser.get('http://localhost:3000/');
+    browser.get('http://localhost:3000/');
   };
 
   this.tweetCount = function() {
-      return tweetCollection.count();
+    return tweetCollection.count();
   }
 
   this.interactionCount = function() {
-      return interactionCollection.count();
+    return interactionCollection.count();
   }
 
   this.composeTweet = function(randomString) {
-      composeTweetField.sendKeys(randomString);
-      composeTweetButton.click();
+    composeTweetField.sendKeys(randomString);
+    composeTweetButton.click();
   };
 
   this.composeTweetInteraction = function(randomString) {
-      composeTweetField.sendKeys(randomString);
-      composeTweetButton.click();
+    composeTweetField.sendKeys(randomString);
+    composeTweetButton.click();
   };
 
   this.tweetText = function() {
-      return tweet.getText();
+    return tweet.getText();
   }
 
   this.openTweetDetail = function() {
-      tweetDetail.click();
+    tweetDetail.click();
   };
 
   this.deleteTweet = function() {
-      tweetDropdownMenu.click();
-      deleteTweet.click();
+    tweetDropdownMenu.click();
+    deleteTweet.click();
   };
 
   this.deleteTweetInteraction = function() {
-      interactionDropdownMenu.click();
-      deleteTweetInteraction.click();
+    interactionDropdownMenu.click();
+    deleteTweetInteraction.click();
   };
 };
 module.exports = TwitterMainPage;

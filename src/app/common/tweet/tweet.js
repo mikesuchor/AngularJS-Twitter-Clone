@@ -13,7 +13,7 @@
     },
     controllerAs: 'TweetController',
     controller: function(TweetService, $uibModal) {
-      var vm = this;
+      let vm = this;
 
       vm.open = open;
       vm.deleteTweet = deleteTweet;
@@ -39,7 +39,7 @@
 
       function deleteTweetInteraction (parent, id) {
         TweetService.deleteTweetInteraction(parent, id).then(function(success) {
-          var index = parent.interactions.findIndex(function(element) {
+          let index = parent.interactions.findIndex(function(element) {
             return element.id === id;
           });
           parent.interactions.splice(index, 1);

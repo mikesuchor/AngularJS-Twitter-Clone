@@ -10,7 +10,7 @@
     },
     controllerAs: 'PopupComposeController',
     controller: function(TweetService) {
-      var vm = this;
+      let vm = this;
       
       vm.postTweet = postTweet;
       

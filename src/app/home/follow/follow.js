@@ -7,7 +7,7 @@
     templateUrl: 'app/home/follow/follow.html',
     controllerAs: 'FollowController',
     controller: function() {
-      var vm = this;
+      let vm = this;
       vm.follow = [
         {
           photo: "https://pbs.twimg.com/profile_images/696357709361188864/3Ghh7TKT_bigger.jpg",

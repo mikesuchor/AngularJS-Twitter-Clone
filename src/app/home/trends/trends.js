@@ -7,7 +7,7 @@ angular
     templateUrl: 'app/home/trends/trends.html',
     controllerAs: 'TrendsController',
     controller: function() {
-      var vm = this;
+      let vm = this;
       vm.trends = [
         {
           name: "#docventures",

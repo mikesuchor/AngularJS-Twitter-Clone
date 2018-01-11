@@ -7,7 +7,7 @@
     templateUrl: 'app/home/home.html',
     controllerAs: 'HomeController',
     controller: function(TweetService) {
-      var vm = this;
+      let vm = this;
 
       vm.onUpdateTweet = onUpdateTweet;
 

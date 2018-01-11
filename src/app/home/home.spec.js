@@ -1,9 +1,9 @@
 describe('home component', function () {
-  var $componentController;
-  var $q;
-  var $scope;
-  var deferred;
-  var promise;
+  let $componentController;
+  let $q;
+  let $scope;
+  let deferred;
+  let promise;
     
   beforeEach(module('app'));
   beforeEach(inject(function(_$componentController_, _TweetService_, _$q_, _$rootScope_) {
@@ -23,7 +23,7 @@ describe('home component', function () {
 
   it('should call TweetService to get tweets after updating a tweet', function() {
     spyOn(TweetService, 'getTweets').and.returnValue(promise);
-    var ctrl = $componentController('home', TweetService);
+    let ctrl = $componentController('home', TweetService);
     ctrl.onUpdateTweet();
     expect(TweetService.getTweets).toHaveBeenCalled();
   });

@@ -8,7 +8,7 @@ describe('trends component', function () {
   }));
 
   it('should...', angular.mock.inject(function ($rootScope, $compile) {
-    var element = $compile('<trends></trends>')($rootScope);
+    let element = $compile('<trends></trends>')($rootScope);
     $rootScope.$digest();
     expect(element).not.toBeNull();
   }));

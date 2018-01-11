@@ -10,12 +10,12 @@
     },
     controllerAs: 'NavbarController',
     controller: function($uibModal) {
-      var vm = this;
+      let vm = this;
 
       vm.open = open;
 
       function open(){
-        var modalInstance = $uibModal.open({
+        let modalInstance = $uibModal.open({
           component: "popupCompose",
           windowClass: 'navbar-tweet-window',
           resolve: {

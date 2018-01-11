@@ -11,7 +11,7 @@
     },
     controllerAs: 'TweetDetailController',
     controller: function(TweetService) {
-      var vm = this;
+      let vm = this;
 
       vm.$onInit = $onInit;
       vm.loadTweet = loadTweet;

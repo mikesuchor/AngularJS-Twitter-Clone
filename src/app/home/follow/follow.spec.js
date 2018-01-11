@@ -8,7 +8,7 @@ describe('follow component', function () {
   }));
 
   it('should...', angular.mock.inject(function ($rootScope, $compile) {
-    var element = $compile('<follow></follow>')($rootScope);
+    let element = $compile('<follow></follow>')($rootScope);
     $rootScope.$digest();
     expect(element).not.toBeNull();
   }));

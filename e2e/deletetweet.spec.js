@@ -2,19 +2,19 @@ var TwitterMainPage = require('./twittermainpage.po.js');
 
 describe('Twitter App', function() {
 
-  var twitterMainPage = new TwitterMainPage();
+  const TWITTER_MAIN_PAGE = new TwitterMainPage();
 
   beforeEach(function() {
-    var randomString = twitterMainPage.generateRandomString();
-    twitterMainPage.loadHomePage();
-    twitterMainPage.composeTweet(randomString);
+    let randomString = TWITTER_MAIN_PAGE.generateRandomString();
+    TWITTER_MAIN_PAGE.loadHomePage();
+    TWITTER_MAIN_PAGE.composeTweet(randomString);
   });
 
   it('should delete a tweet', function() {
-    twitterMainPage.tweetCount().then(function(result) {
+    TWITTER_MAIN_PAGE.tweetCount().then(function(result) {
       // Why is this line deleting 2 tweets?
-      twitterMainPage.deleteTweet();
-      expect(twitterMainPage.tweetCount()).toEqual(result - 1);
+      TWITTER_MAIN_PAGE.deleteTweet();
+      expect(TWITTER_MAIN_PAGE.tweetCount()).toEqual(result - 1);
     });
   });
 });

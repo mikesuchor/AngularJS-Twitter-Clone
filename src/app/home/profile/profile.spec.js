@@ -8,7 +8,7 @@ describe('profile component', function () {
   }));
 
   it('should...', angular.mock.inject(function ($rootScope, $compile) {
-    var element = $compile('<profile></profile>')($rootScope);
+    let element = $compile('<profile></profile>')($rootScope);
     $rootScope.$digest();
     expect(element).not.toBeNull();
   }));

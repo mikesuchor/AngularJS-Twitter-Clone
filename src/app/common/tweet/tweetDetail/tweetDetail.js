@@ -9,7 +9,6 @@
       tweet: '<',
       resolve: '<'
     },
-    controllerAs: 'TweetDetailController',
     controller: function(TweetService) {
       let vm = this;
 

@@ -8,7 +8,6 @@
     bindings: {
       onUpdateTweet: '&'
     },
-    controllerAs: 'NavbarController',
     controller: function($uibModal) {
       let vm = this;
 

@@ -5,7 +5,6 @@
   .module('app')
   .component('follow', {
     templateUrl: 'app/home/follow/follow.html',
-    controllerAs: 'FollowController',
     controller: function() {
       let vm = this;
       vm.follow = [

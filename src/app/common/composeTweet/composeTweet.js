@@ -10,7 +10,6 @@
       type: '@',
       onUpdateTweet: '&'
     },
-    controllerAs: 'ComposeTweetController',
     controller: function(TweetService) {
       let vm = this;
 

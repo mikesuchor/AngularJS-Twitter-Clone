@@ -5,7 +5,6 @@
   .module('app')
   .component('home', {
     templateUrl: 'app/home/home.html',
-    controllerAs: 'HomeController',
     controller: function(TweetService) {
       let vm = this;
 

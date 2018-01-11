@@ -1,6 +1,10 @@
 describe('TweetService', function () {
-  var $httpBackend, $q;
-  var interactionId, tweet, parent, composetweet;
+  var $httpBackend;
+  var $q;
+  var interactionId;
+  var tweet;
+  var parent; 
+  var composetweet;
   var id = 1;
   var expressTweetResource = 'http://localhost:5000/tweets';
   var expressTweetResourceWithId = 'http://localhost:5000/tweets/' + id;

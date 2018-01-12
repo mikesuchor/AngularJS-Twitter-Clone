@@ -1,13 +1,14 @@
-describe('composeTweet component', function () {
-  let $componentController;
-  let $q;
-  let $scope;
-  let deferred;
-  let promise;
-  let tweet;
-  let text;
-  let composeTweet;
-  
+describe('composeTweet component', function() {
+  var $componentController;
+  var TweetService;
+  var $q;
+  var $scope;
+  var deferred;
+  var promise;
+  var tweet;
+  var text;
+  var composeTweet;
+
   beforeEach(module('app'));
   beforeEach(inject(function(_$componentController_, _TweetService_, _$q_, _$rootScope_) {
     $componentController = _$componentController_;
@@ -16,14 +17,14 @@ describe('composeTweet component', function () {
     $scope = _$rootScope_.$new();
     deferred = $q.defer();
     promise = deferred.promise;
-    tweet = {tweet: "test"};
-    text = "test";
+    tweet = {tweet: 'test'};
+    text = 'test';
     composeTweet = {
-      photo: "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-      name: "Michael Suchorolski",
-      handle: "mikesuchor",
-      time: "testing",
-      replyingto: "testing",
+      photo: 'https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg',
+      name: 'Michael Suchorolski',
+      handle: 'mikesuchor',
+      time: 'testing',
+      replyingto: 'testing',
       tweet: text,
       date: new Date().toString()
     };
@@ -31,24 +32,24 @@ describe('composeTweet component', function () {
 
   it('should call TweetService after posting a tweet', function() {
     spyOn(TweetService, 'postTweet').and.returnValue(promise);
-    let ctrl = $componentController('composeTweet', TweetService);
-    composeTweet = {tweet: "test"};
+    var ctrl = $componentController('composeTweet', TweetService);
+    composeTweet = {tweet: 'test'};
     ctrl.postTweet(composeTweet);
     expect(TweetService.postTweet).toHaveBeenCalledWith(composeTweet);
   });
 
   it('should call TweetService after posting a tweet interaction', function() {
     spyOn(TweetService, 'postTweetInteraction').and.returnValue(promise);
-    let ctrl = $componentController('composeTweet', TweetService);
+    var ctrl = $componentController('composeTweet', TweetService);
     ctrl.postTweetInteraction(tweet, text);
     expect(TweetService.postTweetInteraction).toHaveBeenCalledWith(tweet, composeTweet);
   });
 
   it('should add a tweet into interactions array after resolving postTweetInteraction', function() {
-    let onUpdateTweetSpy = jasmine.createSpy('onUpdateTweet');
-    let bindings = {onUpdateTweet: onUpdateTweetSpy};
+    var onUpdateTweetSpy = jasmine.createSpy('onUpdateTweet');
+    var bindings = {onUpdateTweet: onUpdateTweetSpy};
     spyOn(TweetService, 'postTweetInteraction').and.returnValue(promise);
-    let ctrl = $componentController('composeTweet', TweetService, bindings);
+    var ctrl = $componentController('composeTweet', TweetService, bindings);
     ctrl.postTweetInteraction(tweet, text);
     deferred.resolve();
     $scope.$apply();
@@ -56,10 +57,10 @@ describe('composeTweet component', function () {
   });
 
   it('should run onUpdate() after resolving postTweetInteraction', function() {
-    let onUpdateTweetSpy = jasmine.createSpy('onUpdateTweet');
-    let bindings = {onUpdateTweet: onUpdateTweetSpy};
+    var onUpdateTweetSpy = jasmine.createSpy('onUpdateTweet');
+    var bindings = {onUpdateTweet: onUpdateTweetSpy};
     spyOn(TweetService, 'postTweetInteraction').and.returnValue(promise);
-    let ctrl = $componentController('composeTweet', TweetService, bindings);
+    var ctrl = $componentController('composeTweet', TweetService, bindings);
     ctrl.postTweetInteraction(tweet, text);
     deferred.resolve();
     $scope.$apply();

@@ -6,8 +6,8 @@
   .service('TweetService', TweetService);
 
   function TweetService($resource, $q) {
-    let vm = this;
-    const expressTweetResource = $resource('http://localhost:5000/tweets/:id/:interactionId', {id: '@id', interactionId: '@interactionId'});
+    var vm = this;
+    var expressTweetResource = $resource('http://localhost:5000/tweets/:id/:interactionId', {id: '@id', interactionId: '@interactionId'});
 
     vm.getTweets = getTweets;
     vm.getTweetById = getTweetById;
@@ -17,7 +17,7 @@
     vm.deleteTweetInteraction = deleteTweetInteraction;
 
     function getTweets() {
-      let deferred = $q.defer();
+      var deferred = $q.defer();
       expressTweetResource.query().$promise.then(function(success) {
         deferred.resolve(success.reverse());
       });
@@ -25,29 +25,29 @@
     }
 
     function getTweetById(id) {
-      let deferred = $q.defer();
+      var deferred = $q.defer();
       expressTweetResource.get({id: id}).$promise.then(function(success) {
         deferred.resolve(success);
       });
       return deferred.promise;
     }
-    
+
     function postTweet(composetweet) {
-      let deferred = $q.defer();
+      var deferred = $q.defer();
       expressTweetResource.save(
         {
-          photo: "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-          name: "Michael Suchorolski",
-          handle: "mikesuchor",
+          photo: 'https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg',
+          name: 'Michael Suchorolski',
+          handle: 'mikesuchor',
           tweet: composetweet
         }).$promise.then(function(success) {
           deferred.resolve(success);
-      });
+        });
       return deferred.promise;
     }
 
     function deleteTweet(id) {
-      let deferred = $q.defer();
+      var deferred = $q.defer();
       expressTweetResource.delete({id: id}).$promise.then(function(success) {
         deferred.resolve(success);
       });
@@ -55,7 +55,7 @@
     }
 
     function postTweetInteraction(tweet, composetweet) {
-      let deferred = $q.defer();
+      var deferred = $q.defer();
       expressTweetResource.save({id: tweet.id}, composetweet).$promise.then(function(success) {
         deferred.resolve(success);
       });
@@ -63,11 +63,11 @@
     }
 
     function deleteTweetInteraction(parent, id) {
-      let deferred = $q.defer();
+      var deferred = $q.defer();
       expressTweetResource.delete({id: parent.id}, {interactionId: id}).$promise.then(function(success) {
         deferred.resolve(success);
       });
-      return deferred.promise;;
+      return deferred.promise;
     }
   }
 })();

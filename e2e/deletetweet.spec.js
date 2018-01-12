@@ -1,15 +1,14 @@
 var TwitterMainPage = require('./twittermainpage.po.js');
 
 describe('Twitter App', function() {
-    
-  const twitterMainPage = new TwitterMainPage();
+  var twitterMainPage = new TwitterMainPage();
 
   beforeEach(function() {
-    let randomString = twitterMainPage.generateRandomString();
+    var randomString = twitterMainPage.generateRandomString();
     twitterMainPage.loadHomePage();
     twitterMainPage.composeTweet(randomString);
   });
-  
+
   it('should delete a tweet', function() {
     twitterMainPage.tweetCount().then(function(result) {
       // Why is this line deleting 2 tweets?

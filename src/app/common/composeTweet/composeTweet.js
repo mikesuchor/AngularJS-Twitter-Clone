@@ -12,29 +12,29 @@
     },
     controller: ComposeTweetController
   });
-  
+
   function ComposeTweetController(TweetService) {
-    let vm = this;
+    var vm = this;
 
     vm.postTweet = postTweet;
     vm.postTweetInteraction = postTweetInteraction;
 
     function postTweet(composeTweet) {
-      TweetService.postTweet(composeTweet).then(function(success) {
+      TweetService.postTweet(composeTweet).then(function() {
         vm.onUpdateTweet();
       });
     }
     function postTweetInteraction(tweet, text) {
-      let composeTweet = {
-        photo: "https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg",
-        name: "Michael Suchorolski",
-        handle: "mikesuchor",
-        time: "testing",
-        replyingto: "testing",
+      var composeTweet = {
+        photo: 'https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg',
+        name: 'Michael Suchorolski',
+        handle: 'mikesuchor',
+        time: 'testing',
+        replyingto: 'testing',
         tweet: text,
         date: new Date().toString()
       };
-      TweetService.postTweetInteraction(tweet, composeTweet).then(function(success) {
+      TweetService.postTweetInteraction(tweet, composeTweet).then(function() {
         if (!tweet.interactions) {
           tweet.interactions = [];
         }

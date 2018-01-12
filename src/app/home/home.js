@@ -7,9 +7,9 @@
     templateUrl: 'app/home/home.html',
     controller: HomeController
   });
-  
+
   function HomeController(TweetService) {
-    let vm = this;
+    var vm = this;
 
     vm.onUpdateTweet = onUpdateTweet;
 
@@ -21,6 +21,6 @@
 
     TweetService.getTweets().then(function(success) {
       vm.tweets = success;
-    })
+    });
   }
 })();

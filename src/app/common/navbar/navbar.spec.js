@@ -1,10 +1,11 @@
-describe('navbar component', function () {
-  let $componentController;
-  let $q;
-  let $scope;
-  let deferred;
-  let promise;
-  
+describe('navbar component', function() {
+  var $componentController;
+  var $q;
+  var $uibModal;
+  var $scope;
+  var deferred;
+  var promise;
+
   beforeEach(module('app'));
   beforeEach(inject(function(_$componentController_, _$q_, _$rootScope_, _$uibModal_) {
     $componentController = _$componentController_;
@@ -16,10 +17,10 @@ describe('navbar component', function () {
   }));
 
   it('should open a modal when clicking the tweet button', function() {
-    let onUpdateTweetSpy = jasmine.createSpy('onUpdateTweet');
-    let bindings = {onUpdateTweet: onUpdateTweetSpy};
+    var onUpdateTweetSpy = jasmine.createSpy('onUpdateTweet');
+    var bindings = {onUpdateTweet: onUpdateTweetSpy};
     spyOn($uibModal, 'open').and.returnValue({result: promise});
-    let ctrl = $componentController('navbar', $uibModal, bindings);
+    var ctrl = $componentController('navbar', $uibModal, bindings);
     ctrl.open();
     deferred.resolve();
     $scope.$apply();
@@ -27,10 +28,10 @@ describe('navbar component', function () {
   });
 
   it('should run onUpdateTweet function after opening the modal', function() {
-    let onUpdateTweetSpy = jasmine.createSpy('onUpdateTweet');
-    let bindings = {onUpdateTweet: onUpdateTweetSpy};
+    var onUpdateTweetSpy = jasmine.createSpy('onUpdateTweet');
+    var bindings = {onUpdateTweet: onUpdateTweetSpy};
     spyOn($uibModal, 'open').and.returnValue({result: promise});
-    let ctrl = $componentController('navbar', $uibModal, bindings);
+    var ctrl = $componentController('navbar', $uibModal, bindings);
     ctrl.open();
     deferred.resolve();
     $scope.$apply();

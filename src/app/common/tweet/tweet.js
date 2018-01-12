@@ -13,9 +13,9 @@
     },
     controller: TweetController
   });
-  
+
   function TweetController(TweetService, $uibModal) {
-    let vm = this;
+    var vm = this;
 
     vm.open = open;
     vm.deleteTweet = deleteTweet;
@@ -23,7 +23,7 @@
 
     function open() {
       $uibModal.open({
-        component: "tweetDetail",
+        component: 'tweetDetail',
         size: 'lg',
         resolve: {
           tweet: function() {
@@ -34,14 +34,14 @@
     }
 
     function deleteTweet(id) {
-      TweetService.deleteTweet(id).then(function(success) {
+      TweetService.deleteTweet(id).then(function() {
         vm.onUpdateTweet();
       });
     }
 
-    function deleteTweetInteraction (parent, id) {
-      TweetService.deleteTweetInteraction(parent, id).then(function(success) {
-        let index = parent.interactions.findIndex(function(element) {
+    function deleteTweetInteraction(parent, id) {
+      TweetService.deleteTweetInteraction(parent, id).then(function() {
+        var index = parent.interactions.findIndex(function(element) {
           return element.id === id;
         });
         parent.interactions.splice(index, 1);

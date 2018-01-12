@@ -1,0 +1,19 @@
+<section class="profile-top-section">
+  <img class="profile-image" ng-src={{$ctrl.profile.photo}}>
+</section>
+<section class="profile-bottom-section">
+  <h1 class="profile-name">{{$ctrl.profile.name}}</h1>
+  <h2 class="profile-account">{{"@" + $ctrl.profile.handle}}</h2>
+  <table class="profile-stats">
+    <tr class="profile-stats-headers">
+      <th>Tweets</th>
+      <th>Following</th>
+      <th>Followers</th>
+    </tr>
+    <tr class="profile-stats-numbers">
+      <td>{{$ctrl.profile.tweets}}</td>
+      <td>{{$ctrl.profile.following}}</td> 
+      <td>{{$ctrl.profile.followers}}</td>
+    </tr>
+  </table>
+</section>

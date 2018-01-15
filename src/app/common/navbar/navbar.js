@@ -10,18 +10,18 @@
     },
     controller: NavbarController
   });
-  
+
   function NavbarController($uibModal) {
-    let vm = this;
+    var vm = this;
 
     vm.open = open;
 
-    function open(){
-      let modalInstance = $uibModal.open({
-        component: "popupCompose",
+    function open() {
+      var modalInstance = $uibModal.open({
+        component: 'popupCompose',
         windowClass: 'navbar-tweet-window',
         resolve: {
-          tweet: function () {
+          tweet: function() {
             return vm.tweet;
           }
         }
@@ -29,6 +29,6 @@
       modalInstance.result.then(function() {
         vm.onUpdateTweet();
       });
-    };
+    }
   }
 })();

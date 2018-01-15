@@ -10,14 +10,14 @@
     },
     controller: PopupComposeController
   });
-  
+
   function PopupComposeController(TweetService) {
-    let vm = this;
-    
+    var vm = this;
+
     vm.postTweet = postTweet;
-    
+
     function postTweet(composetweet) {
-      TweetService.postTweet(composetweet).then(function(success) {
+      TweetService.postTweet(composetweet).then(function() {
         vm.modalInstance.close();
       });
     }

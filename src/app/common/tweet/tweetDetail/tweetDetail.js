@@ -11,15 +11,15 @@
     },
     controller: TweetDetailController
   });
-  
+
   function TweetDetailController(TweetService) {
-    let vm = this;
+    var vm = this;
 
     vm.$onInit = $onInit;
     vm.loadTweet = loadTweet;
 
     function $onInit() {
-        vm.loadTweet();
+      vm.loadTweet();
     }
 
     function loadTweet() {

@@ -31,7 +31,7 @@ router.get('/', cors(), function(req, res, next) {
 
 /* GET tweet by id */
 router.get('/:id', cors(), function(req, res, next) {
-  let index = tweetsInDatabase.findIndex(function(element) {
+  var index = tweetsInDatabase.findIndex(function(element) {
     return element.id == req.params.id;
   });
   if (index === -1) {
@@ -48,7 +48,7 @@ router.post('/', cors(), function(req, res, next) {
     req.body.id = 1;
   }
   else {
-    let lastTweetId = tweetsInDatabase[tweetsInDatabase.length - 1].id;
+    var lastTweetId = tweetsInDatabase[tweetsInDatabase.length - 1].id;
     req.body.id = lastTweetId + 1;
   }
   /* Push the new tweet onto the tweets array and write it to db.json */
@@ -58,7 +58,7 @@ router.post('/', cors(), function(req, res, next) {
 
 /* POST tweet interaction to tweet */
 router.post('/:id', cors(), function(req, res, next) {
-  let index = tweetsInDatabase.findIndex(function(element) {
+  var index = tweetsInDatabase.findIndex(function(element) {
     return element.id == req.params.id;
   });
   if (!tweetsInDatabase[index].interactions || tweetsInDatabase[index].interactions.length == 0) {
@@ -66,7 +66,7 @@ router.post('/:id', cors(), function(req, res, next) {
     req.body.id = 1;
   }
   else {
-    let lastInteractionId = tweetsInDatabase[index].interactions[tweetsInDatabase[index].interactions.length - 1].id;
+    var lastInteractionId = tweetsInDatabase[index].interactions[tweetsInDatabase[index].interactions.length - 1].id;
     req.body.id = lastInteractionId + 1;
   }
   req.body.date = new Date().toString();
@@ -84,10 +84,10 @@ router.delete('/:id', cors(), function(req, res, next) {
 
 /* DELETE tweet interaction */
 router.delete('/:id/:interactionId', cors(), function(req, res, next) {
-  let index = tweetsInDatabase.findIndex(function(element) {
+  var index = tweetsInDatabase.findIndex(function(element) {
     return element.id == req.params.id;
   });
-  let interactionIndex = tweetsInDatabase[index].interactions.findIndex(function(element) {
+  var interactionIndex = tweetsInDatabase[index].interactions.findIndex(function(element) {
     return element.id == req.params.interactionId;
   });
   tweetsInDatabase[index].interactions.splice(interactionIndex, 1);

@@ -1,11 +1,10 @@
 var TwitterMainPage = require('./twittermainpage.po.js');
 
 describe('Twitter App', function() {
-
-  const twitterMainPage = new TwitterMainPage();
+  var twitterMainPage = new TwitterMainPage();
 
   beforeEach(function() {
-    let randomString = twitterMainPage.generateRandomString();
+    var randomString = twitterMainPage.generateRandomString();
     twitterMainPage.loadHomePage();
     twitterMainPage.composeTweet(randomString);
     twitterMainPage.openTweetDetail();

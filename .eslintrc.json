@@ -1,0 +1,27 @@
+{
+    "env": {
+        "es6": false
+    },
+    "extends": "google",
+    "rules": {
+        "no-var": [
+            "off"
+        ],
+        "comma-dangle": [
+            "error",
+            "never"
+        ],
+        "require-jsdoc": [
+            "off"
+        ],
+        "valid-jsdoc": [
+            "off"
+        ],
+        "max-len": [
+            "off"
+        ],
+        "switch-colon-spacing": [
+            "off"
+        ]
+    }
+}

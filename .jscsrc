@@ -1,5 +1,5 @@
 {
     "preset": "google",
-    "maximumLineLength": null,
+    "maximumLineLength": 120,
     "jsDoc": null
 }

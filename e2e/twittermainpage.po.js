@@ -5,7 +5,8 @@ var TwitterMainPage = function() {
   var tweetDropdownMenu = element.all(by.css('.dropdown-toggle')).first();
   var deleteTweet = element.all(by.css('[ng-click="$ctrl.deleteTweet($ctrl.tweet.id)"]')).first();
   var interactionDropdownMenu = element.all(by.css('.interaction-dropdown')).first();
-  var deleteTweetInteraction = element.all(by.css('[ng-click="$ctrl.deleteTweetInteraction($ctrl.parent, $ctrl.tweet.id)"]')).first();
+  var deleteTweetInteraction = element.all(by.css(
+      '[ng-click="$ctrl.deleteTweetInteraction($ctrl.parent, $ctrl.tweet.id)"]')).first();
   var tweetCollection = element.all(by.repeater('tweet in $ctrl.tweets'));
   var interactionCollection = element.all(by.repeater('interaction in $ctrl.tweet.interactions'));
   var tweet = element.all(by.binding('$ctrl.tweet.tweet')).first();

@@ -7,7 +7,8 @@
 
   function TweetService($resource, $q) {
     var vm = this;
-    var expressTweetResource = $resource('http://localhost:5000/tweets/:id/:interactionId', {id: '@id', interactionId: '@interactionId'});
+    var expressTweetResource = $resource('http://localhost:5000/tweets/:id/:interactionId',
+        {id: '@id', interactionId: '@interactionId'});
 
     vm.getTweets = getTweets;
     vm.getTweetById = getTweetById;

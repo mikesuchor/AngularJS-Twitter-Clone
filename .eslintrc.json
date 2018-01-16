@@ -18,7 +18,10 @@
             "off"
         ],
         "max-len": [
-            "off"
+            "error", 
+            {
+                "code": 120
+            }
         ],
         "switch-colon-spacing": [
             "off"

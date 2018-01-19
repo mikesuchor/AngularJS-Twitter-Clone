@@ -126,7 +126,7 @@ ul {
 	box-shadow: none;
 }
 
-.navbar-btn, .compose-tweet-btn, .padding-compose-tweet-btn {
+.navbar-btn, .compose-tweet-btn, .padding-compose-tweet-btn, .checkmark-btn, .messages-btn {
 	border-radius: 20px;
 	color: #FFFFFF;
 	background: #4AB3F4;
@@ -253,6 +253,7 @@ ul {
 .compose-tweet-section, .popup-compose-tweet-form {
 	background: #E8F5FD;
 	padding: 10px 12px;
+	border-bottom: 1px solid #E1E8ED;
 }
 
 .your-reply-section {
@@ -367,23 +368,38 @@ ul {
 	overflow: hidden;
 }
 
-.tweets-section, .tweet-reply-section {
+.tweets-section, .tweet-reply-section, .messages-section {
 	background: #FFFFFF;
 	display: inline-block;
 	vertical-align: top;
 	width: 588px;
 }
 
-.tweets-account, .tweet-reply-account {
+.tweets-account, .tweet-reply-account, .messages-account {
 	height: 48px;
 	border-radius: 100%;
 	float: left;
 }
 
-.tweets-section-list li {
+.tweets-section-list li, .messages-section-list li {
 	margin-top: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
+	border-bottom: 1px solid #E1E8ED;
+}
+
+.messages-section-header {
+	line-height: 60px;
+	border-bottom: 1px solid #E1E8ED;
+}
+
+.messages-section-list p {
+	margin-top: 6px;
+	margin-left: 58px;
+	margin-bottom: 14px;
+	font-size: 14px;
+	color: #657786;
+	font-weight: normal;
 }
 
 .tweet-reply-section-list-items {
@@ -391,15 +407,16 @@ ul {
 	width: 898px;
 }
 
-.tweets-section-list li:hover, .tweet-reply-section-list li:hover {
+.tweets-section-list li:hover, .tweet-reply-section-list li:hover, .messages-section-list li:hover {
 	background: #F5F8FA;
 }
 
-.tweets-section-list li:not(:last-child), .tweet-reply-section-list li:not(:last-child) {
+.tweets-section-list li:not(:last-child), .tweet-reply-section-list li:not(:last-child)
+.messages-section-list li:not(:last-child) {
 	border-bottom: 1px solid #E1E8ED;
 }
 
-.tweets-name, .tweet-reply-name {
+.tweets-name, .tweet-reply-name, .messages-name {
 	color: #14171A;
 	margin-left: 10px;
 	margin-right: 5px;
@@ -410,7 +427,7 @@ ul {
 	font-size: 14px;
 }
 
-.tweets-section-list li span, .tweet-reply-section-list li span {
+.tweets-section-list li span, .tweet-reply-section-list li span, .messages-section-list li span {
 	color: #657786;
 	font-weight: normal;
 }
@@ -504,6 +521,43 @@ ul {
 .fa-chevron-down {
 	float: right;
 	font-size: 12px;
+}
+
+.messages-section-title, .notifications-section-all, .notifications-section-mentions {
+	margin-left: 10px;
+}
+
+.messages-date {
+	float: right;
+}
+
+.checkmark-btn {
+	width: 34px;
+	margin-left: 270px;
+	margin-right: 10px;
+}
+
+.messages-btn {
+	font-size: 12px;
+	width: 100px;
+	box-shadow:
+    0 0 0 2px #FFF,
+	0 0 0 4px #1DA1F2;
+	margin-left: 0px;
+	margin-right: 10px;
+}
+
+.notifications-section-header {
+	line-height: 50px;
+	border-bottom: 1px solid #E1E8ED;
+}
+
+.notifications-section-all, .notifications-section-mentions {
+	color: #14171A;
+	font-size: 18px;
+	font-weight: bold;
+	display: inline-block;
+ 	vertical-align: top;
 }
 
 .right-column {

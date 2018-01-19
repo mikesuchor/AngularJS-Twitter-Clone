@@ -1,0 +1,24 @@
+<section class="tweets-section">
+    <div class="notifications-section-header">
+      <a class="notifications-section-all">All</a>
+      <a class="notifications-section-mentions">Mentions</a>
+    </div>
+    <ul class="tweets-section-list">
+      <li>
+        <div class="click-container" ng-click="$ctrl.open()">
+          <img class="tweets-account" ng-src={{$ctrl.tweet.photo}}>
+          <a class="tweets-name">{{$ctrl.tweet.name}}</a><span>{{"@" + $ctrl.tweet.handle}}</span>
+        </div>
+        <div class="click-container" ng-click="$ctrl.open()">
+          <p class="tweets-tweet">{{$ctrl.tweet.tweet}}</p>
+          <p class="tweets-icons"><i class="fa fa-comment-o" aria-hidden="true"></i><i class="fa fa-retweet" aria-hidden="true"></i><i class="fa fa-heart-o" aria-hidden="true"></i><i class="fa fa-envelope-o" aria-hidden="true"></i></p>
+          <div class="tweets-photo-section" ng-show={{$ctrl.tweet.image}}>
+            <img ng-src={{$ctrl.tweet.image.url}}>
+            <h2>{{$ctrl.tweet.image.heading}}</h2>
+            <p>{{$ctrl.tweet.image.description}}</p>
+            <p>{{$ctrl.tweet.image.link}}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>

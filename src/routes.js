@@ -17,9 +17,16 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       component: 'notifications',
       resolve: {
         tweet: function(TweetService) {
-          TweetService.getTweets().then(function(success) {
-            return success;
-          });
+          return TweetService.getTweets();
+        }
+      }
+    })
+    .state('home.mentions', {
+      url: 'mentions',
+      component: 'notifications',
+      resolve: {
+        tweet: function(TweetService) {
+          return TweetService.getTweets();
         }
       }
     })

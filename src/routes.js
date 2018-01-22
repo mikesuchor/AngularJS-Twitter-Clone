@@ -8,8 +8,30 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('app', {
+    .state('home', {
       url: '/',
       component: 'home'
+    })
+    .state('home.notifications', {
+      url: 'notifications',
+      component: 'notifications',
+      resolve: {
+        tweet: function(TweetService) {
+          return TweetService.getTweets();
+        }
+      }
+    })
+    .state('home.mentions', {
+      url: 'mentions',
+      component: 'notifications',
+      resolve: {
+        tweet: function(TweetService) {
+          return TweetService.getTweets();
+        }
+      }
+    })
+    .state('home.messages', {
+      url: 'messages',
+      component: 'messages'
     });
 }

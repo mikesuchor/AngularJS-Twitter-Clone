@@ -12,7 +12,7 @@ var TwitterMainPage = function() {
   var tweet = element.all(by.binding('$ctrl.tweet.tweet')).first();
   var navbarNotificationsButton = element(by.css('.navbar-notifications-button'));
   var navbarMessagesButton = element(by.css('.navbar-messages-button'));
-  var notificationsAllLink = element(by.css('.notifications-section-all')); 
+  var notificationsAllLink = element(by.css('.notifications-section-all'));
   var notificationsMentionsLink = element(by.css('.notifications-section-mentions'));
 
   this.generateRandomString = function() {

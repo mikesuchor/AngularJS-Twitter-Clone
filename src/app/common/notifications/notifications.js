@@ -9,7 +9,4 @@ angular
   });
 
   function NotificationsController() {
-    var vm = this;
-    console.log(vm.tweet);
-    console.log(tweet);
   }

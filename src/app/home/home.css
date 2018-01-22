@@ -553,7 +553,7 @@ ul {
 }
 
 .notifications-section-all, .notifications-section-mentions {
-	color: #14171A;
+	color: #1DA1F2;
 	font-size: 18px;
 	font-weight: bold;
 	display: inline-block;
@@ -739,4 +739,8 @@ ul {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.active {
+	color: black;
 }

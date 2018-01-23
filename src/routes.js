@@ -16,7 +16,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: 'notifications',
       component: 'notifications',
       resolve: {
-        tweet: function(TweetService) {
+        tweets: function(TweetService) {
           return TweetService.getTweets();
         }
       }
@@ -25,7 +25,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: 'mentions',
       component: 'notifications',
       resolve: {
-        tweet: function(TweetService) {
+        tweets: function(TweetService) {
           return TweetService.getTweets();
         }
       }

@@ -23,7 +23,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('home.mentions', {
       url: 'mentions',
-      component: 'notifications',
+      component: 'mentions',
       resolve: {
         tweets: function(TweetService) {
           return TweetService.getTweets();

@@ -26,7 +26,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       component: 'mentions',
       resolve: {
         tweets: function(TweetService) {
-          return TweetService.getTweets();
+          return TweetService.getMentions();
         }
       }
     })

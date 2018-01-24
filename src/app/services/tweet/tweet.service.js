@@ -38,8 +38,8 @@
       var deferred = $q.defer();
       expressTweetResource.query().$promise.then(function(success) {
         deferred.resolve(success.reverse());
-        for(var i = success.length -1; i>=0; i-=1) {
-          if(success[i].name === "Michael Suchorolski") {
+        for (var i = success.length -1; i>=0; i-=1) {
+          if (success[i].name === 'Michael Suchorolski') {
             success.splice(i, 1);
           }
         }

@@ -1,10 +1,10 @@
 <section class="tweets-section">
     <div class="notifications-section-header">
       <a class="notifications-section-all" ui-sref="home.notifications" ui-sref-active="active">All</a>
-      <a class="notifications-section-mentions" ui-sref="home.mentions"ui-sref-active="active">Mentions</a>
+      <a class="notifications-section-mentions" ui-sref="home.mentions" ui-sref-active="active">Mentions</a>
     </div>
     <ul class="tweets-section-list">
-      <li ng-repeat="tweet in $ctrl.tweet">
+      <li ng-repeat="tweet in $ctrl.tweets">
         <div class="click-container">
           <img class="tweets-account" ng-src={{tweet.photo}}>
           <a class="tweets-name">{{tweet.name}}</a><span>{{"@" + tweet.handle}}</span>

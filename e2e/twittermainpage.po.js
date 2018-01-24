@@ -10,6 +10,11 @@ var TwitterMainPage = function() {
   var tweetCollection = element.all(by.repeater('tweet in $ctrl.tweets'));
   var interactionCollection = element.all(by.repeater('interaction in $ctrl.tweet.interactions'));
   var tweet = element.all(by.binding('$ctrl.tweet.tweet')).first();
+  var navbarNotificationsLink = element(by.css('[ui-sref=".notifications"]'));
+  var navbarMessagesLink = element(by.css('[ui-sref=".messages"]'));
+  var notificationsAllLink = element(by.css('[ui-sref="home.notifications"]'));
+  var notificationsMentionsLink = element(by.css('[ui-sref="home.mentions"]'));
+  var messagesCount = element.all(by.css('.messages-section-list li'));
 
   this.generateRandomString = function() {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
@@ -19,12 +24,32 @@ var TwitterMainPage = function() {
     browser.get('http://localhost:3000/');
   };
 
+  this.clickNavbarNotificationsLink = function() {
+    navbarNotificationsLink.click();
+  };
+
+  this.clickNavbarMessagesLink = function() {
+    navbarMessagesLink.click();
+  };
+
+  this.clickNotificationsMentionsLink = function() {
+    notificationsMentionsLink.click();
+  };
+
+  this.clickNotificationsAllLink = function() {
+    notificationsAllLink.click();
+  };
+
   this.tweetCount = function() {
     return tweetCollection.count();
   };
 
   this.interactionCount = function() {
     return interactionCollection.count();
+  };
+
+  this.messagesCount = function() {
+    return messagesCount.count();
   };
 
   this.composeTweet = function(randomString) {

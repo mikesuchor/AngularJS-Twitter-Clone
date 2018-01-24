@@ -523,7 +523,7 @@ ul {
 	font-size: 12px;
 }
 
-.messages-section-title, .notifications-section-all, .notifications-section-mentions {
+.messages-section-title, .notifications-section-all, .notifications-section-mentions, .mentions-section-all, .mentions-section-mentions {
 	margin-left: 10px;
 }
 
@@ -547,12 +547,12 @@ ul {
 	margin-right: 10px;
 }
 
-.notifications-section-header {
+.notifications-section-header, .mentions-section-header {
 	line-height: 50px;
 	border-bottom: 1px solid #E1E8ED;
 }
 
-.notifications-section-all, .notifications-section-mentions {
+.notifications-section-all, .notifications-section-mentions, .mentions-section-all, .mentions-section-mentions {
 	color: #1DA1F2;
 	font-size: 18px;
 	font-weight: bold;

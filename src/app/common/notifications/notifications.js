@@ -3,7 +3,7 @@ angular
   .component('notifications', {
     templateUrl: 'app/common/notifications/notifications.html',
     bindings: {
-      tweet: '<'
+      tweets: '<'
     },
     controller: NotificationsController
   });

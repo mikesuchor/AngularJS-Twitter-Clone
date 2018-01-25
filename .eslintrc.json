@@ -25,6 +25,10 @@
         ],
         "switch-colon-spacing": [
             "off"
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
         ]
     }
 }

@@ -12,6 +12,7 @@
 
     vm.getTweets = getTweets;
     vm.getTweetById = getTweetById;
+    vm.getMentions = getMentions;
     vm.postTweet = postTweet;
     vm.deleteTweet = deleteTweet;
     vm.postTweetInteraction = postTweetInteraction;
@@ -29,6 +30,19 @@
       var deferred = $q.defer();
       expressTweetResource.get({id: id}).$promise.then(function(success) {
         deferred.resolve(success);
+      });
+      return deferred.promise;
+    }
+
+    function getMentions() {
+      var deferred = $q.defer();
+      expressTweetResource.query().$promise.then(function(success) {
+        deferred.resolve(success.reverse());
+        for (var i = success.length -1; i>=0; i-=1) {
+          if (success[i].name === 'Michael Suchorolski') {
+            success.splice(i, 1);
+          }
+        }
       });
       return deferred.promise;
     }

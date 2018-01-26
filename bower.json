@@ -8,7 +8,6 @@
     "components-font-awesome": "^4.7.0",
     "angular-bootstrap": "^2.5.0",
     "angular-resource": "^1.6.6",
-    "ng-spin": "^1.0.2",
     "angular-busy": "^4.1.4"
   },
   "devDependencies": {

@@ -1,2 +1,2 @@
 angular
-  .module('app', ['cgBusy', 'ngResource', 'thatisuday.ng-spin', 'ui.bootstrap', 'ui.router']);
+  .module('app', ['cgBusy', 'ngResource', 'ui.bootstrap', 'ui.router']);

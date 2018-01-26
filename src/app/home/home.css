@@ -744,3 +744,11 @@ ul {
 .active {
 	color: black;
 }
+
+.cg-busy-fullscreen {
+	position: fixed;
+	top: 150px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}

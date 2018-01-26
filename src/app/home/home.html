@@ -1,57 +1,59 @@
-<navbar on-update-tweet="$ctrl.onUpdateTweet()"></navbar>
-<!-- Left column -->
-<div class="container-fluid"></div>
-  <div class="row">
-    <div class="left-column col-xs-3">
-      <!-- Profile section -->
-      <profile></profile>
-      <!-- Trends section -->
-      <trends></trends>
-    </div>
-    
-    <!-- Center column -->
-    <div ui-view class="center-column col-xs-6">
-      <!-- Compose tweet section -->
-      <compose-tweet type="tweet-home" on-update-tweet="$ctrl.onUpdateTweet()"></compose-tweet>
-      <!-- Tweets section -->
-      <tweet ng-repeat="tweet in $ctrl.tweets" tweet="tweet" type="tweet-home" on-update-tweet="$ctrl.onUpdateTweet()"></tweet>
-    </div>
+<div cg-busy="{promise:$ctrl.promise}">
+  <navbar on-update-tweet="$ctrl.onUpdateTweet()"></navbar>
+  <!-- Left column -->
+  <div class="container-fluid"></div>
+    <div class="row">
+      <div class="left-column col-xs-3">
+        <!-- Profile section -->
+        <profile></profile>
+        <!-- Trends section -->
+        <trends></trends>
+      </div>
+      
+      <!-- Center column -->
+      <div ui-view class="center-column col-xs-6">
+        <!-- Compose tweet section -->
+        <compose-tweet type="tweet-home" on-update-tweet="$ctrl.onUpdateTweet()"></compose-tweet>
+        <!-- Tweets section -->
+        <tweet ng-repeat="tweet in $ctrl.tweets" tweet="tweet" type="tweet-home" on-update-tweet="$ctrl.onUpdateTweet()"></tweet>
+      </div>
 
-    <!-- Right column -->
-    <div class="right-column col-xs-3">
-      <!-- Follow section -->
-      <follow></follow>
-      <!-- Find people section -->
-      <section class="find-people-section">
-        <div class="find-people-section-contacts">
-          <img src="http://icons.iconarchive.com/icons/dtafalonso/android-l/128/Gmail-icon.png">
-          <h2>Find people you know</h2>
-          <p>Import your contacts from Gmail</p>
-        </div>
-        <a href="#">Connect other address books</a>
-      </section>
-      <!-- About section -->
-      <section class="about-section">
-        <p>&copy; 2017 Twitter</p>
-        <a href="https://twitter.com/about">About</a>
-        <a href="https://support.twitter.com">Help Center</a>
-        <a href="https://twitter.com/tos">Terms</a>
-        <a href="https://twitter.com/privacy">Privacy policy</a>
-        <a href="https://support.twitter.com/articles/20170514">Cookies</a>
-        <a href="https://support.twitter.com/articles/20170451">Ads info</a>
-        <a href="https://about.twitter.com/press/brand-assets">Brand</a>
-        <a href="https://blog.twitter.com">Blog</a>
-        <a href="https://status.twitter.com">Status</a>
-        <a href="https://about.twitter.com/products">Apps</a>
-        <a href="https://about.twitter.com/careers">Jobs</a>
-        <a href="https://marketing.twitter.com">Marketing</a>
-        <a href="https://business.twitter.com">Businesses</a>
-        <a href="https://dev.twitter.com">Developers</a>
-      </section>
-      <!-- Advertise section -->
-      <section class="advertise-section">
-        <i class="fa fa-share-square-o" aria-hidden="true"></i><a class="advertise-section-link">Advertise with Twitter</a>
-      </section>
+      <!-- Right column -->
+      <div class="right-column col-xs-3">
+        <!-- Follow section -->
+        <follow></follow>
+        <!-- Find people section -->
+        <section class="find-people-section">
+          <div class="find-people-section-contacts">
+            <img src="http://icons.iconarchive.com/icons/dtafalonso/android-l/128/Gmail-icon.png">
+            <h2>Find people you know</h2>
+            <p>Import your contacts from Gmail</p>
+          </div>
+          <a href="#">Connect other address books</a>
+        </section>
+        <!-- About section -->
+        <section class="about-section">
+          <p>&copy; 2017 Twitter</p>
+          <a href="https://twitter.com/about">About</a>
+          <a href="https://support.twitter.com">Help Center</a>
+          <a href="https://twitter.com/tos">Terms</a>
+          <a href="https://twitter.com/privacy">Privacy policy</a>
+          <a href="https://support.twitter.com/articles/20170514">Cookies</a>
+          <a href="https://support.twitter.com/articles/20170451">Ads info</a>
+          <a href="https://about.twitter.com/press/brand-assets">Brand</a>
+          <a href="https://blog.twitter.com">Blog</a>
+          <a href="https://status.twitter.com">Status</a>
+          <a href="https://about.twitter.com/products">Apps</a>
+          <a href="https://about.twitter.com/careers">Jobs</a>
+          <a href="https://marketing.twitter.com">Marketing</a>
+          <a href="https://business.twitter.com">Businesses</a>
+          <a href="https://dev.twitter.com">Developers</a>
+        </section>
+        <!-- Advertise section -->
+        <section class="advertise-section">
+          <i class="fa fa-share-square-o" aria-hidden="true"></i><a class="advertise-section-link">Advertise with Twitter</a>
+        </section>
+      </div>
     </div>
   </div>
 </div>

@@ -77,8 +77,6 @@
     ]
   },
   "dependencies": {
-    "@cgross/angular-busy": "^4.1.4",
-    "ng-spin": "^1.0.2",
     "protractor": "^5.2.2"
   }
 }

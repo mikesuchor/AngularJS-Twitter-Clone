@@ -19,7 +19,6 @@
     function open() {
       var modalInstance = $uibModal.open({
         component: 'popupCompose',
-        windowClass: 'navbar-tweet-window',
         resolve: {
           tweet: function() {
             return vm.tweet;

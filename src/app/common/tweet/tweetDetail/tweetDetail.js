@@ -7,7 +7,8 @@
     templateUrl: 'app/common/tweet/tweetDetail/tweetDetail.html',
     bindings: {
       tweet: '<',
-      resolve: '<'
+      resolve: '<',
+      modalInstance: '<'
     },
     controller: TweetDetailController
   });
@@ -25,6 +26,9 @@
     function loadTweet() {
       TweetService.getTweetById(vm.resolve.tweet.id).then(function(success) {
         vm.tweet = success;
+        setTimeout(function() {
+          vm.modalInstance.close();
+        }, 3000);
       });
     }
   }

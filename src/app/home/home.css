@@ -747,8 +747,9 @@ ul {
 
 .cg-busy-fullscreen {
 	position: fixed;
-	top: 150px;
+	top: 0px;
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
+	z-index: 10000;
 }

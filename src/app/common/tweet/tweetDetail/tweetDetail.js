@@ -18,6 +18,7 @@
 
     vm.$onInit = $onInit;
     vm.loadTweet = loadTweet;
+    vm.closeModal = closeModal;
 
     function $onInit() {
       vm.loadTweet();
@@ -26,10 +27,11 @@
     function loadTweet() {
       TweetService.getTweetById(vm.resolve.tweet.id).then(function(success) {
         vm.tweet = success;
-        setTimeout(function() {
-          vm.modalInstance.close();
-        }, 3000);
       });
+    }
+
+    function closeModal() {
+      vm.modalInstance.close();
     }
   }
 })();

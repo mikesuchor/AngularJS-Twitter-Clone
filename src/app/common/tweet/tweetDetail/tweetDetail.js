@@ -25,7 +25,7 @@
     }
 
     function loadTweet() {
-      TweetService.getTweetById(vm.resolve.tweet.id).then(function(success) {
+      vm.promise = TweetService.getTweetById(vm.resolve.tweet.id).then(function(success) {
         vm.tweet = success;
       });
     }

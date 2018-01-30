@@ -3,6 +3,6 @@ angular
   .value('cgBusyDefaults',{
     message:'Please Wait...',
     backdrop: true,
-    minDuration: 1000,
+    minDuration: 3000,
     wrapperClass: 'cg-busy-fullscreen'
   });

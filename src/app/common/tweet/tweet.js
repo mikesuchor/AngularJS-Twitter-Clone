@@ -38,7 +38,6 @@
 
     function deleteTweet(id) {
       TweetService.deleteTweet(id).then(function() {
-
         vm.onUpdateTweet();
       });
     }

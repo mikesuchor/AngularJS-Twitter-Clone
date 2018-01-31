@@ -8,5 +8,12 @@ angular
     controller: MentionsController
   });
 
-  function MentionsController() {
-  }
+function MentionsController(TweetService) {
+  var vm = this;
+
+  vm.$onInit = function() {
+    vm.promise = TweetService.getMentions().then(function(success) {
+      vm.tweets = success;
+    });
+  };
+}

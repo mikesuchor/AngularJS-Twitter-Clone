@@ -14,21 +14,11 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('home.notifications', {
       url: 'notifications',
-      component: 'notifications',
-      resolve: {
-        tweets: function(TweetService) {
-          return TweetService.getTweets();
-        }
-      }
+      component: 'notifications'
     })
     .state('home.mentions', {
       url: 'mentions',
-      component: 'mentions',
-      resolve: {
-        tweets: function(TweetService) {
-          return TweetService.getMentions();
-        }
-      }
+      component: 'mentions'
     })
     .state('home.messages', {
       url: 'messages',

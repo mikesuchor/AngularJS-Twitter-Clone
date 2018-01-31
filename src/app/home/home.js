@@ -13,9 +13,11 @@
 
     vm.onUpdateTweet = onUpdateTweet;
 
-    vm.promise = TweetService.getTweets().then(function(success) {
-      vm.tweets = success;
-    });
+    vm.$onInit = function() {
+      vm.promise = TweetService.getTweets().then(function(success) {
+        vm.tweets = success;
+      });
+    };
 
     function onUpdateTweet() {
       vm.promise = TweetService.getTweets().then(function(success) {

@@ -5,5 +5,5 @@ angular
     controller: MessagesController
   });
 
-  function MessagesController() {
-  }
+function MessagesController() {
+}

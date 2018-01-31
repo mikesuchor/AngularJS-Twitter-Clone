@@ -8,7 +8,7 @@ describe('notifications component', function() {
 
   function mockServices($provide) {
     $provide.factory('TweetService', function() {
-        return tweetServiceMock;
+      return tweetServiceMock;
     });
   }
 

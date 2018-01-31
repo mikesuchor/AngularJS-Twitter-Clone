@@ -8,5 +8,12 @@ angular
     controller: NotificationsController
   });
 
-  function NotificationsController() {
-  }
+function NotificationsController(TweetService) {
+  var vm = this;
+
+  vm.$onInit = function() {
+    vm.promise = TweetService.getTweets().then(function(success) {
+      vm.tweets = success;
+    });
+  };
+}

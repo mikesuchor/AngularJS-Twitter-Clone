@@ -7,7 +7,8 @@
     templateUrl: 'app/common/tweet/tweetDetail/tweetDetail.html',
     bindings: {
       tweet: '<',
-      resolve: '<'
+      resolve: '<',
+      modalInstance: '<'
     },
     controller: TweetDetailController
   });
@@ -17,15 +18,20 @@
 
     vm.$onInit = $onInit;
     vm.loadTweet = loadTweet;
+    vm.closeModal = closeModal;
 
     function $onInit() {
       vm.loadTweet();
     }
 
     function loadTweet() {
-      TweetService.getTweetById(vm.resolve.tweet.id).then(function(success) {
+      vm.promise = TweetService.getTweetById(vm.resolve.tweet.id).then(function(success) {
         vm.tweet = success;
       });
+    }
+
+    function closeModal() {
+      vm.modalInstance.close();
     }
   }
 })();

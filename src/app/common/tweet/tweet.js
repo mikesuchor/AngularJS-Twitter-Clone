@@ -22,7 +22,7 @@
     vm.deleteTweetInteraction = deleteTweetInteraction;
 
     function open() {
-      $uibModal.open({
+      var modalInstance = $uibModal.open({
         component: 'tweetDetail',
         size: 'lg',
         resolve: {
@@ -30,6 +30,9 @@
             return vm.tweet;
           }
         }
+      });
+      modalInstance.result.then(function() {
+        vm.onUpdateTweet();
       });
     }
 

@@ -5,6 +5,9 @@
   .module('app')
   .component('home', {
     templateUrl: 'app/home/home.html',
+    bindings: {
+      tweets: '='
+    },
     controller: HomeController
   });
 

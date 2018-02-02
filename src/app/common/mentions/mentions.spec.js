@@ -1,15 +1,20 @@
 describe('mentions component', function() {
-  beforeEach(module('app', function($provide) {
-    $provide.factory('mentions', function() {
-      return {
-        templateUrl: 'app/mentions.html'
-      };
-    });
+  var TweetService;
+  var $q;
+  var deferred;
+  var promise;
+
+  beforeEach(module('app'));
+  beforeEach(inject(function(_TweetService_, _$q_) {
+    TweetService = _TweetService_;
+    $q = _$q_;
+    deferred = $q.defer();
+    promise = deferred.promise;
   }));
 
-  it('should...', angular.mock.inject(function($rootScope, $compile) {
-    var element = $compile('<mentions></mentions>')($rootScope);
-    $rootScope.$digest();
-    expect(element).not.toBeNull();
-  }));
+  it('should call TweetService to get mentions', function() {
+    spyOn(TweetService, 'getMentions').and.returnValue(promise);
+    TweetService.getMentions();
+    expect(TweetService.getMentions).toHaveBeenCalled();
+  });
 });

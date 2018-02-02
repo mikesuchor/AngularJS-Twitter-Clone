@@ -1,1 +1,6 @@
-<tweet ng-repeat="tweet in $ctrl.tweets" tweet="tweet" type="tweet-home" on-update-tweet="$ctrl.onUpdateTweet()"></tweet>
+<div cg-busy="{promise:$ctrl.promise}">
+    <!-- Compose tweet section -->
+    <compose-tweet type="tweet-home" on-update-tweet="$ctrl.onUpdateTweet()"></compose-tweet>
+    <!-- Tweet section -->
+    <tweet ng-repeat="tweet in $ctrl.tweets" tweet="tweet" type="tweet-home" on-update-tweet="$ctrl.onUpdateTweet()"></tweet>
+</div>

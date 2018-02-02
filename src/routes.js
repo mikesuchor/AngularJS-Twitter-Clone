@@ -8,19 +8,23 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('home', {
+    .state('main', {
       url: '/',
+      component: 'main'
+    })
+    .state('main.home', {
+      url: 'home',
       component: 'home'
     })
-    .state('home.notifications', {
+    .state('main.notifications', {
       url: 'notifications',
       component: 'notifications'
     })
-    .state('home.mentions', {
+    .state('main.mentions', {
       url: 'mentions',
       component: 'mentions'
     })
-    .state('home.messages', {
+    .state('main.messages', {
       url: 'messages',
       component: 'messages'
     });

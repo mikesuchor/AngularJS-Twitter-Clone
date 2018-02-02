@@ -4,14 +4,14 @@ describe('Twitter App', function() {
   var twitterMainPage = new TwitterMainPage();
 
   it('should navigate to /mentions from /notifications', function() {
-    twitterMainPage.loadHomePage();
+    twitterMainPage.loadMainPage();
     twitterMainPage.clickNavbarNotificationsLink();
     twitterMainPage.clickNotificationsMentionsLink();
     expect(browser.getCurrentUrl()).toBe('http://localhost:3000/mentions');
   });
 
   it('should display tweets in /mentions', function() {
-    twitterMainPage.loadHomePage();
+    twitterMainPage.loadMainPage();
     twitterMainPage.composeTweet('test');
     twitterMainPage.clickNavbarNotificationsLink();
     twitterMainPage.clickNotificationsMentionsLink();
@@ -19,7 +19,7 @@ describe('Twitter App', function() {
   });
 
   afterAll(function() {
-    twitterMainPage.loadHomePage();
+    twitterMainPage.loadMainPage();
     twitterMainPage.deleteTweet();
   });
 });

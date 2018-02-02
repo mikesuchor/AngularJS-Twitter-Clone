@@ -5,7 +5,7 @@ describe('Twitter App', function() {
 
   beforeEach(function() {
     var randomString = twitterMainPage.generateRandomString();
-    twitterMainPage.loadHomePage();
+    twitterMainPage.loadMainPage();
     twitterMainPage.composeTweet(randomString);
     twitterMainPage.openTweetDetail();
     twitterMainPage.composeTweetInteraction(randomString);

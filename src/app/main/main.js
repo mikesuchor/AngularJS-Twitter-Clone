@@ -14,7 +14,7 @@
     vm.onComposeTweet = onComposeTweet;
 
     function onComposeTweet() {
-      TweetService.getTweets().then(function(success) {
+      vm.promise = TweetService.getTweets().then(function(success) {
         vm.tweets = success;
       });
     }

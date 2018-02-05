@@ -16,17 +16,9 @@
 
     vm.onUpdateTweet = onUpdateTweet;
 
-    $scope.$on('NavbarUpdateTweet', function onUpdateTweet() {
-      vm.promise = TweetService.getTweets().then(function(success) {
-        vm.tweets = success;
-      });
-    });
+    vm.$onInit = onUpdateTweet();
 
-    vm.$onInit = function() {
-      vm.promise = TweetService.getTweets().then(function(success) {
-        vm.tweets = success;
-      });
-    };
+    $scope.$on('HomeRefreshTweets', onUpdateTweet);
 
     function onUpdateTweet() {
       vm.promise = TweetService.getTweets().then(function(success) {

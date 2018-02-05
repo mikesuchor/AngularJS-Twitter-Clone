@@ -25,9 +25,13 @@ describe('tweet component', function() {
   }));
 
   it('should open a tweet detail modal', function() {
-    var ctrl = $componentController('tweet', $uibModal);
-    spyOn($uibModal, 'open');
+    var onUpdateTweetSpy = jasmine.createSpy('onUpdateTweet');
+    var bindings = {onUpdateTweet: onUpdateTweetSpy};
+    spyOn($uibModal, 'open').and.returnValue({result: promise});
+    var ctrl = $componentController('tweet', $uibModal, bindings);
     ctrl.open();
+    deferred.resolve();
+    $scope.$apply();
     expect($uibModal.open).toHaveBeenCalled();
   });
 

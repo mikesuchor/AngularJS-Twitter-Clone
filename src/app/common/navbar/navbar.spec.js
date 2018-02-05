@@ -26,15 +26,4 @@ describe('navbar component', function() {
     $scope.$apply();
     expect($uibModal.open).toHaveBeenCalled();
   });
-
-  it('should run onUpdateTweet function after opening the modal', function() {
-    var onUpdateTweetSpy = jasmine.createSpy('onUpdateTweet');
-    var bindings = {onUpdateTweet: onUpdateTweetSpy};
-    spyOn($uibModal, 'open').and.returnValue({result: promise});
-    var ctrl = $componentController('navbar', $uibModal, bindings);
-    ctrl.open();
-    deferred.resolve();
-    $scope.$apply();
-    expect(onUpdateTweetSpy).toHaveBeenCalled();
-  });
 });

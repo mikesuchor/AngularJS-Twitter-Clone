@@ -5,7 +5,7 @@ describe('Twitter App', function() {
 
   it('should post a tweet on the main page', function() {
     var randomString = twitterMainPage.generateRandomString();
-    twitterMainPage.loadHomePage();
+    twitterMainPage.loadMainPage();
     twitterMainPage.composeTweet(randomString);
     expect(twitterMainPage.tweetText()).toEqual(randomString);
   });

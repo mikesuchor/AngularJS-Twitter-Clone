@@ -5,13 +5,10 @@
   .module('app')
   .component('navbar', {
     templateUrl: 'app/common/navbar/navbar.html',
-    bindings: {
-      onUpdateTweet: '&'
-    },
     controller: NavbarController
   });
 
-  function NavbarController($uibModal) {
+  function NavbarController($uibModal, $scope) {
     var vm = this;
 
     vm.open = open;
@@ -26,7 +23,7 @@
         }
       });
       modalInstance.result.then(function() {
-        vm.onUpdateTweet();
+        $scope.$emit('NavbarUpdateTweet');
       });
     }
   }

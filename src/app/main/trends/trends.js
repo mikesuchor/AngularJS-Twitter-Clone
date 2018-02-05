@@ -4,7 +4,7 @@
   angular
   .module('app')
   .component('trends', {
-    templateUrl: 'app/home/trends/trends.html',
+    templateUrl: 'app/main/trends/trends.html',
     controller: TrendsController
   });
 

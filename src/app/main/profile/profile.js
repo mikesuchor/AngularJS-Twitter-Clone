@@ -4,7 +4,7 @@
   angular
   .module('app')
   .component('profile', {
-    templateUrl: 'app/home/profile/profile.html',
+    templateUrl: 'app/main/profile/profile.html',
     controller: ProfileController
   });
 

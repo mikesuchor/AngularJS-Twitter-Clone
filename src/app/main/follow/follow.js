@@ -4,7 +4,7 @@
   angular
   .module('app')
   .component('follow', {
-    templateUrl: 'app/home/follow/follow.html',
+    templateUrl: 'app/main/follow/follow.html',
     controller: FollowController
   });
 

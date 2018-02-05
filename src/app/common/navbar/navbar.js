@@ -8,7 +8,7 @@
     controller: NavbarController
   });
 
-  function NavbarController($uibModal, $rootScope) {
+  function NavbarController($uibModal, $scope) {
     var vm = this;
 
     vm.open = open;
@@ -23,7 +23,7 @@
         }
       });
       modalInstance.result.then(function() {
-        $rootScope.$broadcast('NavbarUpdateTweet');
+        $scope.$emit('NavbarUpdateTweet');
       });
     }
   }

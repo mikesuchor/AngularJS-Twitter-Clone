@@ -8,10 +8,14 @@
     controller: MainController
   });
 
-  function MainController(TweetService) {
+  function MainController(TweetService, $scope) {
     var vm = this;
 
     vm.onComposeTweet = onComposeTweet;
+
+    $scope.$on('NavbarUpdateTweet', function() {
+      $scope.$broadcast('HomeRefreshTweets');
+    })
 
     function onComposeTweet() {
       vm.promise = TweetService.getTweets().then(function(success) {

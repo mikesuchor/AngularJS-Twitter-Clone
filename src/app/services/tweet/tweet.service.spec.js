@@ -11,10 +11,21 @@ describe('TweetService', function() {
   var expressTweetResource = 'http://localhost:5000/tweets';
   var expressTweetResourceWithId = 'http://localhost:5000/tweets/' + id;
 
-  beforeEach(module('app'));
+  beforeEach(module('app', function($provide, $translateProvider) {
+    $provide.factory('customLoader', function($q) {
+      return function() {
+        var deferred = $q.defer();
+        deferred.resolve({});
+        return deferred.promise;
+      };
+    });
+    $translateProvider.useLoader('customLoader');
+  }));
+
   beforeEach(function() {
     installPromiseMatchers();
   });
+
   beforeEach(inject(function(_$httpBackend_, _TweetService_, _$q_) {
     $httpBackend = _$httpBackend_;
     TweetService = _TweetService_;

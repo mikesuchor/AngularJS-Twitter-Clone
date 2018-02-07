@@ -1,0 +1,72 @@
+{
+  "COMPOSETWEET": {
+    "WHATS_HAPPENING": "What's happening?",
+    "TWEET": "Tweet",
+    "REPLYING_TO": "Replying to ",
+    "TWEET_YOUR_REPLY": "Tweet your reply",
+    "REPLY": "Reply"
+  },
+  "MENTIONS": {
+    "ALL": "All",
+    "MENTIONS": "Mentions"
+  },
+  "MESSAGES": {
+    "DIRECT_MESSAGES": "Direct Messages",
+    "NEW_MESSAGE": "New Message"
+  },
+  "NAVBAR": {
+    "HOME": "Home",
+    "NOTIFICATIONS": "Notifications",
+    "MESSAGES": "Messages",
+    "SEARCH_TWITTER": "Search Twitter",
+    "TWEET": "Tweet"
+  },
+  "NOTIFICATIONS": {
+    "ALL": "All",
+    "MENTIONS": "Mentions"
+  },
+  "POPUPCOMPOSE": {
+    "COMPOSE_NEW_TWEET": "Compose new Tweet",
+    "WHATS_HAPPENING": "What's happening?",
+    "TWEET": "Tweet"
+  },
+  "TWEET": {
+    "DELETE_TWEET": "Delete Tweet"
+  },
+  "FOLLOW": {
+    "WHO_TO_FOLLOW": "Who to follow",
+    "REFRESH": "Refresh",
+    "VIEW_ALL": "View all",
+    "FOLLOW": "Follow"
+  },
+  "PROFILE": {
+    "TWEETS": "Tweets",
+    "FOLLOWING": "Following",
+    "FOLLOWERS": "Followers"
+  },
+  "TRENDS": {
+    "TRENDS_FOR_YOU": "Trends for you",
+    "CHANGE": "Change"
+  },
+  "MAIN": {
+    "FIND_PEOPLE": "Find people you know",
+    "IMPORT_CONTACTS_GMAIL": "Import your contacts from Gmail",
+    "CONNECT_ADDRESS_BOOKS": "Connect other address books",
+    "2018_TWITTER": "2018 Twitter",
+    "ABOUT": "About",
+    "HELP_CENTER": "Help Center",
+    "TERMS": "Terms",
+    "PRIVACY_POLICY": "Privacy policy",
+    "COOKIES": "Cookies",
+    "ADS_INFO": "Ads info",
+    "BRAND": "Brand",
+    "BLOG": "Blog",
+    "STATUS": "Status",
+    "APPS": "Apps",
+    "JOBS": "Jobs",
+    "MARKETING": "Marketing",
+    "BUSINESSES": "Businesses",
+    "DEVELOPERS": "Developers",
+    "ADVERTISE_WITH_TWITTER": "Advertise with Twitter"
+  }
+}

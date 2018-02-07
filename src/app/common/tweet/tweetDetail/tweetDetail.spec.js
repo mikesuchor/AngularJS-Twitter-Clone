@@ -6,7 +6,17 @@ describe('tweetDetail component', function() {
   var deferred;
   var promise;
 
-  beforeEach(module('app'));
+  beforeEach(module('app', function($provide, $translateProvider) {
+    $provide.factory('customLoader', function($q) {
+      return function() {
+        var deferred = $q.defer();
+        deferred.resolve({});
+        return deferred.promise;
+      };
+    });
+    $translateProvider.useLoader('customLoader');
+  }));
+
   beforeEach(inject(function(_$componentController_, _TweetService_, _$q_, _$rootScope_) {
     $componentController = _$componentController_;
     TweetService = _TweetService_;

@@ -15,7 +15,7 @@
 
     $scope.$on('NavbarUpdateTweet', function() {
       $scope.$broadcast('HomeRefreshTweets');
-    })
+    });
 
     function onComposeTweet() {
       vm.promise = TweetService.getTweets().then(function(success) {

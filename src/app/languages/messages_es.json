@@ -1,0 +1,73 @@
+{
+    "COMPOSETWEET": {
+      "WHATS_HAPPENING": "¿Qué está pasando?",
+      "TWEET": "Twittear",
+      "REPLYING_TO": "Respondiendo a ",
+      "TWEET_YOUR_REPLY": "Tweet tu respuesta",
+      "REPLY": "Respuesta"
+    },
+    "MENTIONS": {
+      "ALL": "Todo",
+      "MENTIONS": "Menciones"
+    },
+    "MESSAGES": {
+      "DIRECT_MESSAGES": "Mensajes directos",
+      "NEW_MESSAGE": "Mensaje nuevo"
+    },
+    "NAVBAR": {
+      "HOME": "Inicio",
+      "NOTIFICATIONS": "Notificaciones",
+      "MESSAGES": "Mensajes",
+      "SEARCH_TWITTER": "Buscar en Twitter",
+      "TWEET": "Twittear"
+    },
+    "NOTIFICATIONS": {
+      "ALL": "Todo",
+      "MENTIONS": "Menciones"
+    },
+    "POPUPCOMPOSE": {
+      "COMPOSE_NEW_TWEET": "Redactar un nuevo Tweet",
+      "WHATS_HAPPENING": "¿Qué está pasando?",
+      "TWEET": "Twittear"
+    },
+    "TWEET": {
+      "DELETE_TWEET": "Eliminar Tweet"
+    },
+    "FOLLOW": {
+      "WHO_TO_FOLLOW": "A quién seguir",
+      "REFRESH": "Actualizar",
+      "VIEW_ALL": "Ver todos",
+      "FOLLOW": "Seguir"
+    },
+    "PROFILE": {
+      "TWEETS": "Tweets",
+      "FOLLOWING": "Siguiendo",
+      "FOLLOWERS": "Seguidores"
+    },
+    "TRENDS": {
+      "TRENDS_FOR_YOU": "Tendencias para ti",
+      "CHANGE": "Cambiar"
+    },
+    "MAIN": {
+      "FIND_PEOPLE": "Encuentra a personas que conoces",
+      "IMPORT_CONTACTS_GMAIL": "Importa tus contactos de Gmail",
+      "CONNECT_ADDRESS_BOOKS": "Conecta otras libretas de direcciones",
+      "2018_TWITTER": "2018 Twitter",
+      "ABOUT": "Sobre Nosotros",
+      "HELP_CENTER": "Centro de Ayuda",
+      "TERMS": "Condiciones",
+      "PRIVACY_POLICY": "Política de privacidad",
+      "COOKIES": "Cookies",
+      "ADS_INFO": "Información sobre anuncios",
+      "BRAND": "Marca",
+      "BLOG": "Blog",
+      "STATUS": "Estado",
+      "APPS": "Aplicaciones",
+      "JOBS": "Empleos",
+      "MARKETING": "Marketing",
+      "BUSINESSES": "Empresas",
+      "DEVELOPERS": "Desarrolladores",
+      "ADVERTISE_WITH_TWITTER": "Publicitar en Twitter"
+    }
+  }
+  

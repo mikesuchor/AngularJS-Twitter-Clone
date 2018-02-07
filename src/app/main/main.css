@@ -46,7 +46,7 @@ ul {
 	background: #FFFFFF;
 	border-bottom: 1px solid #AAB8C2;
 	box-shadow: 1px 1px #E1E8ED;
-	padding: 0px 35px;
+	padding: 0px 12px 0px 35px;
 	height: 40px;
 	line-height: 50px;
 }
@@ -136,13 +136,35 @@ ul {
 	font-weight: bold;
 }
 
-.navbar-btn:focus, .compose-tweet-btn:focus, .padding-compose-tweet-btn:focus {
+.navbar-btn {
+	margin-right: 10px;
+}
+
+.navbar-btn:focus, .navbar-flag-btn:focus, .compose-tweet-btn:focus, .padding-compose-tweet-btn:focus {
 	outline: 0;
 }
 
 .navbar-btn:hover, .compose-tweet-btn:hover {
 	color: #FFFFFF;
 	background: #1DA1F2;
+}
+
+.navbar-flag-btn {
+	height: 32px;
+	width: 40px;
+	border: none;
+	vertical-align: middle;
+	margin-right: 0px;
+}
+
+.usa-flag-btn {
+	background: url('/images/usa_flag.png') no-repeat;
+	background-size: 100% 100%;
+}
+
+.bo-flag-btn {
+	background: url('/images/bolivia_flag.png') no-repeat;
+	background-size: 100% 100%;
 }
 
 .fa-twitter {

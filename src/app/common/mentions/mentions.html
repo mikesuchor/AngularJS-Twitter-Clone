@@ -1,8 +1,8 @@
 <div cg-busy="{promise:$ctrl.promise}">
   <section class="tweets-section">
     <div class="mentions-section-header">
-      <a class="mentions-section-all" ui-sref="main.notifications" ui-sref-active="active">All</a>
-      <a class="mentions-section-mentions" ui-sref="main.mentions" ui-sref-active="active">Mentions</a>
+      <a class="mentions-section-all" ui-sref="main.notifications" ui-sref-active="active">{{'MENTIONS.ALL' | translate}}</a>
+      <a class="mentions-section-mentions" ui-sref="main.mentions" ui-sref-active="active">{{'MENTIONS.MENTIONS' | translate}}</a>
     </div>
     <ul class="tweets-section-list">
       <li ng-repeat="tweet in $ctrl.tweets">

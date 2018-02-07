@@ -775,3 +775,62 @@ ul {
 	bottom: 0px;
 	z-index: 10000;
 }
+
+.login-page {
+	font-size: 0;
+}
+
+.login-sections {
+	display: inline-block;
+	height: 619px;
+	width: 50%;
+}
+
+.left-half-login-page {
+	vertical-align: top;
+	background: url('/images/left-side-login-image.png') no-repeat;
+}
+
+.login-page-slogans-container {
+	margin-top: 33%;
+}
+
+.login-page-slogans {
+	font-size: 18px;
+	color: #fff;
+	margin-left: 25%;
+	margin-bottom: 42px;
+}
+
+.login-page-slogans i {
+	font-size: 30px;
+	color: #fff;
+	margin-right: 10px;
+}
+
+.right-half-login-page {
+	background-color: #fff;
+	text-align: center;
+}
+
+.right-half-login-page h1 {
+	margin: 0px;
+	display: block;
+	font-size: 25px;
+}
+
+.right-half-login-page h2 {
+	font-size: 16px;
+}
+
+.right-half-slogans-container {
+	display: inline-block;
+	text-align: left;
+}
+
+.register-form .form-group {
+	margin: 20px auto;
+	width: 350px;
+	height: 20px;
+	padding: 12px;
+}

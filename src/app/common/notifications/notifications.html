@@ -8,7 +8,7 @@
       <li ng-repeat="tweet in $ctrl.tweets">
         <div class="click-container">
           <img class="tweets-account" ng-src={{tweet.photo}}>
-          <a class="tweets-name">{{tweet.name}}</a><span>{{"@" + tweet.handle}}</span>
+          <a class="tweets-name">{{tweet.name}}</a><span>{{"@" + tweet.username}}</span>
         </div>
         <div class="click-container">
           <p class="tweets-tweet">{{tweet.tweet}}</p>

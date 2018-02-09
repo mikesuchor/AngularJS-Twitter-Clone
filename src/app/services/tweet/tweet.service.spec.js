@@ -50,7 +50,7 @@ describe('TweetService', function() {
     $httpBackend.expectGET(expressTweetResourceWithId).respond({
       photo: ':)',
       name: 'A',
-      handle: '@abc',
+      username: '@abc',
       id: id
     });
     var result = TweetService.getTweetById(id);
@@ -58,7 +58,7 @@ describe('TweetService', function() {
     expect(result).toBeResolvedWith({
       photo: ':)',
       name: 'A',
-      handle: '@abc',
+      username: '@abc',
       id: id
     });
   });
@@ -67,7 +67,7 @@ describe('TweetService', function() {
     $httpBackend.expectPOST(expressTweetResource).respond({
       photo: 'https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg',
       name: 'Michael Suchorolski',
-      handle: 'mikesuchor',
+      username: 'mikesuchor',
       tweet: composetweet
     });
     var result = TweetService.postTweet(composetweet);
@@ -75,7 +75,7 @@ describe('TweetService', function() {
     expect(result).toBeResolvedWith({
       photo: 'https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg',
       name: 'Michael Suchorolski',
-      handle: 'mikesuchor',
+      username: 'mikesuchor',
       tweet: composetweet
     });
   });
@@ -84,7 +84,7 @@ describe('TweetService', function() {
     $httpBackend.expectDELETE(expressTweetResourceWithId).respond({
       photo: ':)',
       name: 'A',
-      handle: '@abc',
+      username: '@abc',
       id: id
     });
     var result = TweetService.deleteTweet(id);
@@ -92,7 +92,7 @@ describe('TweetService', function() {
     expect(result).toBeResolvedWith({
       photo: ':)',
       name: 'A',
-      handle: '@abc',
+      username: '@abc',
       id: id
     });
   });

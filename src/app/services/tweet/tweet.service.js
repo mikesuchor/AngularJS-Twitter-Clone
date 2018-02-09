@@ -53,7 +53,7 @@
         {
           photo: 'https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg',
           name: 'Michael Suchorolski',
-          handle: 'mikesuchor',
+          username: 'mikesuchor',
           tweet: composetweet
         }).$promise.then(function(success) {
           deferred.resolve(success);

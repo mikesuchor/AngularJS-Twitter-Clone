@@ -1,3 +1,4 @@
+<!-- <div cg-busy="{promise:$ctrl.promise}"> -->
 <div>
   <div class="login-page">
     <section class="login-section left-half-login-page">
@@ -11,13 +12,13 @@
       <div class="login-page-login-container">
         <form class="form-inline login-form">
           <div class="form-group">
-            <input class="form-control login-username-field" type="text" pattern="[a-zA-Z0-9-]{5,20}" placeholder="Username" required>
+            <input class="form-control login-username-field" ng-model="username" type="text" pattern="[a-zA-Z0-9-]{5,20}" placeholder="Username" required>
           </div>
           <div class="form-group">
-            <input class="form-control login-password-field" type="password" pattern="[a-zA-Z0-9-]{5,20}" placeholder="Password" required>
+            <input class="form-control login-password-field" ng-model="password" type="password" pattern="[a-zA-Z0-9-]{5,20}" placeholder="Password" required>
             <p class="login-form-forgot">Forgot password?</p>
           </div>
-          <button type="submit" class="btn btn-default login-btn" ng-click="$ctrl.login()">Log in</button>
+          <button type="submit" class="btn btn-default login-btn" ng-click="$ctrl.login(username, password)">Log in</button>
         </form>
         <form class="register-form">
           <div class="right-half-slogans-container">

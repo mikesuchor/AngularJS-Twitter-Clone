@@ -504,7 +504,7 @@ ul {
 	margin-right: 5px;
 }
 
-.tweet-detail-handle {
+.tweet-detail-username {
 	font-size: 14px;
 	color: #657786;
 	margin-left: 58px;
@@ -819,7 +819,7 @@ ul {
 .right-half-login-page h1 {
 	margin: 0px;
 	display: block;
-	font-size: 25px;
+	font-size: 26px;
 }
 
 .right-half-login-page h2 {
@@ -834,8 +834,7 @@ ul {
 
 .login-form {
 	text-align: center;
-	padding-left: 0px;
-	margin-top: 10px;
+	margin-top: 2px;
 	padding-left: 20px;
 	padding-right: 20px;
 }
@@ -845,7 +844,7 @@ ul {
 	box-shadow: none;
 	border-radius: 3px;
 	height: 46px;
-	width: 210;
+	width: 210px;
 	padding: 12px;
 	margin-right: 12px;
 	font-weight: normal;
@@ -914,6 +913,10 @@ ul {
 	border: 1px solid #1DA1F2;
 	box-shadow: none;
 	color: #14171A;
+}
+
+.login-btn:focus, .register-btn:focus {
+	outline: none;
 }
 
 .login-page-footer {

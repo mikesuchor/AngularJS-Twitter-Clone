@@ -25,10 +25,10 @@ router.get('/', cors(), function(req, res, next) {
 router.post('/', cors(), function(req, res, next) {
   usersInDatabase.forEach(function(dbuser) {
     if (dbuser.username === req.body.username && dbuser.password === req.body.password) {
-      res.status(200).json();
+      res.status(200).json(true);
     }
   });
-  res.status(400).send('Username/password combination was not found');
+  res.status(404).json(false);
 });
 
 module.exports = router;

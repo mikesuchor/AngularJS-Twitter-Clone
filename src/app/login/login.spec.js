@@ -1,15 +1,26 @@
 describe('login component', function() {
-  beforeEach(module('app', function($provide) {
-    $provide.factory('login', function() {
-      return {
-        templateUrl: 'app/login.html'
-      };
-    });
+  var LoginService;
+  var $q;
+  var deferred;
+  var promise;
+  var username;
+  var password;
+
+  beforeEach(module('app'));
+  beforeEach(inject(function(_$componentController_, _LoginService_, _$q_) {
+    $componentController = _$componentController_;
+    LoginService = _LoginService_;
+    $q = _$q_;
+    deferred = $q.defer();
+    promise = deferred.promise;
+    username = 'testusername';
+    password = 'testpassword';
   }));
 
-  it('should...', angular.mock.inject(function($rootScope, $compile) {
-    var element = $compile('<login></login>')($rootScope);
-    $rootScope.$digest();
-    expect(element).not.toBeNull();
-  }));
+  it('should call LoginService after attempting to login', function() {
+    spyOn(LoginService, 'postUser').and.returnValue(promise);
+    var ctrl = $componentController('login', LoginService);
+    ctrl.login(username, password);
+    expect(LoginService.postUser).toHaveBeenCalledWith(username, password);
+  });
 });

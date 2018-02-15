@@ -1,0 +1,171 @@
+
+.login-page {
+	font-size: 0;
+}
+
+.login-section {
+	display: inline-block;
+	height: 617px;
+	width: 50%;
+}
+
+.left-half-login-page {
+	vertical-align: top;
+	background: url('/images/left-side-login-image.png') no-repeat;
+}
+
+.login-page-slogans-container {
+	margin-top: 205px;
+}
+
+.login-page-slogans {
+	font-size: 18px;
+	color: #fff;
+	margin-left: 160px;
+	margin-bottom: 22px;
+}
+
+.login-page-slogans i {
+	font-size: 30px;
+	color: #fff;
+	margin-right: 18px;
+	vertical-align: middle;
+}
+
+.right-half-login-page {
+	background-color: #fff;
+}
+
+.right-half-login-page h1 {
+	margin: 0px;
+	display: block;
+	font-size: 26px;
+}
+
+.right-half-login-page h2 {
+	font-size: 18px;
+	margin-bottom: 28px;
+}
+
+.right-half-slogans-container {
+	display: inline-block;
+	text-align: left;
+}
+
+.login-form {
+	text-align: center;
+	margin-top: 2px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.login-form .form-control {
+	border: 1px solid #E1E8ED;
+	box-shadow: none;
+	border-radius: 3px;
+	height: 46px;
+	width: 210px;
+	padding: 12px;
+	margin-right: 12px;
+	font-weight: normal;
+}
+
+.login-username-field-with-fail {
+	margin-top: 30px;
+}
+
+.login-password-field {
+	margin-top: 30px;
+}
+
+.login-form-forgot {
+	color: #AAB8C2;
+	font-size: 14px;
+	text-align: left;
+}
+
+.login-form-failed {
+	color: red;
+	font-size: 14px;
+	text-align: left;
+}
+
+.ng-show {
+	color: black;
+}
+
+.login-form .login-btn {
+	width: 66.7px;
+	height: 46px;
+	padding: 12px;
+	border-radius: 100px;
+	border: 1px solid #1DA1F2;
+	color: #1DA1F2;
+	font-weight: bold;
+}
+
+.register-form {
+	width: 376px;
+	margin: auto;
+}
+
+.register-form .fa-twitter {
+	font-size: 50px;
+	margin-top: 40px;
+	margin-bottom: 22px;
+}
+
+.register-form .form-control {
+	border: 1px solid #E1E8ED;
+	box-shadow: none;
+	border-radius: 3px;
+	height: 46px;
+	padding: 12px;
+	margin-bottom: 18px;
+	font-weight: normal;
+}
+
+.register-form .register-btn {
+	width: 107.23;
+	height: 34px;
+	padding: 6px 16px;
+	border-radius: 100px;
+	border: 1px solid #1DA1F2;
+	background-color: #1DA1F2;
+	color: #fff;
+	font-weight: bold;
+}
+
+.register-form-have-account {
+	display: inline;
+	font-size: 14px;
+	vertical-align: middle;
+	margin-left: 90px;
+}
+
+.login-form .form-control:focus, .register-form .form-control:focus {
+	border: 1px solid #1DA1F2;
+	box-shadow: none;
+	color: #14171A;
+}
+
+.login-btn:focus, .register-btn:focus {
+	outline: none;
+}
+
+.login-page-footer {
+	text-align: center;
+	line-height: 43px;
+	height: 43px;
+	background-color: #fff;
+	border-top: 1px solid #E1E8ED;
+	font-size: 12px;
+	color: #AAB8C2;
+	font-weight: normal;
+}
+
+.login-page-footer a, .login-page-footer span {
+	color: #AAB8C2;
+	margin-left: 7px;
+	margin-right: 7px;
+}

@@ -3,7 +3,7 @@
   <ul class="follow-section-people" ng-repeat="follow in $ctrl.follow">
     <li>
       <img ng-src={{follow.photo}}>
-      <a ng-href="https://twitter.com/{{follow.handle}}">{{follow.name}}</a><span>{{"@" + follow.handle}}</span><i class="fa fa-times" aria-hidden="true"></i>
+      <a ng-href="https://twitter.com/{{follow.username}}">{{follow.name}}</a><span>{{"@" + follow.username}}</span><i class="fa fa-times" aria-hidden="true"></i>
       <button class="btn follow-button">{{'FOLLOW.FOLLOW' | translate}}</button>
     </li>
   </ul>

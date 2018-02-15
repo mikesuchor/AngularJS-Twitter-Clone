@@ -8,10 +8,11 @@
     controller: NavbarController
   });
 
-  function NavbarController($uibModal, $scope) {
+  function NavbarController($uibModal, $scope, $translate) {
     var vm = this;
 
     vm.open = open;
+    vm.changeLanguage = changeLanguage;
 
     function open() {
       var modalInstance = $uibModal.open({
@@ -25,6 +26,10 @@
       modalInstance.result.then(function() {
         $scope.$emit('NavbarUpdateTweet');
       });
+    }
+
+    function changeLanguage(language) {
+      $translate.use(language);
     }
   }
 })();

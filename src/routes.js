@@ -5,12 +5,16 @@ angular
 /** @ngInject */
 function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true).hashPrefix('!');
-  $urlRouterProvider.when('/', '/home');
+  $urlRouterProvider.when('/', '/login');
 
   $stateProvider
     .state('main', {
       url: '/',
       component: 'main'
+    })
+    .state('login', {
+      url: '/login',
+      component: 'login'
     })
     .state('main.home', {
       url: 'home',

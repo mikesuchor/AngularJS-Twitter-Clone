@@ -1,0 +1,62 @@
+<div cg-busy="{promise:$ctrl.promise}">
+  <div class="login-page">
+    <section class="login-section left-half-login-page">
+      <div class="login-page-slogans-container">
+        <h1 class="login-page-slogans"><i class="fa fa-search" aria-hidden="true"></i><strong>Follow your interests.</strong></h1>
+        <h1 class="login-page-slogans"><i class="fa fa-user-circle-o"></i><strong>Hear what people are talking about.</strong></h1>
+        <h1 class="login-page-slogans"><i class="fa fa-comment-o"></i><strong>Join the conversation.</strong></h1>
+      </div>
+    </section>
+    <section class="login-section right-half-login-page">
+      <div class="login-page-login-container">
+        <form class="form-inline login-form">
+          <div class="form-group">
+            <input class="form-control login-username-field" ng-model="username" ng-class="{'login-username-field-with-fail': $ctrl.displayLoginFail}" type="text" pattern="[a-zA-Z0-9-]{5,20}" placeholder="Username" required>
+            <p class="login-form-failed" ng-show="$ctrl.displayLoginFail">Invalid login</p>
+          </div>
+          <div class="form-group">
+            <input class="form-control login-password-field" ng-model="password" type="password" pattern="[a-zA-Z0-9-]{5,20}" placeholder="Password" required>
+            <p class="login-form-forgot">Forgot password?</p>
+          </div>
+          <button type="submit" class="btn btn-default login-btn" ng-click="$ctrl.login(username, password)">Log in</button>
+        </form>
+        <form class="register-form">
+          <div class="right-half-slogans-container">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <h1>See what's happening in</h1>
+            <h1>the world right now</h1>
+            <h2>Join Twitter today.</h2>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control register-username-field" placeholder="Phone or email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control register-password-field" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default register-btn">Get started</button>
+          <p class="register-form-have-account">Have an account? <a href="#">Log in</a></p>
+        </form>
+      </div>
+    </section>
+  </div>
+  <footer class="login-page-footer">
+    <a href="#">About</a>
+    <a href="#">Help Center</a>
+    <a href="#">Blog</a>
+    <a href="#">Status</a>
+    <a href="#">Jobs</a>
+    <a href="#">Terms</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Cookies</a>
+    <a href="#">Ads info</a>
+    <a href="#">Brand</a>
+    <a href="#">Apps</a>
+    <a href="#">Advertise</a>
+    <a href="#">Marketing</a>
+    <a href="#">Businesses</a>
+    <a href="#">Developers</a>
+    <a href="#">Directory</a>
+    <a href="#">Settings</a>
+    <span>&copy; 2018 Twitter</span>
+  </footer>
+</div>

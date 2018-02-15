@@ -17,7 +17,7 @@
       vm.promise = LoginService.postUser(username, password).then(function(success) {
         $state.go('main.home');
       }, function(error) {
-        vm.loginFail = true;
+        vm.displayLoginFail = true;
       });
     }
   }

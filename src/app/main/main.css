@@ -854,10 +854,20 @@ ul {
 	margin-top: 30px;
 }
 
-.login-form-forgot, .login-form-instructions {
+.login-form-forgot {
 	color: #AAB8C2;
 	font-size: 14px;
 	text-align: left;
+}
+
+.login-form-failed {
+	color: red;
+	font-size: 14px;
+	text-align: left;
+}
+
+.ng-show {
+	color: black;
 }
 
 .login-form .login-btn {

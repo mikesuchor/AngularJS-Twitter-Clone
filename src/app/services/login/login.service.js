@@ -7,7 +7,7 @@
 
     function LoginService($resource, $q) {
       var vm = this;
-      var expressUsersResource = $resource('http://localhost:5000/users/');
+      var expressUsersResource = $resource('http://localhost:5000/users');
 
       vm.postUser = postUser;
 

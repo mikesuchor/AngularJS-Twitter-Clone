@@ -16,11 +16,6 @@ fs.readFile(pathToDatabase, function(err, data) {
   usersInDatabase = usersJSON.users;
 });
 
-/* GET users listing */
-router.get('/', cors(), function(req, res, next) {
-  res.json(usersInDatabase);
-});
-
 /* POST new user to users.json file */
 router.post('/', cors(), function(req, res, next) {
   usersInDatabase.forEach(function(dbuser) {

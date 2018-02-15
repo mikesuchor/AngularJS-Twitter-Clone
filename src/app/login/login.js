@@ -15,8 +15,10 @@
 
     function login(username, password) {
       vm.promise = LoginService.postUser(username, password).then(function(success) {
-          $state.go('main');
-        })
+        $state.go('main.home');
+      }, function(error) {
+        vm.loginFail = true;
+      });
     }
   }
 })();

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app')
+    .module('app.login')
     .component('login', {
       templateUrl: 'app/login/login.html',
       controller: LoginController

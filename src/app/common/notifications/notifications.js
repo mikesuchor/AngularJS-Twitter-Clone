@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app')
+    .module('app.notifications')
     .component('notifications', {
       templateUrl: 'app/common/notifications/notifications.html',
       bindings: {

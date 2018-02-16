@@ -1,5 +1,6 @@
 angular
-  .module('app', ['cgBusy', 'ngResource', 'pascalprecht.translate', 'ui.bootstrap', 'ui.router'])
+  .module('app', ['app.home', 'app.login', 'app.messages', 'app.notifications',
+  'cgBusy', 'ngResource', 'pascalprecht.translate', 'ui.bootstrap', 'ui.router'])
   .config(['$translateProvider', function($translateProvider) {
     $translateProvider
       .preferredLanguage('messages_en')

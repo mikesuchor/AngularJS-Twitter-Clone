@@ -65,7 +65,7 @@ describe('TweetService', function() {
 
   it('should post a tweet after calling vm.postTweet', function() {
     $httpBackend.expectPOST(expressTweetResource).respond({
-      photo: 'https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg',
+      photo: '/images/profile_images/JlEInrNR_bigger.jpg',
       name: 'Michael Suchorolski',
       username: 'mikesuchor',
       tweet: composetweet
@@ -73,7 +73,7 @@ describe('TweetService', function() {
     var result = TweetService.postTweet(composetweet);
     $httpBackend.flush();
     expect(result).toBeResolvedWith({
-      photo: 'https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg',
+      photo: '/images/profile_images/JlEInrNR_bigger.jpg',
       name: 'Michael Suchorolski',
       username: 'mikesuchor',
       tweet: composetweet

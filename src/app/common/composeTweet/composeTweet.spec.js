@@ -30,7 +30,7 @@ describe('composeTweet component', function() {
     tweet = {tweet: 'test'};
     text = 'test';
     composeTweet = {
-      photo: 'https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg',
+      photo: '/images/profile_images/JlEInrNR_bigger.jpg',
       name: 'Michael Suchorolski',
       username: 'mikesuchor',
       time: 'testing',

@@ -2,7 +2,6 @@ describe('LoginService', function() {
   var $httpBackend;
   var LoginService;
   var $q;
-  var deferred;
   var username;
   var password;
   var expressUsersResource = 'http://localhost:5000/users';

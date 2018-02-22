@@ -9,7 +9,7 @@
     </section>
     <section class="login-section right-half-login-page">
       <div class="login-page-login-container">
-        <form class="form-inline login-form">
+        <form class="form-inline login-form" novalidate>
           <div class="form-group">
             <input class="form-control login-username-field" ng-model="username" ng-class="{'login-username-field-with-fail': $ctrl.displayLoginFail}" type="text" pattern="[a-zA-Z0-9-]{5,20}" placeholder="Username" required>
             <p class="login-form-failed" ng-show="$ctrl.displayLoginFail">Invalid login</p>

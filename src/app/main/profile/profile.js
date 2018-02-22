@@ -11,7 +11,7 @@
   function ProfileController() {
     var vm = this;
     vm.profile = {
-      photo: 'https://pbs.twimg.com/profile_images/821536751642673153/JlEInrNR_bigger.jpg',
+      photo: '/images/profile_images/JlEInrNR_bigger.jpg',
       name: 'Michael Suchorolski',
       username: 'mikesuchor',
       tweets: 91,
